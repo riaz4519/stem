@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AboutUsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+/*about us*/
+
+Route::get('our-people',[AboutUsController::class,'our_people'])->name('about_us.our_people');
+Route::get('our-story',[AboutUsController::class,'our_story'])->name('about_us.our_story');
+Route::get('our-work',[AboutUsController::class,'our_work'])->name('about_us.our_work');
+/*end of about us*/
+
 Route::get('/', function () {
     return view('welcome');
 });
+
+
