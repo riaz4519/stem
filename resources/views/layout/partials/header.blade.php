@@ -51,7 +51,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="drop-link">
-                        <a class="active" href="index.html">Home</a>
+                        <a class="active" href="{{ url('/') }}">Home</a>
                     </li>
                     <li class="drop-link">
                         <a href="#">About us <i class="fa fa-angle-down"></i></a>
@@ -59,7 +59,7 @@
                             <li><a href="{{ route('about_us.our_work') }}">Our Work</a></li>
                             <li><a href="{{ route('about_us.our_story') }}">Our Story</a></li>
                             <li><a href="{{ route('about_us.our_people') }}">Our People</a></li>
-                            <li><a href="single-project.html">Annual Report</a></li>
+                            <li><a href="{{ route('about_us.annual_report') }}">Annual Report</a></li>
                             <li><a href="single-project.html">Career</a></li>
 
                         </ul>

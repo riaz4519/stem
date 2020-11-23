@@ -22,4 +22,10 @@ class AboutUsController extends Controller
 
         return view('about_us.our_people');
     }
+
+    public function annual_report(){
+
+        return view('about_us.annual_report');
+
+    }
 }

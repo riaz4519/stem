@@ -8,10 +8,11 @@
 			================================================== -->
     <section class="page-banner-section">
         <div class="container">
-            <h1>News</h1>
+            <h1>Our People</h1>
             <ul class="page-depth">
-                <li><a href="index.html">Studiare</a></li>
-                <li><a href="blog.html">News</a></li>
+                <li><a href="{{ url('/') }}">Stem</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="{{ route('about_us.our_people') }}">Our People</a></li>
             </ul>
         </div>
     </section>

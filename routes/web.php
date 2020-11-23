@@ -15,10 +15,10 @@ use App\Http\Controllers\AboutUsController;
 */
 
 /*about us*/
-
-Route::get('our-people',[AboutUsController::class,'our_people'])->name('about_us.our_people');
-Route::get('our-story',[AboutUsController::class,'our_story'])->name('about_us.our_story');
-Route::get('our-work',[AboutUsController::class,'our_work'])->name('about_us.our_work');
+Route::get('about-us/annual-report',[AboutUsController::class,'annual_report'])->name('about_us.annual_report');
+Route::get('about-us/our-people',[AboutUsController::class,'our_people'])->name('about_us.our_people');
+Route::get('about-us/our-story',[AboutUsController::class,'our_story'])->name('about_us.our_story');
+Route::get('about-us/our-work',[AboutUsController::class,'our_work'])->name('about_us.our_work');
 /*end of about us*/
 
 Route::get('/', function () {
