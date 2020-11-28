@@ -1,6 +1,8 @@
 
 @extends('layout.main')
 
+@section('title','Our People')
+
 @section('content')
 
 

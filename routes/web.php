@@ -2,6 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AboutUsController;
+use App\Http\Controllers\ProgramController;
+use App\Http\Controllers\EventsController;
+use App\Http\Controllers\CompetitionController;
+use App\Http\Controllers\ContactUsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,7 +16,26 @@ use App\Http\Controllers\AboutUsController;
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
+
+
+
 */
+
+/*contact us*/
+Route::get('contact-us',[ContactUsController::class,'contact'])->name('contact-us');
+/*end of contact us*/
+
+/*competition*/
+Route::get('/competition/competition-1',[CompetitionController::class,'competition'])->name('competition.single');
+/*end of competition*/
+
+/*events*/
+Route::get('/event/event-1',[EventsController::class,'event'])->name('event.single');
+/*end of events*/
+
+/*program section*/
+Route::get('/programs/program-one',[ProgramController::class,'program'])->name('program.single');
+/*end of program section*/
 
 /*about us*/
 Route::get('about-us/annual-report',[AboutUsController::class,'annual_report'])->name('about_us.annual_report');
