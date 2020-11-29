@@ -517,6 +517,7 @@ class ComposerStaticInitfdb9ebac88ad58f2c02e8b291e828b26
         'App\\Http\\Controllers\\AboutUsController' => __DIR__ . '/../..' . '/app/Http/Controllers/AboutUsController.php',
         'App\\Http\\Controllers\\AdminController' => __DIR__ . '/../..' . '/app/Http/Controllers/AdminController.php',
         'App\\Http\\Controllers\\AdminaboutmessageController' => __DIR__ . '/../..' . '/app/Http/Controllers/AdminaboutmessageController.php',
+        'App\\Http\\Controllers\\AnnualreportController' => __DIR__ . '/../..' . '/app/Http/Controllers/AnnualreportController.php',
         'App\\Http\\Controllers\\Auth\\ConfirmPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ConfirmPasswordController.php',
         'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
         'App\\Http\\Controllers\\Auth\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/LoginController.php',
