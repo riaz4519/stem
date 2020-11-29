@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Ourstory;
 use App\Models\Annualreport;
+use App\Models\Peoplecategory;
+use App\Models\Ourpeople;
 
 class AboutUsController extends Controller
 {
@@ -21,8 +23,18 @@ class AboutUsController extends Controller
     }
 
     public function our_people(){
+        $data['categories'] = Peoplecategory::latest()->get();
+        $data['ourpeoples'] = Ourpeople::latest()->get();
+        return view('about_us.our_people',$data);
+    }
 
-        return view('about_us.our_people');
+    public function categorywise_people($categoryID)
+    {
+        $peoplecategory = Peoplecategory::where('id',$categoryID)->first();
+        $data['categories'] = Peoplecategory::latest()->get();
+        $data['ourpeoples'] = Ourpeople::where('peoplecategory_id',$peoplecategory->id)->get();
+
+        return view('about_us.categorywise_ourpeople',$data);
     }
 
     public function annual_report(){

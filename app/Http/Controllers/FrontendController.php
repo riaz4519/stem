@@ -6,6 +6,7 @@ use App\Models\Banner;
 use App\Models\Whatwedo;
 use App\Models\Ourpartner;
 use App\Models\Aboutmessage;
+use App\Models\News;
 use Illuminate\Http\Request;
 
 class FrontendController extends Controller
@@ -18,5 +19,11 @@ class FrontendController extends Controller
         $data['partners']               = Ourpartner::latest()->get();
         
         return view('welcome',$data);
+    }
+
+    public function news()
+    {
+        $data['allnews'] = News::latest()->get();
+        return view('news.news',$data);
     }
 }

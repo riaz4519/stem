@@ -48,9 +48,12 @@ Route::get('about-us/annual-report',[AboutUsController::class,'annual_report'])-
 Route::get('about-us/our-people',[AboutUsController::class,'our_people'])->name('about_us.our_people');
 Route::get('about-us/our-story',[AboutUsController::class,'our_story'])->name('about_us.our_story');
 Route::get('about-us/our-work',[AboutUsController::class,'our_work'])->name('about_us.our_work');
+Route::get('about-us/our-people/{categoryID}',[App\Http\Controllers\AboutUsController::class,'categorywise_people'])->name('category.people');
+
 /*end of about us*/
 
 Route::get('/',[App\Http\Controllers\FrontendController::class,'homepage']);
+Route::get('/all-news',[App\Http\Controllers\FrontendController::class,'news'])->name('all.news');
 
 
 
@@ -106,3 +109,24 @@ Route::post('annualreport',[App\Http\Controllers\AnnualreportController::class,'
 Route::get('annualreport',[App\Http\Controllers\AnnualreportController::class,'index'])->name('annualreport.index')->middleware('auth');
 Route::get('annualreport/{id}/edit',[App\Http\Controllers\AnnualreportController::class,'edit'])->name('annualreport.edit')->middleware('auth');
 Route::patch('annualreport/{id}',[App\Http\Controllers\AnnualreportController::class,'update'])->name('annualreport.update')->middleware('auth');
+
+// People Category
+Route::get('peoplecategory/create',[App\Http\Controllers\PeoplecategoryController::class,'create'])->name('peoplecategory.create')->middleware('auth');
+Route::post('peoplecategory',[App\Http\Controllers\PeoplecategoryController::class,'store'])->name('peoplecategory.store')->middleware('auth');
+Route::get('peoplecategory',[App\Http\Controllers\PeoplecategoryController::class,'index'])->name('peoplecategory.index')->middleware('auth');
+Route::get('peoplecategory/{id}/edit',[App\Http\Controllers\PeoplecategoryController::class,'edit'])->name('peoplecategory.edit')->middleware('auth');
+Route::patch('peoplecategory/{id}',[App\Http\Controllers\PeoplecategoryController::class,'update'])->name('peoplecategory.update')->middleware('auth');
+
+// Our people
+Route::get('ourpeople/create',[App\Http\Controllers\OurpeopleController::class,'create'])->name('ourpeople.create')->middleware('auth');
+Route::post('ourpeople',[App\Http\Controllers\OurpeopleController::class,'store'])->name('ourpeople.store')->middleware('auth');
+Route::get('ourpeople',[App\Http\Controllers\OurpeopleController::class,'index'])->name('ourpeople.index')->middleware('auth');
+Route::get('ourpeople/{id}/edit',[App\Http\Controllers\OurpeopleController::class,'edit'])->name('ourpeople.edit')->middleware('auth');
+Route::patch('ourpeople/{id}',[App\Http\Controllers\OurpeopleController::class,'update'])->name('ourpeople.update')->middleware('auth');
+
+// News
+Route::get('news/create',[App\Http\Controllers\NewsController::class,'create'])->name('news.create')->middleware('auth');
+Route::post('news',[App\Http\Controllers\NewsController::class,'store'])->name('news.store')->middleware('auth');
+Route::get('news',[App\Http\Controllers\NewsController::class,'index'])->name('news.index')->middleware('auth');
+Route::get('news/{id}/edit',[App\Http\Controllers\NewsController::class,'edit'])->name('news.edit')->middleware('auth');
+Route::patch('news/{id}',[App\Http\Controllers\NewsController::class,'update'])->name('news.update')->middleware('auth');
