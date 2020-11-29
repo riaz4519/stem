@@ -59,6 +59,24 @@
             <li class="nav-item">
               <a class="nav-link" href="{{route('annualreport.index')}}">All of annual report</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{route('peoplecategory.create')}}">Create category</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{route('peoplecategory.index')}}">All Categories</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{route('ourpeople.create')}}">Create people</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{route('ourpeople.index')}}">All peoples</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{route('news.create')}}">Create news</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{route('news.index')}}">All news</a>
+            </li>
           </ul>
         </div>
       </li>

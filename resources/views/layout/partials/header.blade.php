@@ -12,7 +12,7 @@
                         <ul class="top-menu">
 
                             <li><a href="{{ route('contact-us') }}">Contact</a></li>
-                            <li><a href="blog.html">News</a></li>
+                            <li><a href="{{route('all.news')}}">News</a></li>
                         </ul>
                         <button class="search-icon">
                             <i class="material-icons open-search">search</i>

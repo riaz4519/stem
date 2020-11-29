@@ -35,7 +35,7 @@
                             <li><a href="pricing.html">Pricing Packages</a></li>
                             <li><a href="about.html">About Us</a></li>
                             <li><a href="courses.html">Courses</a></li>
-                            <li><a href="blog.html">News</a></li>
+                            <li><a href="{{route('all.news')}}">News</a></li>
                             <li><a href="index.html">Home</a></li>
                             <li><a href="#">Sample Page</a></li>
                         </ul>

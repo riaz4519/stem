@@ -9,7 +9,7 @@ use App\Models\Ourstory;
 
 class OurstoryController extends Controller
 {
-     public function index()
+    public function index()
     {
         $data['ourstories'] = $ourstories = Ourstory::latest()->get();
         return view('admin.ourstory.index',$data);
