@@ -69,6 +69,7 @@
                       @endforeach
                     </tbody>
                 </table>
+                {{$banners->links()}}
             </div>
             <!-- Modal -->
             <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">

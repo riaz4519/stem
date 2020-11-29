@@ -234,26 +234,12 @@
                 <h1>Our Partners</h1>
                 <p>Sed vehicula consectetur rutrum</p>
                 <ul class="clients-list">
+                    @foreach($partners as $partner)
                     <li>
-                        <img src="{{ asset('stem/images/clients/logo-client-1.png') }}" alt="">
-                        <a href="#"><span>Honeydew</span></a>
+                        <img src="{{asset('storage/partners/'.$partner->image)}}" alt="">
+                        <a><span>{{$partner->name}}</span></a>
                     </li>
-                    <li>
-                        <img src="{{ asset('stem/images/clients/logo-client-2.png') }}" alt="">
-                        <a href="#"><span>Madison</span></a>
-                    </li>
-                    <li>
-                        <img src="{{ asset('stem/images/clients/logo-client-3.png') }}" alt="">
-                        <a href="#"><span>Everlane</span></a>
-                    </li>
-                    <li>
-                        <img src="{{ asset('stem/images/clients/logo-client-4.png') }}" alt="">
-                        <a href="#"><span>Henderson</span></a>
-                    </li>
-                    <li>
-                        <img src="{{ asset('stem/images/clients/logo-client-5.png') }}" alt="">
-                        <a href="#"><span>Andersen</span></a>
-                    </li>
+                    @endforeach
                 </ul>
             </div>
         </div>

@@ -41,6 +41,12 @@
             <li class="nav-item">
               <a class="nav-link" href="{{route('whatwedo.index')}}">All of 'What We Do'</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{route('ourpartner.create')}}">Create Partners</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{route('ourpartner.index')}}">All Partners</a>
+            </li>
           </ul>
         </div>
       </li>

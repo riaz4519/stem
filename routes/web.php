@@ -9,6 +9,7 @@ use App\Http\Controllers\ProgramController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\WhatwedoController;
 use App\Http\Controllers\ContactUsController;
+use App\Http\Controllers\OurpartnerController;
 use App\Http\Controllers\CompetitionController;
 use App\Http\Controllers\AdminaboutmessageController;
 
@@ -84,3 +85,10 @@ Route::post('what-we-do',[App\Http\Controllers\WhatwedoController::class,'store'
 Route::get('what-we-do',[App\Http\Controllers\WhatwedoController::class,'index'])->name('whatwedo.index')->middleware('auth');
 Route::get('what-we-do/{id}/edit',[App\Http\Controllers\WhatwedoController::class,'edit'])->name('whatwedo.edit')->middleware('auth');
 Route::patch('what-we-do/{id}',[App\Http\Controllers\WhatwedoController::class,'update'])->name('whatwedo.update')->middleware('auth');
+
+// Our Partners
+Route::get('partner/create',[App\Http\Controllers\OurpartnerController::class,'create'])->name('ourpartner.create')->middleware('auth');
+Route::post('partner',[App\Http\Controllers\OurpartnerController::class,'store'])->name('ourpartner.store')->middleware('auth');
+Route::get('partner',[App\Http\Controllers\OurpartnerController::class,'index'])->name('ourpartner.index')->middleware('auth');
+Route::get('partner/{id}/edit',[App\Http\Controllers\OurpartnerController::class,'edit'])->name('ourpartner.edit')->middleware('auth');
+Route::patch('partner/{id}',[App\Http\Controllers\OurpartnerController::class,'update'])->name('ourpartner.update')->middleware('auth');
