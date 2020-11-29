@@ -205,45 +205,23 @@
         <div class="container">
             <div class="feature-box">
                 <div class="row">
+                    @foreach($whatwedos as $whatwedo)
                     <div class="col-lg-4 col-md-6">
                         <div class="feature-post">
                             <div class="icon-holder">
-                                <i class="fa fa-umbrella"></i>
+                                <i class="{{$whatwedo->icon}}"></i>
                             </div>
                             <div class="feature-content">
                                 <h2>
-                                    Online Learn Courses Management
+                                    {{$whatwedo->title}}
                                 </h2>
-                                <p>Analyzing negative materials about your brand and addressing them with sentiment analysis and press.</p>
+                                <p>
+                                    {{$whatwedo->description}}
+                                </p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="feature-post">
-                            <div class="icon-holder color2">
-                                <i class="fa fa-id-card-o"></i>
-                            </div>
-                            <div class="feature-content">
-                                <h2>
-                                    Learn from the masters of the field online
-                                </h2>
-                                <p>Analyzing negative materials about your brand and addressing them with sentiment analysis and press.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="feature-post">
-                            <div class="icon-holder color3">
-                                <i class="fa fa-handshake-o"></i>
-                            </div>
-                            <div class="feature-content">
-                                <h2>
-                                    An Introduction-Skills For Learners
-                                </h2>
-                                <p>Analyzing negative materials about your brand and addressing them with sentiment analysis and press.</p>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>

@@ -38,6 +38,9 @@
             <li class="nav-item">
               <a class="nav-link" href="{{route('whatwedo.create')}}">Create What We Do</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{route('whatwedo.index')}}">All of 'What We Do'</a>
+            </li>
           </ul>
         </div>
       </li>

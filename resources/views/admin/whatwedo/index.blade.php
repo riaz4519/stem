@@ -14,86 +14,25 @@
                 <table id="example1" class="table">
                     <thead>
                         <tr>
-                            <th class="wd-20p">ID</th>
-                            <th class="wd-25p">Image</th>
-                            <th class="wd-20p">Status</th>
-                            <th class="wd-15p">Change Status</th>
-                            <th class="wd-20p">View</th>
+                            <th class="wd-25p">Icon</th>
+                            <th class="wd-25p">Title</th>
                             <th class="wd-20p">Edit</th>
-                            <th class="wd-20p">Delete</th>
                         </tr>
                     </thead>
                     <tbody>
-                      @foreach($banners as $banner)
+                      @foreach($whatwedos as $row)
                         <tr>
-                            <td>{{$banner->id}}</td>
-                            <td><img style="width: 50px; height: 50px;"  src="{{asset('storage/banner/'.$banner->image)}}"  alt="Img"></td>
+                            <td><i class="{{$row->icon}}"></i></td>
+                            <td>{{$row->title}}</td>
                             <td>
-                              @if($banner->activitystatus==1)
-                                  <p class="text-success">
-                                    Active
-                                  </p>
-                              @else
-                                  <p class="text-danger">
-                                    InActive
-                                  </p>
-                              @endif
-                            </td>
-                            <td>
-                              @if($banner->activitystatus==1)
-              
-                                    <button type="submit" class="btn btn-xs btn-danger banner_changestatus_btn" value="{{$banner->id}}">
-                                      <i class="fa fa-thumbs-down" aria-hidden="true"></i>
-                                    </button>
-              
-                                  @else
-              
-                                    <button type="submit" class="btn btn-xs btn-success banner_changestatus_btn" value="{{$banner->id}}">
-                                      <i class="fa fa-thumbs-up " aria-hidden="true"></i>
-                                    </button>
-              
-                              @endif
-                            </td>
-                            <td>
-                              <a href="{{route('banner.show',$banner->id)}}" class="btn btn-xs btn-success"><i class="fa fa-eye"></i></a>
-                            </td>
-                            <td>
-                              <a href="{{route('banner.edit',$banner->id)}}" class="btn btn-xs btn-info"><i class="fa fa-pencil"></i></a>
-                            </td>
-                            <td>
-                              <button type="button" value="{{ $banner->id }}" class="btn btn-danger btn-xs banner_delete_btn">
-                                <i class="fa fa-trash" aria-hidden="true"></i>
-                              </button>
+                              <a href="{{route('whatwedo.edit',$row->id)}}" class="btn btn-xs btn-info"><i class="fa fa-pencil"></i></a>
                             </td>
                         </tr>
                       @endforeach
                     </tbody>
                 </table>
             </div>
-            <!-- Modal -->
-            <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h4 class="modal-title text-center" id="myModalLabel">Delete Confirmation</h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                  </div>
-                  <form action="{{route('banner.destroy','test')}}" id="banner_delete_form" method="POST">
-                      {{method_field('delete')}}
-                      {{csrf_field()}}
-                      <div class="modal-body">
-                        <p class="text-center">Are you sure you want to delete?</p>
-                        <input type="hidden" name="banner_id" id="ban_id" >
-                      </div>
-                  
-                      <div class="modal-footer">
-                        <button type="button" class="btn btn-xs btn-success" data-dismiss="modal">No, Cancel</button>
-                        <button type="submit" class="btn btn-xs btn-warning">Yes, DELETE</button>
-                      </div>
-                    </form>
-                </div>
-              </div>
-            </div>
+            
         </div>
     </div>
 </div>

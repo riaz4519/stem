@@ -81,3 +81,6 @@ Route::patch('about-message/{id}',[App\Http\Controllers\AdminaboutmessageControl
 // Whatwedo
 Route::get('what-we-do/create',[App\Http\Controllers\WhatwedoController::class,'create'])->name('whatwedo.create')->middleware('auth');
 Route::post('what-we-do',[App\Http\Controllers\WhatwedoController::class,'store'])->name('whatwedo.store')->middleware('auth');
+Route::get('what-we-do',[App\Http\Controllers\WhatwedoController::class,'index'])->name('whatwedo.index')->middleware('auth');
+Route::get('what-we-do/{id}/edit',[App\Http\Controllers\WhatwedoController::class,'edit'])->name('whatwedo.edit')->middleware('auth');
+Route::patch('what-we-do/{id}',[App\Http\Controllers\WhatwedoController::class,'update'])->name('whatwedo.update')->middleware('auth');
