@@ -147,35 +147,7 @@
         <!-- START REVOLUTION SLIDER 5.1.1RC fullscreen mode -->
         <div id="rev_slider_202_1" class="rev_slider" data-version="5.1.1RC">
             <ul>
-                <!-- SLIDE  -->
-                <li data-index="rs-672" data-transition="fade" data-slotamount="default" data-easein="default" data-easeout="default" data-masterspeed="default"  data-thumb="upload/slider/slider-image-1.jpg" data-rotate="0" data-saveperformance="off" data-title="unique" data-description="">
-                    <!-- MAIN IMAGE -->
-                    <img src="{{ asset('stem/upload/slider/slider-image-1.jpg') }}" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
-                    <!-- LAYERS -->
-
-                </li>
-                <!-- SLIDE  -->
-                <li data-index="rs-673" data-transition="fade" data-slotamount="default" data-easein="default" data-easeout="default" data-masterspeed="default" data-thumb="upload/slider/slider-image-2.jpg" data-rotate="0" data-saveperformance="off" data-title="ideas" data-description="">
-                    <!-- MAIN IMAGE -->
-                    <img src="{{ asset('stem/upload/slider/slider-image-2.jpg') }}" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
-                    <!-- LAYERS -->
-
-                </li>
-                <!-- SLIDE  -->
-                <li data-index="rs-674" data-transition="fade" data-slotamount="default" data-easein="default" data-easeout="default" data-masterspeed="default" data-thumb="upload/slider/slider-image-3.jpg" data-rotate="0" data-saveperformance="off" data-title="ideas" data-description="">
-                    <!-- MAIN IMAGE -->
-                    <img src="{{ asset('stem/upload/slider/slider-image-3.jpg') }}" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
-                    <!-- LAYERS -->
-
-                </li>
-                <!-- SLIDE  -->
-                <li data-index="rs-675" data-transition="fade" data-slotamount="default" data-easein="default" data-easeout="default" data-masterspeed="default" data-thumb="upload/slider/slider-image-4.jpg" data-rotate="0" data-saveperformance="off" data-title="ideas" data-description="">
-                    <!-- MAIN IMAGE -->
-                    <img src="{{ asset('stem/upload/slider/slider-image-4.jpg') }}" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
-                    <!-- LAYERS -->
-
-                </li>
-
+                @include('layout.frontend_layout.frontend_slider')
             </ul>
             <div class="tp-bannertimer tp-bottom" style="visibility: hidden !important;"></div>
         </div>
@@ -189,8 +161,8 @@
     <section class="countdown-section">
         <div class="container">
             <div class="countdown-box">
-                <h1>Limited Time: Get My Book For Free!</h1>
-                <p>Learn anytime, anywhere. Best Courses. Top Instituion.</p>
+                <h1>@if(isset($aboutmessage)) {{$aboutmessage->title}} @else {{'comming soon!'}} @endif</h1>
+                <p>@if(isset($aboutmessage)) {{$aboutmessage->description}} @else {{'Comming soon!'}} @endif</p>
                 <div class="countdown-item" data-date="2019/12/14">
                     <div class="countdown-col">
 							<span class="countdown-unit countdown-days">
@@ -217,8 +189,11 @@
 							</span>
                     </div>
                 </div>
-                <p>We offer professional SEO services that help websites increase their organic search score drastically in order to compete for the highest rankings.</p>
-                <a class="button-two" href="#">Get my free book</a>
+                @if(isset($aboutmessage))
+                    <a class="button-two" target="_blank" href="{{$aboutmessage->link}}"> {{$aboutmessage->link_title}} </a>
+                @else 
+                    <a class="button-two" href="#"> {{'comming soon'}} </a>
+                @endif
             </div>
         </div>
     </section>

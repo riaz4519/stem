@@ -1,11 +1,16 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\BannerController;
+use App\Http\Controllers\EventsController;
 use App\Http\Controllers\AboutUsController;
 use App\Http\Controllers\ProgramController;
-use App\Http\Controllers\EventsController;
-use App\Http\Controllers\CompetitionController;
+use App\Http\Controllers\FrontendController;
+use App\Http\Controllers\WhatwedoController;
 use App\Http\Controllers\ContactUsController;
+use App\Http\Controllers\CompetitionController;
+use App\Http\Controllers\AdminaboutmessageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,12 +49,35 @@ Route::get('about-us/our-story',[AboutUsController::class,'our_story'])->name('a
 Route::get('about-us/our-work',[AboutUsController::class,'our_work'])->name('about_us.our_work');
 /*end of about us*/
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/',[App\Http\Controllers\FrontendController::class,'homepage']);
 
 
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+// ADMIN SIDE
+Route::get('/admin_dashboard', [App\Http\Controllers\AdminController::class, 'dashboard'])->name('dashboard');
+
+
+// banner
+Route::get('banner/create',[App\Http\Controllers\BannerController::class,'create'])->name('banner.create')->middleware('auth');
+Route::post('banner',[App\Http\Controllers\BannerController::class,'store'])->name('banner.store')->middleware('auth');
+Route::get('banner',[App\Http\Controllers\BannerController::class,'index'])->name('banner.index')->middleware('auth');
+Route::post('/banner/changestatus/{id}',[App\Http\Controllers\BannerController::class,'changestatus'])->name('banner.changestatus')->middleware('auth');
+Route::get('banner/{id}',[App\Http\Controllers\BannerController::class,'show'])->name('banner.show')->middleware('auth');
+Route::get('banner/{id}/edit',[App\Http\Controllers\BannerController::class,'edit'])->name('banner.edit')->middleware('auth');
+Route::patch('banner/{id}',[App\Http\Controllers\BannerController::class,'update'])->name('banner.update')->middleware('auth');
+Route::DELETE('/deletebanner',[App\Http\Controllers\BannerController::class,'destroy'])->name('banner.destroy');
+
+// About message
+Route::get('about-message/create',[App\Http\Controllers\AdminaboutmessageController::class,'create'])->name('aboutmessage.create')->middleware('auth');
+Route::post('about-message',[App\Http\Controllers\AdminaboutmessageController::class,'store'])->name('aboutmessage.store')->middleware('auth');
+Route::get('about-message',[App\Http\Controllers\AdminaboutmessageController::class,'index'])->name('aboutmessage.index')->middleware('auth');
+Route::get('about-message/{id}/edit',[App\Http\Controllers\AdminaboutmessageController::class,'edit'])->name('aboutmessage.edit')->middleware('auth');
+Route::patch('about-message/{id}',[App\Http\Controllers\AdminaboutmessageController::class,'update'])->name('aboutmessage.update')->middleware('auth');
+
+// Whatwedo
+Route::get('what-we-do/create',[App\Http\Controllers\WhatwedoController::class,'create'])->name('whatwedo.create')->middleware('auth');
+Route::post('what-we-do',[App\Http\Controllers\WhatwedoController::class,'store'])->name('whatwedo.store')->middleware('auth');
