@@ -42,9 +42,9 @@
 													<i class="material-icons">location_on</i> {{$ourstory->location}}
 												</span>
                                         </div>
-                                        <h2 class="title"><a href="single-event.html">Summer High School Journalism Camp Registration Form</a></h2>
+                                        <h2 class="title"><a href="#">Summer High School Journalism Camp Registration Form</a></h2>
                                     </div>
-                                    <a href="single-event.html" class="events-image"><img src="{{ asset('stem/upload/events/events7.jpg') }}" alt=""></a>
+                                    <a href="#" class="events-image"><img src="{{ asset('stem/upload/events/events7.jpg') }}" alt=""></a>
                                 </div>
                             </div>
                         </div>
