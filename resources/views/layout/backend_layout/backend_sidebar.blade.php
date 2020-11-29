@@ -47,6 +47,18 @@
             <li class="nav-item">
               <a class="nav-link" href="{{route('ourpartner.index')}}">All Partners</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{route('ourstory.create')}}">Create ourstory</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{route('ourstory.index')}}">All of ourstory</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{route('annualreport.create')}}">Create annual report</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{route('annualreport.index')}}">All of annual report</a>
+            </li>
           </ul>
         </div>
       </li>

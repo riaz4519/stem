@@ -8,7 +8,7 @@
 <div class="col-12 mt-4">
     <div class="card ">
         <div class="card-body">
-            <h5 class="card-title">View all banners</h5>
+            <h5 class="card-title">View all partners</h5>
             @include('flash_message')
             <div class="table-responsive">
                 <table id="example1" class="table">

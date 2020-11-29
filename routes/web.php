@@ -60,7 +60,7 @@ Auth::routes();
 
 // ADMIN SIDE
 Route::get('/admin_dashboard', [App\Http\Controllers\AdminController::class, 'dashboard'])->name('dashboard');
-
+Route::get('/admin_logout','AdminController@logout');
 
 // banner
 Route::get('banner/create',[App\Http\Controllers\BannerController::class,'create'])->name('banner.create')->middleware('auth');
@@ -92,3 +92,17 @@ Route::post('partner',[App\Http\Controllers\OurpartnerController::class,'store']
 Route::get('partner',[App\Http\Controllers\OurpartnerController::class,'index'])->name('ourpartner.index')->middleware('auth');
 Route::get('partner/{id}/edit',[App\Http\Controllers\OurpartnerController::class,'edit'])->name('ourpartner.edit')->middleware('auth');
 Route::patch('partner/{id}',[App\Http\Controllers\OurpartnerController::class,'update'])->name('ourpartner.update')->middleware('auth');
+
+// our story
+Route::get('ourstory/create',[App\Http\Controllers\OurstoryController::class,'create'])->name('ourstory.create')->middleware('auth');
+Route::post('ourstory',[App\Http\Controllers\OurstoryController::class,'store'])->name('ourstory.store')->middleware('auth');
+Route::get('ourstory',[App\Http\Controllers\OurstoryController::class,'index'])->name('ourstory.index')->middleware('auth');
+Route::get('ourstory/{id}/edit',[App\Http\Controllers\OurstoryController::class,'edit'])->name('ourstory.edit')->middleware('auth');
+Route::patch('ourstory/{id}',[App\Http\Controllers\OurstoryController::class,'update'])->name('ourstory.update')->middleware('auth');
+
+// Annual Report
+Route::get('annualreport/create',[App\Http\Controllers\AnnualreportController::class,'create'])->name('annualreport.create')->middleware('auth');
+Route::post('annualreport',[App\Http\Controllers\AnnualreportController::class,'store'])->name('annualreport.store')->middleware('auth');
+Route::get('annualreport',[App\Http\Controllers\AnnualreportController::class,'index'])->name('annualreport.index')->middleware('auth');
+Route::get('annualreport/{id}/edit',[App\Http\Controllers\AnnualreportController::class,'edit'])->name('annualreport.edit')->middleware('auth');
+Route::patch('annualreport/{id}',[App\Http\Controllers\AnnualreportController::class,'update'])->name('annualreport.update')->middleware('auth');

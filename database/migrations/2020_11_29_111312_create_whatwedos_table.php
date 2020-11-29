@@ -15,9 +15,9 @@ class CreateWhatwedosTable extends Migration
     {
         Schema::create('whatwedos', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->text('description');
-            $table->string('icon');
+            $table->string('title')->nullable();
+            $table->text('description')->nullable();
+            $table->string('icon')->nullable();
             $table->timestamps();
         });
     }

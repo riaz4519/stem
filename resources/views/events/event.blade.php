@@ -1,17 +1,17 @@
 @extends('layout.main')
 
-@section('title','Event -1')
+@section('title','Our Story -1')
 
 @section('content')
     <!-- page-banner-section
 			================================================== -->
     <section class="page-banner-section">
         <div class="container">
-            <h1>Title of the Event </h1>
+            <h1>Our Story </h1>
             <ul class="page-depth">
                 <li><a href="{{ url('/') }}">Home</a></li>
-                <li><a href="#">Events</a></li>
-                <li><a href="{{ route('program.single') }}">Event Title</a></li>
+                <li><a href="#">Our Story</a></li>
+                <li><a href="{{ route('program.single') }}">Our Story Title</a></li>
             </ul>
         </div>
     </section>
@@ -29,7 +29,7 @@
                 </div>
                 <div class="col-lg-5">
                     <div class="project-details">
-                        <h1>Event Title Here</h1>
+                        <h1>Our Story Title Here</h1>
                         <p>We are excited to launch our new company and product Ooooh. After being featured in too many magazines to mention and having created an online stir, we know that Ooooh is going to be big. You may have seen us in the Dinosaurs’ Den where we were we told that we didn’t need them because we were already doing it so well ourselves.</p>
                         <table>
                             <tbody>

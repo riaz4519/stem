@@ -8,7 +8,7 @@
             <div class="row d-flex justify-content-center">
                 <div class="col-md-12">
                     <h4 class="card-title">Write an about message</h4>
-                    <form action="{{route('about.store')}}" method="POST" enctype="multipart/form-data">
+                    <form action="{{route('aboutmessage.store')}}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <label class="d-block">Title</label>
                         <input type="text" name="title" class="form-control" id="" placeholder="title">

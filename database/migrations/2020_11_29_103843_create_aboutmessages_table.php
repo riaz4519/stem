@@ -15,10 +15,10 @@ class CreateAboutmessagesTable extends Migration
     {
         Schema::create('aboutmessages', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->text('description');
-            $table->string('link_title');
-            $table->text('link');
+            $table->string('title')->nullable();
+            $table->text('description')->nullable();
+            $table->string('link_title')->nullable();
+            $table->text('link')->nullable();
             $table->timestamps();
         });
     }

@@ -26,140 +26,20 @@
                 <div class="col-lg-12 col-md-12">
                     <div class="portfolio-box iso-call">
 
+                        @foreach($annualreports as $row)
                         <div class="project-post university">
                             <div class="inner-project">
                                 <div class="image-holder">
-                                    <img src="{{ asset('stem/upload/portfolio/portfolio-image-1.jpg') }}" alt="">
-                                    <a href="single-project.html">
-                                        <i class="material-icons">arrow_forward</i>
-                                    </a>
+                                    <img src="{{asset('storage/annualreport/'.$row->image)}}" alt="">
                                 </div>
                                 <div class="content-holder">
-                                    <h2><a href="single-project.html">Spring Events and Courses</a></h2>
-                                    <span>Nature of University</span>
+                                    <h2>{{$row->report_title}}</h2>
+                                    <span>{{$row->date}}</span>
                                 </div>
                             </div>
                         </div>
-
-                        <div class="project-post students">
-                            <div class="inner-project">
-                                <div class="image-holder">
-                                    <img src="{{ asset('stem/upload/portfolio/portfolio-image-1.jpg') }}" alt="">
-                                    <a href="single-project.html">
-                                        <i class="material-icons">arrow_forward</i>
-                                    </a>
-                                </div>
-                                <div class="content-holder">
-                                    <h2><a href="single-project.html">Southeastern Art</a></h2>
-                                    <span>Students Learning</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="project-post travelling">
-                            <div class="inner-project">
-                                <div class="image-holder">
-                                    <img src="{{ asset('stem/upload/portfolio/portfolio-image-1.jpg') }}" alt="">
-                                    <a href="single-project.html">
-                                        <i class="material-icons">arrow_forward</i>
-                                    </a>
-                                </div>
-                                <div class="content-holder">
-                                    <h2><a href="single-project.html">Beauty of Bucknell</a></h2>
-                                    <span>Travelling with Teachers</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="project-post students">
-                            <div class="inner-project">
-                                <div class="image-holder">
-                                    <img src="{{ asset('stem/upload/portfolio/portfolio-image-1.jpg') }}" alt="">
-                                    <a href="single-project.html">
-                                        <i class="material-icons">arrow_forward</i>
-                                    </a>
-                                </div>
-                                <div class="content-holder">
-                                    <h2><a href="single-project.html">Close-up Hand and Exam</a></h2>
-                                    <span>Students Learning</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="project-post campus">
-                            <div class="inner-project">
-                                <div class="image-holder">
-                                    <img src="{{ asset('stem/upload/portfolio/portfolio-image-1.jpg') }}" alt="">
-                                    <a href="single-project.html">
-                                        <i class="material-icons">arrow_forward</i>
-                                    </a>
-                                </div>
-                                <div class="content-holder">
-                                    <h2><a href="single-project.html">2018 Faculty Biennial</a></h2>
-                                    <span>Campus Images</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="project-post travelling">
-                            <div class="inner-project">
-                                <div class="image-holder">
-                                    <img src="{{ asset('stem/upload/portfolio/portfolio-image-1.jpg') }}" alt="">
-                                    <a href="single-project.html">
-                                        <i class="material-icons">arrow_forward</i>
-                                    </a>
-                                </div>
-                                <div class="content-holder">
-                                    <h2><a href="single-project.html">Juried Student Exhibition</a></h2>
-                                    <span>Travelling with Teachers</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="project-post university">
-                            <div class="inner-project">
-                                <div class="image-holder">
-                                    <img src="{{ asset('stem/upload/portfolio/portfolio-image-1.jpg') }}" alt="">
-                                    <a href="single-project.html">
-                                        <i class="material-icons">arrow_forward</i>
-                                    </a>
-                                </div>
-                                <div class="content-holder">
-                                    <h2><a href="single-project.html">Students Looking Resource</a></h2>
-                                    <span>Nature of University</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="project-post students">
-                            <div class="inner-project">
-                                <div class="image-holder">
-                                    <img src="{{ asset('stem/upload/portfolio/portfolio-image-1.jpg') }}" alt="">
-                                    <a href="single-project.html">
-                                        <i class="material-icons">arrow_forward</i>
-                                    </a>
-                                </div>
-                                <div class="content-holder">
-                                    <h2><a href="single-project.html">Spring Events and Courses</a></h2>
-                                    <span>Students Learning</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="project-post campus">
-                            <div class="inner-project">
-                                <div class="image-holder">
-                                    <img src="{{ asset('stem/upload/portfolio/portfolio-image-1.jpg') }}" alt="">
-                                    <a href="single-project.html">
-                                        <i class="material-icons">arrow_forward</i>
-                                    </a>
-                                </div>
-                                <div class="content-holder">
-                                    <h2><a href="single-project.html">Access to Photography</a></h2>
-                                    <span>Campus Images</span>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
+                        
 
                     </div>
                 </div>

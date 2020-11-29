@@ -39,7 +39,7 @@ trait HasRelationships
     /**
      * The many to many relationship methods.
      *
-     * @var array
+     * @var string[]
      */
     public static $manyMethods = [
         'belongsToMany', 'morphToMany', 'morphedByMany',
@@ -729,6 +729,10 @@ trait HasRelationships
 
         if (! empty($morphMap) && in_array(static::class, $morphMap)) {
             return array_search(static::class, $morphMap, true);
+        }
+
+        if (Relation::$tableNameAsMorphType) {
+            return $this->getTable();
         }
 
         return static::class;

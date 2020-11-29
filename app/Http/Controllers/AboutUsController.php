@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Ourstory;
+use App\Models\Annualreport;
 
 class AboutUsController extends Controller
 {
@@ -14,8 +16,8 @@ class AboutUsController extends Controller
     }
 
     public function our_story(){
-
-        return view('about_us.our_story');
+        $data['ourstories'] = Ourstory::paginate(8);
+        return view('about_us.our_story',$data);
     }
 
     public function our_people(){
@@ -24,8 +26,8 @@ class AboutUsController extends Controller
     }
 
     public function annual_report(){
-
-        return view('about_us.annual_report');
+        $data['annualreports'] = Annualreport::latest()->get();
+        return view('about_us.annual_report',$data);
 
     }
 }
