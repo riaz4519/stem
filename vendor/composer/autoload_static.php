@@ -552,6 +552,7 @@ class ComposerStaticInitfdb9ebac88ad58f2c02e8b291e828b26
         'App\\Models\\Aboutmessage' => __DIR__ . '/../..' . '/app/Models/Aboutmessage.php',
         'App\\Models\\Annualreport' => __DIR__ . '/../..' . '/app/Models/Annualreport.php',
         'App\\Models\\Banner' => __DIR__ . '/../..' . '/app/Models/Banner.php',
+        'App\\Models\\Career' => __DIR__ . '/../..' . '/app/Models/Career.php',
         'App\\Models\\Contact' => __DIR__ . '/../..' . '/app/Models/Contact.php',
         'App\\Models\\News' => __DIR__ . '/../..' . '/app/Models/News.php',
         'App\\Models\\Ourpartner' => __DIR__ . '/../..' . '/app/Models/Ourpartner.php',

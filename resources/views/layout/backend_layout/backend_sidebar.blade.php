@@ -139,19 +139,35 @@
       {{--end of our work--}}
 
       <li class="nav-item">
-        <a class="nav-link" data-toggle="collapse" href="#ourwork-drop" aria-expanded="false" aria-controls="dashboard-dropdown">
-            <i class="menu-icon mdi mdi-television"></i>
-            <span class="menu-title">Contact Messages</span>
-            <i class="menu-arrow"></i>
-        </a>
-        <div class="collapse" id="ourwork-drop">
-            <ul class="nav flex-column sub-menu">
-                <li class="nav-item">
-                    <a class="nav-link" href="{{route('contact.index')}}">All Messages</a>
-                </li>
-            </ul>
-        </div>
-    </li>
+          <a class="nav-link" data-toggle="collapse" href="#contact-drop" aria-expanded="false" aria-controls="dashboard-dropdown">
+              <i class="menu-icon mdi mdi-television"></i>
+              <span class="menu-title">Contact Messages</span>
+              <i class="menu-arrow"></i>
+          </a>
+          <div class="collapse" id="contact-drop">
+              <ul class="nav flex-column sub-menu">
+                  <li class="nav-item">
+                      <a class="nav-link" href="{{route('contact.index')}}">All Messages</a>
+                  </li>
+              </ul>
+          </div>
+      </li>
+      {{-- start of career section--}}
+      <li class="nav-item">
+          <a class="nav-link" data-toggle="collapse" href="#career-drop" aria-expanded="false" aria-controls="dashboard-dropdown">
+              <i class="menu-icon mdi mdi-television"></i>
+              <span class="menu-title">Careerpage Messages</span>
+              <i class="menu-arrow"></i>
+          </a>
+          <div class="collapse" id="career-drop">
+              <ul class="nav flex-column sub-menu">
+                  <li class="nav-item">
+                      <a class="nav-link" href="{{route('career.index')}}">Career Page Messages</a>
+                  </li>
+              </ul>
+          </div>
+      </li>
+      {{-- start of career section--}}
 
     </ul>
   </nav>

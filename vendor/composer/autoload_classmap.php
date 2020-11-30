@@ -46,6 +46,7 @@ return array(
     'App\\Models\\Aboutmessage' => $baseDir . '/app/Models/Aboutmessage.php',
     'App\\Models\\Annualreport' => $baseDir . '/app/Models/Annualreport.php',
     'App\\Models\\Banner' => $baseDir . '/app/Models/Banner.php',
+    'App\\Models\\Career' => $baseDir . '/app/Models/Career.php',
     'App\\Models\\Contact' => $baseDir . '/app/Models/Contact.php',
     'App\\Models\\News' => $baseDir . '/app/Models/News.php',
     'App\\Models\\Ourpartner' => $baseDir . '/app/Models/Ourpartner.php',

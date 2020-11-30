@@ -8,7 +8,7 @@
 <div class="col-12 mt-4">
     <div class="card ">
         <div class="card-body">
-            <h5 class="card-title">All Contact Messages</h5>
+            <h5 class="card-title">All Messages From Career Page</h5>
             @include('flash_message')
             <div class="table-responsive">
                 <table id="example1" class="table">
@@ -20,19 +20,19 @@
                         </tr>
                     </thead>
                     <tbody>
-                      @foreach($contacts as $row)
+                      @foreach($careermessages as $row)
                         <tr>
                             <td>{{$row->name}}</td>
                             <td>{{$row->email}}</td>
                             <td>{{$row->phone}}</td>
                             <td>
-                              <a href="{{route('contact.show',$row->id)}}" class="btn btn-xs btn-info"><i class="fa fa-eye"></i></a>
+                              <a href="{{route('career.show',$row->id)}}" class="btn btn-xs btn-info"><i class="fa fa-eye"></i></a>
                             </td>
                         </tr>
                       @endforeach
                     </tbody>
                 </table>
-                {{$contacts->links()}}
+                {{$careermessages->links()}}
             </div>
             
         </div>

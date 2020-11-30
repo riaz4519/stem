@@ -55,6 +55,8 @@ Route::get('about-us/our-people/{categoryID}',[App\Http\Controllers\AboutUsContr
 Route::get('/',[App\Http\Controllers\FrontendController::class,'homepage']);
 Route::get('/all-news',[App\Http\Controllers\FrontendController::class,'news'])->name('all.news');
 
+// career page
+Route::get('/career',[App\Http\Controllers\FrontendController::class,'career'])->name('career.show_career_page');
 
 
 Auth::routes();
@@ -148,4 +150,9 @@ Route::middleware('auth')->group(function (){
     Route::post('contact',[App\Http\Controllers\ContactController::class,'store'])->name('contact.store');
     Route::get('contact',[App\Http\Controllers\ContactController::class,'index'])->name('contact.index')->middleware('auth');
     Route::get('contact/{id}',[App\Http\Controllers\ContactController::class,'show'])->name('contact.show')->middleware('auth');
+
+// Career
+    Route::post('career',[App\Http\Controllers\CareerController::class,'store'])->name('career.store');
+    Route::get('admin/career/messages',[App\Http\Controllers\CareerController::class,'index'])->name('career.index')->middleware('auth');
+    Route::get('career/{id}',[App\Http\Controllers\CareerController::class,'show'])->name('career.show')->middleware('auth');
 });

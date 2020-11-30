@@ -46,11 +46,12 @@
                     <li class="drop-link">
                         <a href="#">About us <i class="fa fa-angle-down"></i></a>
                         <ul class="dropdown">
+                            
                             <li><a href="{{ route('about_us.our_work') }}">Our Work</a></li>
                             <li><a href="{{ route('about_us.our_story') }}">Our Story</a></li>
                             <li><a href="{{ route('about_us.our_people') }}">Our People</a></li>
                             <li><a href="{{ route('about_us.annual_report') }}">Annual Report</a></li>
-                            <li><a href="single-project.html">Career</a></li>
+                            <li><a href="{{route('career.show_career_page')}}">Career</a></li>
 
                         </ul>
                     </li>
