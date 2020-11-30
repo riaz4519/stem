@@ -51,8 +51,40 @@ class ProgramController extends Controller
         return redirect()->back();
     }
 
-    public function show_program(){
-
-        return $data['programs'] = Program::all();
+    public function index()
+    {
+        $data['programs'] = Program::latest()->get();
+        return view('admin.programs.index',$data);
+        
     }
+
+    public function edit($id)
+    {
+        $data['program'] = Program::findOrFail($id);
+        return view('admin.programs.edit',$data);
+    }
+
+    public function update(Request $request, $id)
+    {   
+        $program = Program::findOrFail($id);
+
+        $image  = $request->file('image');
+        if($image){
+                $imagepath = 'storage/program/'.$program->image;
+                File::delete($imagepath);
+                $filename       = time().$image->getClientOriginalName();
+                $image->storeAs("public/program",$filename);
+                $image     = $filename;
+                $program->image = $image;
+                $program->save();
+        }
+
+        $program->title             = $request->title;
+        $program->about             = $request->about;
+        $program->save();
+
+        Session::flash('success_message','Updated successfully!');
+        return redirect()->back();
+    }
+    
 }

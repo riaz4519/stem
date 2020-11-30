@@ -62,12 +62,7 @@ Route::get('/career',[App\Http\Controllers\FrontendController::class,'career'])-
 Auth::routes();
 Route::middleware('auth')->group(function (){
 
-//program
 
-    //create program
-    Route::get('program/show',[ProgramController::class,'show_program'])->name('program.show');
-    Route::post('/program/create-program',[ProgramController::class,'store_program'])->name('program.new.store');
-    Route::get('/program/create-program',[ProgramController::class,'create_program'])->name('program.new');
 
 
 // ADMIN SIDE
@@ -155,4 +150,12 @@ Route::middleware('auth')->group(function (){
     Route::post('career',[App\Http\Controllers\CareerController::class,'store'])->name('career.store');
     Route::get('admin/career/messages',[App\Http\Controllers\CareerController::class,'index'])->name('career.index')->middleware('auth');
     Route::get('career/{id}',[App\Http\Controllers\CareerController::class,'show'])->name('career.show')->middleware('auth');
+
+//program
+
+    Route::post('/program/create-program',[ProgramController::class,'store_program'])->name('program.new.store')->middleware('auth');
+    Route::get('/program/create-program',[ProgramController::class,'create_program'])->name('program.new')->middleware('auth');
+    Route::get('view-all-programs',[App\Http\Controllers\ProgramController::class,'index'])->name('program.index')->middleware('auth');
+    Route::get('program/{id}/edit',[App\Http\Controllers\ProgramController::class,'edit'])->name('program.edit')->middleware('auth');
+    Route::patch('program/{id}',[App\Http\Controllers\ProgramController::class,'update'])->name('program.update')->middleware('auth');
 });

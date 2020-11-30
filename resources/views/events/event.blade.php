@@ -11,7 +11,7 @@
             <ul class="page-depth">
                 <li><a href="{{ url('/') }}">Home</a></li>
                 <li><a href="#">Our Story</a></li>
-                <li><a href="{{ route('program.single') }}">Our Story Title</a></li>
+                <li><a href="#">Our Story Title</a></li>
             </ul>
         </div>
     </section>

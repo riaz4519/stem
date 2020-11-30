@@ -11,7 +11,7 @@
             <ul class="page-depth">
                 <li><a href="{{ url('/') }}">Home</a></li>
                 <li><a href="#">Events</a></li>
-                <li><a href="{{ route('program.single') }}">Event Title</a></li>
+                <li><a href="#">Event Title</a></li>
             </ul>
         </div>
     </section>
