@@ -118,6 +118,40 @@
             </div>
         </li>
         {{--end of program--}}
+        {{--start of our work--}}
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="collapse" href="#ourwork-drop" aria-expanded="false" aria-controls="dashboard-dropdown">
+              <i class="menu-icon mdi mdi-television"></i>
+              <span class="menu-title">Our work</span>
+              <i class="menu-arrow"></i>
+          </a>
+          <div class="collapse" id="ourwork-drop">
+              <ul class="nav flex-column sub-menu">
+                  <li class="nav-item">
+                      <a class="nav-link" href="{{route('ourwork.create')}}">Create Our work</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="{{route('ourwork.index')}}">All of 'Our work'</a>
+                  </li>
+              </ul>
+          </div>
+      </li>
+      {{--end of our work--}}
+
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="collapse" href="#ourwork-drop" aria-expanded="false" aria-controls="dashboard-dropdown">
+            <i class="menu-icon mdi mdi-television"></i>
+            <span class="menu-title">Contact Messages</span>
+            <i class="menu-arrow"></i>
+        </a>
+        <div class="collapse" id="ourwork-drop">
+            <ul class="nav flex-column sub-menu">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{route('contact.index')}}">All Messages</a>
+                </li>
+            </ul>
+        </div>
+    </li>
 
     </ul>
   </nav>

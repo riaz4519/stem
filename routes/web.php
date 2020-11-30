@@ -138,4 +138,14 @@ Route::middleware('auth')->group(function (){
     Route::get('news/{id}/edit',[App\Http\Controllers\NewsController::class,'edit'])->name('news.edit')->middleware('auth');
     Route::patch('news/{id}',[App\Http\Controllers\NewsController::class,'update'])->name('news.update')->middleware('auth');
 
+// Our work
+    Route::get('ourwork/create',[App\Http\Controllers\OurworkController::class,'create'])->name('ourwork.create')->middleware('auth');
+    Route::post('ourwork',[App\Http\Controllers\OurworkController::class,'store'])->name('ourwork.store')->middleware('auth');
+    Route::get('ourwork',[App\Http\Controllers\OurworkController::class,'index'])->name('ourwork.index')->middleware('auth');
+    Route::get('ourwork/{id}/edit',[App\Http\Controllers\OurworkController::class,'edit'])->name('ourwork.edit')->middleware('auth');
+    Route::patch('ourwork/{id}',[App\Http\Controllers\OurworkController::class,'update'])->name('ourwork.update')->middleware('auth');
+// Contact
+    Route::post('contact',[App\Http\Controllers\ContactController::class,'store'])->name('contact.store');
+    Route::get('contact',[App\Http\Controllers\ContactController::class,'index'])->name('contact.index')->middleware('auth');
+    Route::get('contact/{id}',[App\Http\Controllers\ContactController::class,'show'])->name('contact.show')->middleware('auth');
 });
