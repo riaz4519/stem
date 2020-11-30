@@ -11,7 +11,7 @@
             <ul class="page-depth">
                 <li><a href="{{ url('/') }}">Home</a></li>
                 <li><a href="#">Programs</a></li>
-                <li><a href="{{ route('program.single') }}">Nature of University</a></li>
+                <li><a href="{{ route('program.single',$program->id) }}">{{ $program->title }}</a></li>
             </ul>
         </div>
     </section>
@@ -24,26 +24,15 @@
             <div class="row">
                 <div class="col-lg-7">
                     <div class="project-image">
-                        <img src="{{ asset('stem/upload/portfolio/portfolio-image-1.jpg') }}" alt="">
+
+                        <img src="{{asset('storage/program/'.$program->image)}}" alt="">
                     </div>
                 </div>
                 <div class="col-lg-5">
                     <div class="project-details">
-                        <h1>program Tittle Here</h1>
-                        <p>We are excited to launch our new company and product Ooooh. After being featured in too many magazines to mention and having created an online stir, we know that Ooooh is going to be big. You may have seen us in the Dinosaurs’ Den where we were we told that we didn’t need them because we were already doing it so well ourselves.</p>
-                        <table>
-                            <tbody>
-                            <tr>
-                                <th>Client:</th>
-                                <td>Omar Akil</td>
-                            </tr>
-                            <tr>
-                                <th>Role:</th>
-                                <td>Campus Images</td>
-                            </tr>
-                            </tbody>
-                        </table>
-                        <a href="#">View Project</a>
+                        <h1>{{ ucfirst($program->title) }}</h1>
+                        <p>{{ $program->about }}</p>
+
                     </div>
                 </div>
             </div>

@@ -23,14 +23,16 @@
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/stem.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/stem.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_100000_create_password_resets_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_100000_create_password_resets_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/bootstrap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProgramController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProgramController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/filesystems.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/filesystems.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layout/backend_layout/backend_layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout/backend_layout/backend_layout.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layout/backend_layout/backend_sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout/backend_layout/backend_sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layout/partials/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout/partials/header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/programs/program.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/programs/program.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.mix.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/logs/laravel.log" beforeDir="false" afterPath="$PROJECT_DIR$/storage/logs/laravel.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -154,6 +156,7 @@
       <path value="$PROJECT_DIR$/vendor/sebastian/resource-operations" />
       <path value="$PROJECT_DIR$/vendor/sebastian/complexity" />
       <path value="$PROJECT_DIR$/vendor/laravel/ui" />
+      <path value="$PROJECT_DIR$/vendor/symfony/http-client-contracts" />
     </include_path>
   </component>
   <component name="ProjectId" id="1iEbTzipqBtOvWRlFVqHJsdwz28" />
@@ -174,11 +177,13 @@
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\out-sourcing\stem\resources\views\layout\partials" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\laragon\www\stem" />
       <recent name="C:\xampp\htdocs\out-sourcing\stem\public\stem" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\laragon\www\stem\resources\views\admin\programs" />
+      <recent name="C:\xampp\htdocs\out-sourcing\stem\resources\views\layout\partials" />
     </key>
   </component>
   <component name="RunManager">
@@ -203,6 +208,7 @@
       <workItem from="1605821171506" duration="2675000" />
       <workItem from="1606501965173" duration="13256000" />
       <workItem from="1606602678830" duration="1381000" />
+      <workItem from="1606673720882" duration="11492000" />
     </task>
     <servers />
   </component>
@@ -222,6 +228,14 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="456" y="165" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1606678464826">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="456" y="165" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728/1366.0.1440.860@0.0.1366.728" timestamp="1606678464826" />
+    <state x="413" y="118" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1606683163954">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="413" y="118" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728/1366.0.1440.860@0.0.1366.728" timestamp="1606683163954" />
     <state x="580" y="185" key="FileChooserDialogImpl" timestamp="1601486963183">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -230,10 +244,11 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="635" y="353" key="NewPhpFileDialog/0.0.1600.860/1600.0.1600.860@0.0.1600.860" timestamp="1605733252625" />
-    <state x="395" y="152" width="672" height="574" key="search.everywhere.popup" timestamp="1606523206256">
+    <state x="395" y="152" width="672" height="574" key="search.everywhere.popup" timestamp="1606688688128">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="395" y="152" width="672" height="574" key="search.everywhere.popup/0.0.1366.728/-1366.0.1366.728@0.0.1366.728" timestamp="1605822370601" />
+    <state x="395" y="152" width="672" height="574" key="search.everywhere.popup/0.0.1366.728/1366.0.1440.860@0.0.1366.728" timestamp="1606688688128" />
     <state x="395" y="152" width="672" height="574" key="search.everywhere.popup/0.0.1366.728/1366.212.1366.728@0.0.1366.728" timestamp="1606523206256" />
     <state x="463" y="180" width="672" height="678" key="search.everywhere.popup/0.0.1600.860/1600.0.1600.860@0.0.1600.860" timestamp="1605729565934" />
   </component>

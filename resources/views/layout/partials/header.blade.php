@@ -57,8 +57,9 @@
                     <li class="drop-link">
                         <a href="blog.html">Programs <i class="fa fa-angle-down"></i></a>
                         <ul class="dropdown">
-                            <li><a href="{{ route('program.single') }}">Program 1 - Event</a></li>
-                            <li><a href="{{ route('program.single') }}">Program 2 - Competition</a></li>
+                            @foreach(\App\Models\Program::all() as $program)
+                            <li><a href="{{ route('program.single',$program->id) }}">{{ $program->title }}</a></li>
+                            @endforeach
                         </ul>
                     </li>
                     <li class="drop-link">

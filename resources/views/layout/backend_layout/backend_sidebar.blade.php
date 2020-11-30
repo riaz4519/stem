@@ -15,6 +15,8 @@
           </div>
         </div>
       </li>
+
+        {{--home page--}}
       <li class="nav-item">
         <a class="nav-link" data-toggle="collapse" href="#dashboard-dropdown1" aria-expanded="false" aria-controls="dashboard-dropdown">
           <i class="menu-icon mdi mdi-television"></i>
@@ -47,38 +49,75 @@
             <li class="nav-item">
               <a class="nav-link" href="{{route('ourpartner.index')}}">All Partners</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{{route('ourstory.create')}}">Create ourstory</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{{route('ourstory.index')}}">All of ourstory</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{{route('annualreport.create')}}">Create annual report</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{{route('annualreport.index')}}">All of annual report</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{{route('peoplecategory.create')}}">Create category</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{{route('peoplecategory.index')}}">All Categories</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{{route('ourpeople.create')}}">Create people</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{{route('ourpeople.index')}}">All peoples</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{{route('news.create')}}">Create news</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{{route('news.index')}}">All news</a>
-            </li>
+
+
           </ul>
         </div>
       </li>
+        {{--end of home page--}}
+        {{--about--}}
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="collapse" href="#about-drop" aria-expanded="false" aria-controls="dashboard-dropdown">
+          <i class="menu-icon mdi mdi-television"></i>
+          <span class="menu-title">About</span>
+          <i class="menu-arrow"></i>
+        </a>
+        <div class="collapse" id="about-drop">
+          <ul class="nav flex-column sub-menu">
+              <li class="nav-item">
+                  <a class="nav-link" href="{{route('ourstory.create')}}">Create ourstory</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="{{route('ourstory.index')}}">All of ourstory</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="{{route('annualreport.create')}}">Create annual report</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="{{route('annualreport.index')}}">All of annual report</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="{{route('peoplecategory.create')}}">Create category</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="{{route('peoplecategory.index')}}">All Categories</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="{{route('ourpeople.create')}}">Create people</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="{{route('ourpeople.index')}}">All peoples</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="{{route('news.create')}}">Create news</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="{{route('news.index')}}">All news</a>
+              </li>
+
+
+          </ul>
+        </div>
+      </li>
+        {{--end of about page--}}
+
+        {{--star of event--}}
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#program-drop" aria-expanded="false" aria-controls="dashboard-dropdown">
+                <i class="menu-icon mdi mdi-television"></i>
+                <span class="menu-title">Program</span>
+                <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="program-drop">
+                <ul class="nav flex-column sub-menu">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('program.new')}}">Create Program</a>
+                    </li>
+
+                </ul>
+            </div>
+        </li>
+        {{--end of program--}}
+
     </ul>
   </nav>

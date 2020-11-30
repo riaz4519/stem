@@ -4,7 +4,7 @@
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>Stem</title>
+        <title>@yield('title')</title>
         <!-- plugins:css -->
         <link rel="stylesheet" href="{{asset('/backend/assets/vendors/iconfonts/mdi/css/materialdesignicons.min.css')}}">
         <link rel="stylesheet" href="{{asset('/backend/assets/vendors/iconfonts/puse-icons-feather/feather.css')}}">
@@ -25,12 +25,12 @@
     </head>
   <body>
     <div class="container-scroller">
-        
+
         @include('layout.backend_layout.backend_header')
       <!-- partial -->
       <div class="container-fluid page-body-wrapper">
         <!-- partial:partials/_settings-panel.html -->
-        
+
         <!-- partial -->
         <!-- partial:partials/_sidebar.html -->
         @include('layout.backend_layout.backend_sidebar')

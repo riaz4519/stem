@@ -555,6 +555,8 @@ class ComposerStaticInitfdb9ebac88ad58f2c02e8b291e828b26
         'App\\Models\\Ourpeople' => __DIR__ . '/../..' . '/app/Models/Ourpeople.php',
         'App\\Models\\Ourstory' => __DIR__ . '/../..' . '/app/Models/Ourstory.php',
         'App\\Models\\Peoplecategory' => __DIR__ . '/../..' . '/app/Models/Peoplecategory.php',
+        'App\\Models\\Program' => __DIR__ . '/../..' . '/app/Models/Program.php',
+        'App\\Models\\ProgramKeyPoint' => __DIR__ . '/../..' . '/app/Models/ProgramKeyPoint.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
         'App\\Models\\Whatwedo' => __DIR__ . '/../..' . '/app/Models/Whatwedo.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',

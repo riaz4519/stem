@@ -49,6 +49,8 @@ return array(
     'App\\Models\\Ourpeople' => $baseDir . '/app/Models/Ourpeople.php',
     'App\\Models\\Ourstory' => $baseDir . '/app/Models/Ourstory.php',
     'App\\Models\\Peoplecategory' => $baseDir . '/app/Models/Peoplecategory.php',
+    'App\\Models\\Program' => $baseDir . '/app/Models/Program.php',
+    'App\\Models\\ProgramKeyPoint' => $baseDir . '/app/Models/ProgramKeyPoint.php',
     'App\\Models\\User' => $baseDir . '/app/Models/User.php',
     'App\\Models\\Whatwedo' => $baseDir . '/app/Models/Whatwedo.php',
     'App\\Providers\\AppServiceProvider' => $baseDir . '/app/Providers/AppServiceProvider.php',
