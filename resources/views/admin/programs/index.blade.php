@@ -16,6 +16,11 @@
                         <tr>
                             <th class="wd-25p">Title</th>
                             <th class="wd-20p">Edit</th>
+                            <th class="wd-20p">Add Points</th>
+                            <th class="wd-20p">Add Objectives</th>
+                            <th class="wd-20p">Add Total Counts</th>
+                            <th class="wd-20p">Add Popular Course</th>
+                            <th class="wd-20p">Add Video</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -24,6 +29,21 @@
                             <td>{{$row->title}}</td>
                             <td>
                               <a href="{{route('program.edit',$row->id)}}" class="btn btn-xs btn-info"><i class="fa fa-pencil"></i></a>
+                            </td>
+                            <td>
+                              <a href="{{route('program.addpoints',$row->id)}}" class="btn btn-xs btn-warning"><i class="fa fa-plus"></i></a>
+                            </td>
+                            <td>
+                              <a href="{{route('program.addobjective',$row->id)}}" class="btn btn-xs btn-success"><i class="fa fa-plus"></i></a>
+                            </td>
+                            <td>
+                              <a href="{{route('program.countlists',$row->id)}}" class="btn btn-xs btn-primary"><i class="fa fa-plus"></i></a>
+                            </td>
+                            <td>
+                              <a href="{{route('program.popularcourse',$row->id)}}" class="btn btn-xs btn-primary"><i class="fa fa-plus"></i></a>
+                            </td>
+                            <td>
+                              <a href="{{route('program.video',$row->id)}}" class="btn btn-xs btn-primary"><i class="fa fa-plus"></i></a>
                             </td>
                         </tr>
                       @endforeach

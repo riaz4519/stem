@@ -158,4 +158,14 @@ Route::middleware('auth')->group(function (){
     Route::get('view-all-programs',[App\Http\Controllers\ProgramController::class,'index'])->name('program.index')->middleware('auth');
     Route::get('program/{id}/edit',[App\Http\Controllers\ProgramController::class,'edit'])->name('program.edit')->middleware('auth');
     Route::patch('program/{id}',[App\Http\Controllers\ProgramController::class,'update'])->name('program.update')->middleware('auth');
+    Route::get('program/add-points/{id}',[App\Http\Controllers\ProgramController::class,'addpoint'])->name('program.addpoints')->middleware('auth');
+    Route::post('/program/store/keypoints',[ProgramController::class,'store_key_points'])->name('program.addpoint.store')->middleware('auth');
+    Route::get('program/add-objectives/{id}',[App\Http\Controllers\ProgramController::class,'addobjective'])->name('program.addobjective')->middleware('auth');
+    Route::post('/program/store/objective',[ProgramController::class,'store_program_objective'])->name('program.addobjective.store')->middleware('auth');
+    Route::get('program/add-program-count-list/{id}',[App\Http\Controllers\ProgramController::class,'countlists'])->name('program.countlists')->middleware('auth');
+    Route::post('/program/store/countlist',[ProgramController::class,'store_program_countlist'])->name('program.countlist.store')->middleware('auth');
+    Route::get('program/add-popularcourse/{id}',[App\Http\Controllers\ProgramController::class,'popularcourse'])->name('program.popularcourse')->middleware('auth');
+    Route::post('/program/store/popularcourse',[ProgramController::class,'store_program_popularcourse'])->name('program.popularcourse.store')->middleware('auth');
+    Route::get('program/add-video/{id}',[App\Http\Controllers\ProgramController::class,'video'])->name('program.video')->middleware('auth');
+    Route::post('/program/store/video',[ProgramController::class,'store_program_video'])->name('program.video.store')->middleware('auth');
 });
