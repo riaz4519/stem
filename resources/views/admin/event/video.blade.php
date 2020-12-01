@@ -8,11 +8,11 @@
             <div class="row d-flex justify-content-center">
                 <div class="col-md-6">
                     
-                    <form action="{{route('program.video.store')}}" method="POST" enctype="multipart/form-data">
+                    <form action="{{route('event.video.store')}}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <label class="d-block">Upload Video</label>
                         <input type="text" name="video" class="form-control" placeholder="Enter video link (iframe)" required>
-                        <input type="hidden" name="program_id" value="{{$program_id}}">
+                        <input type="hidden" name="event_id" value="{{$event_id}}">
                         <button class="mt-4 btn btn-sm btn-primary submit_cls" type="submit">Submit</button>
                     </form>
                     

@@ -36,7 +36,7 @@ Route::get('/competition/competition-1',[CompetitionController::class,'competiti
 /*end of competition*/
 
 /*events*/
-Route::get('/event/event-1',[EventsController::class,'event'])->name('event.single');
+Route::get('/event/{event_id}',[EventsController::class,'event'])->name('event.single');
 /*end of events*/
 
 /*program section*/
@@ -168,4 +168,25 @@ Route::middleware('auth')->group(function (){
     Route::post('/program/store/popularcourse',[ProgramController::class,'store_program_popularcourse'])->name('program.popularcourse.store')->middleware('auth');
     Route::get('program/add-video/{id}',[App\Http\Controllers\ProgramController::class,'video'])->name('program.video')->middleware('auth');
     Route::post('/program/store/video',[ProgramController::class,'store_program_video'])->name('program.video.store')->middleware('auth');
+
+// Event 
+
+    Route::get('/event/create/event',[EventsController::class,'create_event'])->name('event.create')->middleware('auth');
+    Route::post('/event/store-event',[EventsController::class,'store_event'])->name('event.new.store')->middleware('auth');
+    Route::get('view-all-events',[App\Http\Controllers\EventsController::class,'index'])->name('event.index')->middleware('auth');
+    Route::get('event/{id}/edit',[App\Http\Controllers\EventsController::class,'edit'])->name('event.edit')->middleware('auth');
+    Route::patch('event/{id}',[App\Http\Controllers\EventsController::class,'update'])->name('event.update')->middleware('auth');
+    Route::get('event/add-participants/{id}',[App\Http\Controllers\EventsController::class,'create_event_participants'])->name('event.create.participants')->middleware('auth');
+    Route::post('/event/store/participants',[EventsController::class,'store_event_participants'])->name('event.addparticipants.store')->middleware('auth');
+    Route::get('event/add-objectives/{id}',[App\Http\Controllers\EventsController::class,'addobjective'])->name('event.add.objective')->middleware('auth');
+    Route::post('/event/store/objective',[EventsController::class,'store_event_objective'])->name('event.addobjective.store')->middleware('auth');
+    Route::get('event/add-photos/{id}',[App\Http\Controllers\EventsController::class,'add_event_photos'])->name('event.add.photos')->middleware('auth');
+    Route::post('/event/store/photos',[EventsController::class,'store_event_photos'])->name('event.addphotos.store')->middleware('auth');
+    Route::get('event/add-points/{id}',[App\Http\Controllers\EventsController::class,'addpoint'])->name('event.add.keypoints')->middleware('auth');
+    Route::post('/event/store/keypoints',[EventsController::class,'store_key_points'])->name('event.addpoint.store')->middleware('auth');
+    Route::get('event/add-video/{id}',[App\Http\Controllers\EventsController::class,'video'])->name('event.add.video')->middleware('auth');
+    Route::post('/event/store/video',[EventsController::class,'store_event_video'])->name('event.video.store')->middleware('auth');
+    
+    Route::get('event/add-mentors/{id}',[App\Http\Controllers\EventsController::class,'create_event_mentors'])->name('event.add.mentor')->middleware('auth');
+    Route::post('/event/store/mentors',[EventsController::class,'store_event_mentors'])->name('event.addmentors.store')->middleware('auth');
 });

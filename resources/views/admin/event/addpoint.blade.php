@@ -9,11 +9,11 @@
         <div class="card ">
             <div class="card-body">
                 @include('flash_message')
-                <form action="{{route('program.addpoint.store')}}" method="post">
+                <form action="{{route('event.addpoint.store')}}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="wrapper">
                         <div>
-                            <input type="hidden" name="program_id" value="{{$program_id}}">
+                            <input type="hidden" name="event_id" value="{{$event_id}}">
                             <input type="text" name="points[]" class="form-control" placeholder="Enter Key Points" />
                         </div>
                     </div>
@@ -28,6 +28,7 @@
 @section('backend_custom_script')
     <script>
         $(document).ready(function(){
+            
             var max_fields = 10; //Maximum allowed input fields 
                 var wrapper    = $(".wrapper"); //Input fields wrapper
                 var add_button = $(".add_fields"); //Add button class or ID
@@ -50,7 +51,7 @@
                     $(this).parent('div').remove(); //remove inout field
                     x--; //inout field decrement
                 })
-                
+
         });
     </script>
 @endsection

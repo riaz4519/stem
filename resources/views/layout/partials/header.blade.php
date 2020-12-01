@@ -56,7 +56,7 @@
                         </ul>
                     </li>
                     <li class="drop-link">
-                        <a href="blog.html">Programs <i class="fa fa-angle-down"></i></a>
+                        <a>Programs <i class="fa fa-angle-down"></i></a>
                         <ul class="dropdown">
                             @foreach(\App\Models\Program::all() as $program)
                             <li><a href="{{ route('program.single',$program->id) }}">{{ $program->title }}</a></li>
@@ -64,10 +64,11 @@
                         </ul>
                     </li>
                     <li class="drop-link">
-                        <a href="blog.html">Events <i class="fa fa-angle-down"></i></a>
+                        <a>Events <i class="fa fa-angle-down"></i></a>
                         <ul class="dropdown">
-                            <li><a href="{{ route('event.single') }}">Event - 1</a></li>
-                            <li><a href="{{ route('event.single') }}">Event - 2</a></li>
+                            @foreach(\App\Models\Event::all() as $event)
+                            <li><a href="{{ route('event.single',$event->id) }}">{{ $event->title }}</a></li>
+                            @endforeach
                         </ul>
                     </li>
                     <li class="drop-link">

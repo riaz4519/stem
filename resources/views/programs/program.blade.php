@@ -207,12 +207,7 @@
                     @foreach($videos as $row)
                     <div class="video-box text-center">
                         <div class="video-post">
-                            <div class="embed-responsive embed-responsive-16by9">
-                                <video controls="true" width="500" height="300" class="embed-responsive-item">
-                                <source src="{{ asset('storage/program/video/'.$row->video) }}" type="video/mp4" />
-                                </video>
-                            </div>
-                            <a class="video-link iframe"><span><i class="fa fa-play"></i></span></a>
+                            {!! $row->video !!}
                         </div>
                     </div>
                     @endforeach

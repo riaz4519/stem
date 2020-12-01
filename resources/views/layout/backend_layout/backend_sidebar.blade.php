@@ -101,7 +101,7 @@
       </li>
         {{--end of about page--}}
 
-        {{--star of event--}}
+        {{--start of program--}}
         <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#program-drop" aria-expanded="false" aria-controls="dashboard-dropdown">
                 <i class="menu-icon mdi mdi-television"></i>
@@ -115,6 +115,27 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('program.index')}}">All Programs</a>
+                    </li>
+
+                </ul>
+            </div>
+        </li>
+        {{--end of program--}}
+        
+        {{--start of program--}}
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#event-drop" aria-expanded="false" aria-controls="dashboard-dropdown">
+                <i class="menu-icon mdi mdi-television"></i>
+                <span class="menu-title">Event</span>
+                <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="event-drop">
+                <ul class="nav flex-column sub-menu">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('event.create')}}">Create Event</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('event.index')}}">All Events</a>
                     </li>
 
                 </ul>

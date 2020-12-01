@@ -2,6 +2,8 @@
 
 @section('backendcss')
 <meta name="csrf-token" content="{{ csrf_token() }}" />
+<style>
+</style>
 @endsection
 
 @section('content')
@@ -16,34 +18,38 @@
                         <tr>
                             <th class="wd-25p">Title</th>
                             <th class="wd-20p">Edit</th>
-                            <th class="wd-20p">Points</th>
+                            <th class="wd-20p">Participants</th>
                             <th class="wd-20p">Objectives</th>
-                            <th class="wd-20p">Total Counts</th>
-                            <th class="wd-20p">Popular Course</th>
+                            <th class="wd-20p">Event Photos</th>
+                            <th class="wd-20p">Event Key Points</th>
                             <th class="wd-20p">Video</th>
+                            <th class="wd-20p">Mentors</th>
                         </tr>
                     </thead>
                     <tbody>
-                      @foreach($programs as $row)
+                      @foreach($events as $row)
                         <tr>
                             <td>{{$row->title}}</td>
                             <td>
-                              <a href="{{route('program.edit',$row->id)}}" class="btn btn-xs btn-info"><i class="fa fa-pencil"></i></a>
+                              <a href="{{route('event.edit',$row->id)}}" class="btn btn-xs btn-info"><i class="fa fa-pencil"></i></a>
                             </td>
                             <td>
-                              <a href="{{route('program.addpoints',$row->id)}}" class="btn btn-xs btn-warning"><i class="fa fa-plus"></i></a>
+                                <a href="{{route('event.create.participants',$row->id)}}" class="btn btn-xs btn-warning"><i class="fa fa-plus"></i></a>
                             </td>
                             <td>
-                              <a href="{{route('program.addobjective',$row->id)}}" class="btn btn-xs btn-success"><i class="fa fa-plus"></i></a>
+                                <a href="{{route('event.add.objective',$row->id)}}" class="btn btn-xs btn-secondary"><i class="fa fa-plus"></i></a>
                             </td>
                             <td>
-                              <a href="{{route('program.countlists',$row->id)}}" class="btn btn-xs btn-primary"><i class="fa fa-plus"></i></a>
+                                <a href="{{route('event.add.photos',$row->id)}}" class="btn btn-xs btn-success"><i class="fa fa-plus"></i></a>
                             </td>
                             <td>
-                              <a href="{{route('program.popularcourse',$row->id)}}" class="btn btn-xs btn-secondary text-dark"><i class="fa fa-plus"></i></a>
+                                <a href="{{route('event.add.keypoints',$row->id)}}" class="btn btn-xs btn-primary"><i class="fa fa-plus"></i></a>
                             </td>
                             <td>
-                              <a href="{{route('program.video',$row->id)}}" class="btn btn-xs btn-dark text-white"><i class="fa fa-plus"></i></a>
+                                <a href="{{route('event.add.video',$row->id)}}" class="btn btn-xs btn-warning"><i class="fa fa-plus"></i></a>
+                            </td>
+                            <td>
+                                <a href="{{route('event.add.mentor',$row->id)}}" class="btn btn-xs btn-dark text-white"><i class="fa fa-plus"></i></a>
                             </td>
                         </tr>
                       @endforeach

@@ -135,10 +135,10 @@ class ProgramController extends Controller
             'description'             => 'required',
         ]);
 
-        $programkeypoint = new Programobjective();
-        $programkeypoint->program_id = $request->program_id;
-        $programkeypoint->description = $request->description;
-        $programkeypoint->save();
+        $programobjective = new Programobjective();
+        $programobjective->program_id = $request->program_id;
+        $programobjective->description = $request->description;
+        $programobjective->save();
 
         Session::flash('success_message','Created successfully!');
         return redirect()->back();
@@ -212,18 +212,9 @@ class ProgramController extends Controller
             'program_id' => 'required',
         ]);
 
-        $video  = $request->file('video');
-
-        if($video){
-
-            $filename       = time().$video->getClientOriginalName();
-            $video->storeAs("public/program/video",$filename);
-            $video     = $filename;
-        }
-
         Programvideo::create([
             'program_id' => $request->program_id,
-            'video' => $video,
+            'video' => $request->video,
         ]);
 
         Session::flash('success_message','Created successfully!');

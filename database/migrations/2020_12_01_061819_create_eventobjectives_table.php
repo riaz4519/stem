@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateProgramvideosTable extends Migration
+class CreateEventobjectivesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateProgramvideosTable extends Migration
      */
     public function up()
     {
-        Schema::create('programvideos', function (Blueprint $table) {
+        Schema::create('eventobjectives', function (Blueprint $table) {
             $table->id();
-            $table->integer('program_id');
-            $table->longText('video');
+            $table->integer('event_id');
+            $table->text('description');
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class CreateProgramvideosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('programvideos');
+        Schema::dropIfExists('eventobjectives');
     }
 }
