@@ -7,14 +7,16 @@ use App\Models\Ourstory;
 use App\Models\Annualreport;
 use App\Models\Peoplecategory;
 use App\Models\Ourpeople;
+use App\Models\Ourwork;
 
 class AboutUsController extends Controller
 {
     //
 
     public function our_work(){
-
-        return view('about_us.our_work');
+        $data['ourworks'] = Ourwork::whereNotNull('image')->get();
+        $data['ourworkswithoutimages'] = Ourwork::whereNull('image')->get();
+        return view('about_us.our_work',$data);
     }
 
     public function our_story(){

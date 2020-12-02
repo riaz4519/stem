@@ -32,11 +32,11 @@ Route::get('contact-us',[ContactUsController::class,'contact'])->name('contact-u
 /*end of contact us*/
 
 /*competition*/
-Route::get('/competition/competition-1',[CompetitionController::class,'competition'])->name('competition.single');
+Route::get('/competition/{competition_id}',[CompetitionController::class,'competition'])->name('competition.single');
 /*end of competition*/
 
 /*events*/
-Route::get('/event/event-1',[EventsController::class,'event'])->name('event.single');
+Route::get('/event/{event_id}',[EventsController::class,'event'])->name('event.single');
 /*end of events*/
 
 /*program section*/
@@ -55,17 +55,14 @@ Route::get('about-us/our-people/{categoryID}',[App\Http\Controllers\AboutUsContr
 Route::get('/',[App\Http\Controllers\FrontendController::class,'homepage']);
 Route::get('/all-news',[App\Http\Controllers\FrontendController::class,'news'])->name('all.news');
 
+// career page
+Route::get('/career',[App\Http\Controllers\FrontendController::class,'career'])->name('career.show_career_page');
 
 
 Auth::routes();
 Route::middleware('auth')->group(function (){
 
-//program
 
-    //create program
-    Route::get('program/show',[ProgramController::class,'show_program'])->name('program.show');
-    Route::post('/program/create-program',[ProgramController::class,'store_program'])->name('program.new.store');
-    Route::get('/program/create-program',[ProgramController::class,'create_program'])->name('program.new');
 
 
 // ADMIN SIDE
@@ -138,4 +135,101 @@ Route::middleware('auth')->group(function (){
     Route::get('news/{id}/edit',[App\Http\Controllers\NewsController::class,'edit'])->name('news.edit')->middleware('auth');
     Route::patch('news/{id}',[App\Http\Controllers\NewsController::class,'update'])->name('news.update')->middleware('auth');
 
+// Our work
+    Route::get('ourwork/create',[App\Http\Controllers\OurworkController::class,'create'])->name('ourwork.create')->middleware('auth');
+    Route::post('ourwork',[App\Http\Controllers\OurworkController::class,'store'])->name('ourwork.store')->middleware('auth');
+    Route::get('ourwork',[App\Http\Controllers\OurworkController::class,'index'])->name('ourwork.index')->middleware('auth');
+    Route::get('ourwork/{id}/edit',[App\Http\Controllers\OurworkController::class,'edit'])->name('ourwork.edit')->middleware('auth');
+    Route::patch('ourwork/{id}',[App\Http\Controllers\OurworkController::class,'update'])->name('ourwork.update')->middleware('auth');
+// Contact
+    Route::post('contact',[App\Http\Controllers\ContactController::class,'store'])->name('contact.store');
+    Route::get('contact',[App\Http\Controllers\ContactController::class,'index'])->name('contact.index')->middleware('auth');
+    Route::get('contact/{id}',[App\Http\Controllers\ContactController::class,'show'])->name('contact.show')->middleware('auth');
+
+// Career
+    Route::post('career',[App\Http\Controllers\CareerController::class,'store'])->name('career.store');
+    Route::get('admin/career/messages',[App\Http\Controllers\CareerController::class,'index'])->name('career.index')->middleware('auth');
+    Route::get('career/{id}',[App\Http\Controllers\CareerController::class,'show'])->name('career.show')->middleware('auth');
+
+//program
+
+    Route::post('/program/create-program',[ProgramController::class,'store_program'])->name('program.new.store')->middleware('auth');
+    Route::get('/program/create-program',[ProgramController::class,'create_program'])->name('program.new')->middleware('auth');
+    Route::get('view-all-programs',[App\Http\Controllers\ProgramController::class,'index'])->name('program.index')->middleware('auth');
+    Route::get('program/{id}/edit',[App\Http\Controllers\ProgramController::class,'edit'])->name('program.edit')->middleware('auth');
+    Route::patch('program/{id}',[App\Http\Controllers\ProgramController::class,'update'])->name('program.update')->middleware('auth');
+    Route::get('program/add-points/{id}',[App\Http\Controllers\ProgramController::class,'addpoint'])->name('program.addpoints')->middleware('auth');
+    Route::post('/program/store/keypoints',[ProgramController::class,'store_key_points'])->name('program.addpoint.store')->middleware('auth');
+    Route::get('program/keypoint/{keypoint_id}/edit',[App\Http\Controllers\ProgramController::class,'edit_key_point'])->name('program.keypoint.edit')->middleware('auth');
+    Route::patch('program/keypoint/{keypoint_id}',[App\Http\Controllers\ProgramController::class,'update_key_point'])->name('program.keypoint.update')->middleware('auth');
+    Route::get('program/add-objectives/{id}',[App\Http\Controllers\ProgramController::class,'addobjective'])->name('program.addobjective')->middleware('auth');
+    Route::post('/program/store/objective',[ProgramController::class,'store_program_objective'])->name('program.addobjective.store')->middleware('auth');
+    
+    Route::get('program/objective/{objective_id}/edit',[App\Http\Controllers\ProgramController::class,'edit_program_objective'])->name('program.objective.edit')->middleware('auth');
+    Route::patch('program/objective/{objective_id}',[App\Http\Controllers\ProgramController::class,'update_program_objective'])->name('program.objective.update')->middleware('auth');
+
+    Route::get('program/countlist/{countlist_id}/edit',[App\Http\Controllers\ProgramController::class,'edit_program_countlist'])->name('program.countlist.edit')->middleware('auth');
+    Route::patch('program/countlist/{countlist_id}',[App\Http\Controllers\ProgramController::class,'update_program_countlist'])->name('program.countlist.update')->middleware('auth');
+
+    Route::get('program/add-program-count-list/{id}',[App\Http\Controllers\ProgramController::class,'countlists'])->name('program.countlists')->middleware('auth');
+    Route::post('/program/store/countlist',[ProgramController::class,'store_program_countlist'])->name('program.countlist.store')->middleware('auth');
+    Route::get('program/add-popularcourse/{id}',[App\Http\Controllers\ProgramController::class,'popularcourse'])->name('program.popularcourse')->middleware('auth');
+    Route::post('/program/store/popularcourse',[ProgramController::class,'store_program_popularcourse'])->name('program.popularcourse.store')->middleware('auth');
+    
+    Route::get('program/popularcourse/{popularcourse_id}/edit',[App\Http\Controllers\ProgramController::class,'edit_program_popularcourse'])->name('program.popularcourse.edit')->middleware('auth');
+    Route::patch('program/popularcourse/{popularcourse_id}',[App\Http\Controllers\ProgramController::class,'update_program_popularcourse'])->name('program.popularcourse.update')->middleware('auth');
+    
+    Route::get('program/add-video/{id}',[App\Http\Controllers\ProgramController::class,'video'])->name('program.video')->middleware('auth');
+    Route::post('/program/store/video',[ProgramController::class,'store_program_video'])->name('program.video.store')->middleware('auth');
+
+    Route::get('program/video/{video_id}/edit',[App\Http\Controllers\ProgramController::class,'edit_program_video'])->name('program.video.edit')->middleware('auth');
+    Route::patch('program/video/{video_id}',[App\Http\Controllers\ProgramController::class,'update_program_video'])->name('program.video.update')->middleware('auth');
+// Event 
+
+    Route::get('/event/create/event',[EventsController::class,'create_event'])->name('event.create')->middleware('auth');
+    Route::post('/event/store-event',[EventsController::class,'store_event'])->name('event.new.store')->middleware('auth');
+    Route::get('view-all-events',[App\Http\Controllers\EventsController::class,'index'])->name('event.index')->middleware('auth');
+    Route::get('event/{id}/edit',[App\Http\Controllers\EventsController::class,'edit'])->name('event.edit')->middleware('auth');
+    Route::patch('event/{id}',[App\Http\Controllers\EventsController::class,'update'])->name('event.update')->middleware('auth');
+    Route::get('event/add-participants/{id}',[App\Http\Controllers\EventsController::class,'create_event_participants'])->name('event.create.participants')->middleware('auth');
+    Route::post('/event/store/participants',[EventsController::class,'store_event_participants'])->name('event.addparticipants.store')->middleware('auth');
+    
+    Route::get('event/eventparticipant/{eventparticipant_id}/edit',[App\Http\Controllers\EventsController::class,'edit_eventparticipant'])->name('event.eventparticipant.edit')->middleware('auth');
+    Route::patch('event/eventparticipant/{eventparticipant_id}',[App\Http\Controllers\EventsController::class,'update_event_eventparticipant'])->name('event.eventparticipant.update')->middleware('auth');
+    
+    Route::get('event/add-objectives/{id}',[App\Http\Controllers\EventsController::class,'addobjective'])->name('event.add.objective')->middleware('auth');
+    Route::post('/event/store/objective',[EventsController::class,'store_event_objective'])->name('event.addobjective.store')->middleware('auth');
+    
+    Route::get('event/eventobjective/{eventobjective_id}/edit',[App\Http\Controllers\EventsController::class,'edit_eventobjective'])->name('event.eventobjective.edit')->middleware('auth');
+    Route::patch('event/eventobjective/{eventobjective_id}',[App\Http\Controllers\EventsController::class,'update_event_eventobjective'])->name('event.eventobjective.update')->middleware('auth');
+
+    Route::get('event/add-photos/{id}',[App\Http\Controllers\EventsController::class,'add_event_photos'])->name('event.add.photos')->middleware('auth');
+    Route::post('/event/store/photos',[EventsController::class,'store_event_photos'])->name('event.addphotos.store')->middleware('auth');
+    Route::get('event/add-points/{id}',[App\Http\Controllers\EventsController::class,'addpoint'])->name('event.add.keypoints')->middleware('auth');
+    Route::post('/event/store/keypoints',[EventsController::class,'store_key_points'])->name('event.addpoint.store')->middleware('auth');
+    Route::get('event/add-video/{id}',[App\Http\Controllers\EventsController::class,'video'])->name('event.add.video')->middleware('auth');
+    Route::post('/event/store/video',[EventsController::class,'store_event_video'])->name('event.video.store')->middleware('auth');
+    Route::get('event/add-mentors/{id}',[App\Http\Controllers\EventsController::class,'create_event_mentors'])->name('event.add.mentor')->middleware('auth');
+    Route::post('/event/store/mentors',[EventsController::class,'store_event_mentors'])->name('event.addmentors.store')->middleware('auth');
+
+// Competition
+    Route::get('/admin/competition/create-competition',[CompetitionController::class,'create_competition'])->name('competition.create')->middleware('auth');
+    Route::post('/competition/store-competition',[CompetitionController::class,'store_competition'])->name('competition.new.store')->middleware('auth');
+    Route::get('view-all-competitions',[App\Http\Controllers\CompetitionController::class,'index'])->name('competition.index')->middleware('auth');
+    Route::get('competition/{id}/edit',[App\Http\Controllers\CompetitionController::class,'edit'])->name('competition.edit')->middleware('auth');
+    Route::patch('competition/{id}',[App\Http\Controllers\CompetitionController::class,'update'])->name('competition.update')->middleware('auth');
+    Route::get('competition/add-participants/{id}',[App\Http\Controllers\CompetitionController::class,'create_competition_participants'])->name('competition.create.participants')->middleware('auth');
+    Route::post('/competition/store/participants',[CompetitionController::class,'store_competition_participants'])->name('competition.addparticipants.store')->middleware('auth');
+    Route::get('competition/add-objectives/{id}',[App\Http\Controllers\CompetitionController::class,'addobjective'])->name('competition.add.objective')->middleware('auth');
+    Route::post('/competition/store/objective',[CompetitionController::class,'store_competition_objective'])->name('competition.addobjective.store')->middleware('auth');
+    Route::get('competition/add-photos/{id}',[App\Http\Controllers\CompetitionController::class,'add_competition_photos'])->name('competition.add.photos')->middleware('auth');
+    Route::post('/competition/store/photos',[CompetitionController::class,'store_competition_photos'])->name('competition.addphotos.store')->middleware('auth');
+    Route::get('competition/add-points/{id}',[App\Http\Controllers\CompetitionController::class,'addpoint'])->name('competition.add.keypoints')->middleware('auth');
+    Route::post('/competition/store/keypoints',[CompetitionController::class,'store_key_points'])->name('competition.addpoint.store')->middleware('auth');
+    Route::get('competition/add-video/{id}',[App\Http\Controllers\CompetitionController::class,'video'])->name('competition.add.video')->middleware('auth');
+    Route::post('/competition/store/video',[CompetitionController::class,'store_competition_video'])->name('competition.video.store')->middleware('auth');
+    Route::get('competition/add-mentors/{id}',[App\Http\Controllers\CompetitionController::class,'create_competition_mentors'])->name('competition.add.mentor')->middleware('auth');
+    Route::post('/competition/store/mentors',[CompetitionController::class,'store_competition_mentors'])->name('competition.addmentors.store')->middleware('auth');
+    Route::get('competition/add-winner/{id}',[App\Http\Controllers\CompetitionController::class,'create_competition_winner'])->name('competition.add.winner')->middleware('auth');
+    Route::post('/competition/store/winner',[CompetitionController::class,'store_competition_winner'])->name('competition.addwinner.store')->middleware('auth');
 });

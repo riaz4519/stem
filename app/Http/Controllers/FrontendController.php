@@ -26,4 +26,9 @@ class FrontendController extends Controller
         $data['allnews'] = News::latest()->get();
         return view('news.news',$data);
     }
+
+    public function career()
+    {
+        return view('career.career_page');
+    }
 }

@@ -101,7 +101,7 @@
       </li>
         {{--end of about page--}}
 
-        {{--star of event--}}
+        {{--start of program--}}
         <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#program-drop" aria-expanded="false" aria-controls="dashboard-dropdown">
                 <i class="menu-icon mdi mdi-television"></i>
@@ -113,11 +113,106 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('program.new')}}">Create Program</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('program.index')}}">All Programs</a>
+                    </li>
 
                 </ul>
             </div>
         </li>
         {{--end of program--}}
+        
+        {{--start of event--}}
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#event-drop" aria-expanded="false" aria-controls="dashboard-dropdown">
+                <i class="menu-icon mdi mdi-television"></i>
+                <span class="menu-title">Event</span>
+                <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="event-drop">
+                <ul class="nav flex-column sub-menu">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('event.create')}}">Create Event</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('event.index')}}">All Events</a>
+                    </li>
+
+                </ul>
+            </div>
+        </li>
+        {{--end of event--}}
+
+        {{--start of competition--}}
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="collapse" href="#competition-drop" aria-expanded="false" aria-controls="dashboard-dropdown">
+              <i class="menu-icon mdi mdi-television"></i>
+              <span class="menu-title">Competition</span>
+              <i class="menu-arrow"></i>
+          </a>
+          <div class="collapse" id="competition-drop">
+              <ul class="nav flex-column sub-menu">
+                  <li class="nav-item">
+                      <a class="nav-link" href="{{route('competition.create')}}">Create Competition</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{route('competition.index')}}">All Competition details</a>
+                  </li>
+              </ul>
+          </div>
+      </li>
+      {{--end of competition--}}
+
+        {{--start of our work--}}
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="collapse" href="#ourwork-drop" aria-expanded="false" aria-controls="dashboard-dropdown">
+              <i class="menu-icon mdi mdi-television"></i>
+              <span class="menu-title">Our work</span>
+              <i class="menu-arrow"></i>
+          </a>
+          <div class="collapse" id="ourwork-drop">
+              <ul class="nav flex-column sub-menu">
+                  <li class="nav-item">
+                      <a class="nav-link" href="{{route('ourwork.create')}}">Create Our work</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="{{route('ourwork.index')}}">All of 'Our work'</a>
+                  </li>
+              </ul>
+          </div>
+      </li>
+      {{--end of our work--}}
+
+      <li class="nav-item">
+          <a class="nav-link" data-toggle="collapse" href="#contact-drop" aria-expanded="false" aria-controls="dashboard-dropdown">
+              <i class="menu-icon mdi mdi-television"></i>
+              <span class="menu-title">Contact Messages</span>
+              <i class="menu-arrow"></i>
+          </a>
+          <div class="collapse" id="contact-drop">
+              <ul class="nav flex-column sub-menu">
+                  <li class="nav-item">
+                      <a class="nav-link" href="{{route('contact.index')}}">All Messages</a>
+                  </li>
+              </ul>
+          </div>
+      </li>
+      {{-- start of career section--}}
+      <li class="nav-item">
+          <a class="nav-link" data-toggle="collapse" href="#career-drop" aria-expanded="false" aria-controls="dashboard-dropdown">
+              <i class="menu-icon mdi mdi-television"></i>
+              <span class="menu-title">Careerpage Messages</span>
+              <i class="menu-arrow"></i>
+          </a>
+          <div class="collapse" id="career-drop">
+              <ul class="nav flex-column sub-menu">
+                  <li class="nav-item">
+                      <a class="nav-link" href="{{route('career.index')}}">Career Page Messages</a>
+                  </li>
+              </ul>
+          </div>
+      </li>
+      {{-- start of career section--}}
 
     </ul>
   </nav>

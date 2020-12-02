@@ -6,18 +6,15 @@
             <div class="card-body">
                 @include('flash_message')
                 <div class="row d-flex justify-content-center">
-                    <div class="col-md-12">
+                    <div class="col-md-8">
 
                         <form action="{{route('program.new.store')}}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="row">
-                                <div class="col-md-6">
-                                    {{-- create banner --}}
-                                    <label class="d-block">Program Image</label>
-                                    <div class="custom-file">
-                                        <input type="file" name="image" class="custom-file-input" id="customFile" required>
-                                        <label class="custom-file-label" for="customFile">Choose file</label>
-                                    </div>
+                                <label class="d-block">Program Image</label>
+                                <div class="custom-file">
+                                    <input type="file" name="image" class="custom-file-input" id="customFile" required>
+                                    <label class="custom-file-label" for="customFile">Choose file</label>
                                 </div>
                             </div>
                             <div class="row mt-4">
@@ -38,6 +35,8 @@
                 </div>
             </div>
         </div>
+
+        
     </div>
 @endsection
 

@@ -46,16 +46,17 @@
                     <li class="drop-link">
                         <a href="#">About us <i class="fa fa-angle-down"></i></a>
                         <ul class="dropdown">
+                            
                             <li><a href="{{ route('about_us.our_work') }}">Our Work</a></li>
                             <li><a href="{{ route('about_us.our_story') }}">Our Story</a></li>
                             <li><a href="{{ route('about_us.our_people') }}">Our People</a></li>
                             <li><a href="{{ route('about_us.annual_report') }}">Annual Report</a></li>
-                            <li><a href="single-project.html">Career</a></li>
+                            <li><a href="{{route('career.show_career_page')}}">Career</a></li>
 
                         </ul>
                     </li>
                     <li class="drop-link">
-                        <a href="blog.html">Programs <i class="fa fa-angle-down"></i></a>
+                        <a>Programs <i class="fa fa-angle-down"></i></a>
                         <ul class="dropdown">
                             @foreach(\App\Models\Program::all() as $program)
                             <li><a href="{{ route('program.single',$program->id) }}">{{ $program->title }}</a></li>
@@ -63,17 +64,19 @@
                         </ul>
                     </li>
                     <li class="drop-link">
-                        <a href="blog.html">Events <i class="fa fa-angle-down"></i></a>
+                        <a>Events <i class="fa fa-angle-down"></i></a>
                         <ul class="dropdown">
-                            <li><a href="{{ route('event.single') }}">Event - 1</a></li>
-                            <li><a href="{{ route('event.single') }}">Event - 2</a></li>
+                            @foreach(\App\Models\Event::all() as $event)
+                            <li><a href="{{ route('event.single',$event->id) }}">{{ $event->title }}</a></li>
+                            @endforeach
                         </ul>
                     </li>
                     <li class="drop-link">
-                        <a href="blog.html">Competition <i class="fa fa-angle-down"></i></a>
+                        <a>Competition <i class="fa fa-angle-down"></i></a>
                         <ul class="dropdown">
-                            <li><a href="{{ route('competition.single') }}">Competition - 1</a></li>
-                            <li><a href="{{ route('competition.single') }}">Competition - 2</a></li>
+                            @foreach(\App\Models\Competition::all() as $competition)
+                                <li><a href="{{ route('competition.single',$competition->id) }}">{{$competition->title}}</a></li>
+                            @endforeach
                         </ul>
                     </li>
                     <li><a href="contact.html">Course</a></li>
