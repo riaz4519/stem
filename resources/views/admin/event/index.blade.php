@@ -10,7 +10,7 @@
 <div class="col-12 mt-4">
     <div class="card ">
         <div class="card-body">
-            <h5 class="card-title">View all programs</h5>
+            <h5 class="card-title">View all events</h5>
             @include('flash_message')
             <div class="table-responsive">
                 <table id="example1" class="table">

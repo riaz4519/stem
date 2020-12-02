@@ -95,6 +95,7 @@ class EventsController extends Controller
 
     public function create_event_participants($event_id){
         $data['event_id'] = Event::where('id',$event_id)->first()->id;
+        $data['event'] = Event::where('id',$event_id)->first();
         return view('admin.event.addparticipants',$data);
     }
 
@@ -128,9 +129,39 @@ class EventsController extends Controller
         return redirect()->back();
     }
 
+    public function edit_eventparticipant($eventparticipant_id)
+    {
+        $data['event_eventparticipant'] = Eventparticipant::where('id',$eventparticipant_id)->first();
+        return view('admin.event.edit.edit_eventparticipant',$data);
+    }
+    
+    public function update_event_eventparticipant(Request $request, $eventparticipant_id)
+    {   
+        $eventparticipant = Eventparticipant::findOrFail($eventparticipant_id);
+
+        $image  = $request->file('image');
+        if($image){
+                $imagepath = 'storage/event/participants/'.$eventparticipant->image;
+                File::delete($imagepath);
+                $filename       = time().$image->getClientOriginalName();
+                $image->storeAs("public/event/participants/",$filename);
+                $image     = $filename;
+                $eventparticipant->image = $image;
+                $eventparticipant->save();
+        }
+
+        $eventparticipant->name             = $request->name;
+        $eventparticipant->profession       = $request->profession;
+        $eventparticipant->save();
+
+        Session::flash('success_message','Updated successfully!');
+        return redirect()->back();
+    }
+
     public function addobjective($id)
     {
         $data['event_id'] = Event::where('id',$id)->first()->id;
+        $data['event'] = Event::where('id',$id)->first();
         return view('admin.event.addobjective',$data);
     }
 
@@ -150,9 +181,27 @@ class EventsController extends Controller
         return redirect()->back();
     }
 
+    public function edit_eventobjective($eventobjective_id)
+    {
+        $data['event_eventobjective'] = Eventobjective::where('id',$eventobjective_id)->first();
+        return view('admin.event.edit.edit_eventobjective',$data);
+    }
+    
+    public function update_event_eventobjective(Request $request, $eventobjective_id)
+    {   
+        
+        $eventobjective = Eventobjective::findOrFail($eventobjective_id);
+        $eventobjective->description = $request->description;
+        $eventobjective->save();
+        
+        Session::flash('success_message','Updated successfully!');
+        return redirect()->back();
+    }
+
     public function add_event_photos($event_id)
     {
         $data['event_id'] = Event::where('id',$event_id)->first()->id;
+        $data['event'] = Event::where('id',$id)->first();
         return view('admin.event.addphotos',$data);
     }
     

@@ -26,4 +26,24 @@ class Event extends Model
     {
         return $this->hasMany(Eventphoto::class,'event_id','id');
     }
+
+    public function eventkeypoints()
+    {
+        return $this->hasMany(Eventkeypoint::class,'event_id','id');
+    }
+    
+    public function eventvideos()
+    {
+        return $this->hasMany(Eventvideo::class,'event_id','id');
+    }
+
+    public function program()
+    {
+        return $this->belongsTo(Program::class);
+    }
+
+    public function eventmentors()
+    {
+        return $this->hasMany(Eventmentor::class,'event_id','id');
+    }
 }

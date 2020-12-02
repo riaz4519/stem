@@ -26,9 +26,10 @@
                                     <label class="custom-file-label" for="customFile">Choose file</label>
                                 </div>
                             </div>
+                            <button type="submit" class="btn btn-info text-white btn-block mt-4">Submit</button>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-info text-white btn-block mt-4">Submit</button>
+                    
                 </form>
             </div>
         </div>

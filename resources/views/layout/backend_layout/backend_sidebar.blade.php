@@ -122,7 +122,7 @@
         </li>
         {{--end of program--}}
         
-        {{--start of program--}}
+        {{--start of event--}}
         <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#event-drop" aria-expanded="false" aria-controls="dashboard-dropdown">
                 <i class="menu-icon mdi mdi-television"></i>
@@ -141,7 +141,28 @@
                 </ul>
             </div>
         </li>
-        {{--end of program--}}
+        {{--end of event--}}
+
+        {{--start of competition--}}
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="collapse" href="#competition-drop" aria-expanded="false" aria-controls="dashboard-dropdown">
+              <i class="menu-icon mdi mdi-television"></i>
+              <span class="menu-title">Competition</span>
+              <i class="menu-arrow"></i>
+          </a>
+          <div class="collapse" id="competition-drop">
+              <ul class="nav flex-column sub-menu">
+                  <li class="nav-item">
+                      <a class="nav-link" href="{{route('competition.create')}}">Create Competition</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{route('competition.index')}}">All Competition details</a>
+                  </li>
+              </ul>
+          </div>
+      </li>
+      {{--end of competition--}}
+
         {{--start of our work--}}
         <li class="nav-item">
           <a class="nav-link" data-toggle="collapse" href="#ourwork-drop" aria-expanded="false" aria-controls="dashboard-dropdown">

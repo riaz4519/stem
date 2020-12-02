@@ -15,4 +15,29 @@ class Program extends Model
     {
         return $this->hasMany(ProgramKeyPoint::class,'program_id','id');
     }
+
+    public function programobjectives()
+    {
+        return $this->hasMany(Programobjective::class,'program_id','id');
+    }
+
+    public function programcases()
+    {
+        return $this->hasMany(Programcase::class,'program_id','id');
+    }
+
+    public function events()
+    {
+        return $this->hasMany(Event::class,'program_id','id');
+    }
+    
+    public function popularcourses()
+    {
+        return $this->hasMany(Popularcourse::class,'program_id','id');
+    }
+    
+    public function programvideos()
+    {
+        return $this->hasMany(Programvideo::class,'program_id','id');
+    }
 }

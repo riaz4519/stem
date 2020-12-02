@@ -72,10 +72,11 @@
                         </ul>
                     </li>
                     <li class="drop-link">
-                        <a href="blog.html">Competition <i class="fa fa-angle-down"></i></a>
+                        <a>Competition <i class="fa fa-angle-down"></i></a>
                         <ul class="dropdown">
-                            <li><a href="{{ route('competition.single') }}">Competition - 1</a></li>
-                            <li><a href="{{ route('competition.single') }}">Competition - 2</a></li>
+                            @foreach(\App\Models\Competition::all() as $competition)
+                                <li><a href="{{ route('competition.single',$competition->id) }}">{{$competition->title}}</a></li>
+                            @endforeach
                         </ul>
                     </li>
                     <li><a href="contact.html">Course</a></li>

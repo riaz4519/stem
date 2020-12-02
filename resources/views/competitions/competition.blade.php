@@ -1,6 +1,6 @@
 @extends('layout.main')
 
-@section('title','Event -1')
+@section('title','Competition')
 
 @section('content')
     <!-- page-banner-section
@@ -23,31 +23,16 @@
             <div class="row">
                 <div class="col-lg-7">
                     <div class="project-image">
-                        <img src="{{ asset('stem/upload/portfolio/portfolio-image-1.jpg') }}" alt="">
+                        <img src="{{ asset('storage/competition/'.$competition->image) }}" alt="">
                     </div>
                 </div>
                 <div class="col-lg-5">
                     <div class="project-details">
-                        <h1>Competition Title Here</h1>
-                        <p>We are excited to launch our new company and product Ooooh. After being featured in too many magazines to mention and having created an online stir, we know that Ooooh is going to be big. You may have seen us in the Dinosaurs’ Den where we were we told that we didn’t need them because we were already doing it so well ourselves.</p>
-                        <table>
-                            <tbody>
-                            <tr>
-                                <th>Client:</th>
-                                <td>Omar Akil</td>
-                            </tr>
-                            <tr>
-                                <th>Role:</th>
-                                <td>Campus Images</td>
-                            </tr>
-                            </tbody>
-                        </table>
-                        <a href="#">View Project</a>
+                        <h1>{{$competition->title}}</h1>
+                        <p>{{$competition->about}}</p>
                     </div>
                 </div>
             </div>
-
-
         </div>
     </section>
     <!-- End portfolio section -->
@@ -59,100 +44,19 @@
             <div class="teachers-box">
                 <h1>Participants</h1>
                 <div class="row">
-
+                    @foreach($competition->competitionparticipants as $competitionparticipant)
                     <div class="col-lg-3 col-md-6">
                         <div class="teacher-post">
                             <a href="single-teacher.html">
-                                <img src="{{ asset('stem/upload/teachers/teacher6.jpg') }}" alt="">
+                                <img src="{{ asset('storage/competition/participants/'.$competitionparticipant->image) }}" alt="">
                                 <div class="hover-post">
-                                    <h2>Michael Arnet</h2>
-                                    <span>Photographer</span>
+                                    <h2>{{$competitionparticipant->name}}</h2>
+                                    <span>{{$competitionparticipant->profession}}</span>
                                 </div>
                             </a>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="teacher-post">
-                            <a href="single-teacher.html">
-                                <img src="{{ asset('stem/upload/teachers/teacher6.jpg') }}" alt="">
-                                <div class="hover-post">
-                                    <h2>Michael Arnet</h2>
-                                    <span>Photographer</span>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="teacher-post">
-                            <a href="single-teacher.html">
-                                <img src="{{ asset('stem/upload/teachers/teacher6.jpg') }}" alt="">
-                                <div class="hover-post">
-                                    <h2>Michael Arnet</h2>
-                                    <span>Photographer</span>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="teacher-post">
-                            <a href="single-teacher.html">
-                                <img src="{{ asset('stem/upload/teachers/teacher6.jpg') }}" alt="">
-                                <div class="hover-post">
-                                    <h2>Michael Arnet</h2>
-                                    <span>Photographer</span>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="row">
-
-                    <div class="col-lg-3 col-md-6">
-                        <div class="teacher-post">
-                            <a href="single-teacher.html">
-                                <img src="{{ asset('stem/upload/teachers/teacher6.jpg') }}" alt="">
-                                <div class="hover-post">
-                                    <h2>Michael Arnet</h2>
-                                    <span>Photographer</span>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="teacher-post">
-                            <a href="single-teacher.html">
-                                <img src="{{ asset('stem/upload/teachers/teacher6.jpg') }}" alt="">
-                                <div class="hover-post">
-                                    <h2>Michael Arnet</h2>
-                                    <span>Photographer</span>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="teacher-post">
-                            <a href="single-teacher.html">
-                                <img src="{{ asset('stem/upload/teachers/teacher6.jpg') }}" alt="">
-                                <div class="hover-post">
-                                    <h2>Michael Arnet</h2>
-                                    <span>Photographer</span>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="teacher-post">
-                            <a href="single-teacher.html">
-                                <img src="{{ asset('stem/upload/teachers/teacher6.jpg') }}" alt="">
-                                <div class="hover-post">
-                                    <h2>Michael Arnet</h2>
-                                    <span>Photographer</span>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-
+                    @endforeach
                 </div>
 
             </div>
@@ -165,51 +69,22 @@
             <h1>winners</h1>
             <div class="blog-box">
                 <div class="row">
-
+                    @foreach($competition->competitionwinners as $competitionwinner)
                     <div class="col-lg-4 col-md-6">
                         <div class="blog-post">
-                            <a href="single-post.html"><img src="{{ asset('stem/upload/blog/blog-image-1.jpg') }}" alt=""></a>
+                            <a><img src="{{ asset('storage/competition/winner/'.$competitionwinner->image) }}" alt=""></a>
                             <div class="post-content">
-                                <a class="category" href="#">Academics</a>
-                                <h2><a href="single-post.html">Couple Of Happy College Students Graduated</a></h2>
+                                <a class="category" href="#">{{$competitionwinner->why}}</a>
+                                <h2><a>{{$competitionwinner->name}}</a></h2>
                                 <div class="post-meta date">
-                                    <i class="material-icons">access_time</i> June 13, 2018
+                                    {{$competitionwinner->position}}
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="blog-post">
-                            <a href="single-post.html"><img src="{{ asset('stem/upload/blog/blog-image-1.jpg') }}" alt=""></a>
-                            <div class="post-content">
-                                <a class="category" href="#">Academics</a>
-                                <h2><a href="single-post.html">Couple Of Happy College Students Graduated</a></h2>
-                                <div class="post-meta date">
-                                    <i class="material-icons">access_time</i> June 13, 2018
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="blog-post">
-                            <a href="single-post.html"><img src="{{ asset('stem/upload/blog/blog-image-1.jpg') }}" alt=""></a>
-                            <div class="post-content">
-                                <a class="category" href="#">Academics</a>
-                                <h2><a href="single-post.html">Couple Of Happy College Students Graduated</a></h2>
-                                <div class="post-meta date">
-                                    <i class="material-icons">access_time</i> June 13, 2018
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-
-
+                    @endforeach
                 </div>
-
-
-
+            </div>
         </div>
     </section>
 
@@ -217,29 +92,15 @@
     <section class="portfolio-section">
         <div class="container">
             <div class="row">
-
+                @foreach($competition->competitionobjectives as $competitionobjective)
                 <div class="col-lg-12">
                     <div class="project-details">
                         <h1>Objective</h1>
-                        <p>We are excited to launch our new company and product Ooooh. After being featured in too many magazines to mention and having created an online stir, we know that Ooooh is going to be big. You may have seen us in the Dinosaurs’ Den where we were we told that we didn’t need them because we were already doing it so well ourselves.</p>
-                        <table>
-                            <tbody>
-                            <tr>
-                                <th>Client:</th>
-                                <td>Omar Akil</td>
-                            </tr>
-                            <tr>
-                                <th>Role:</th>
-                                <td>Campus Images</td>
-                            </tr>
-                            </tbody>
-                        </table>
-                        <a href="#">View Project</a>
+                        <p>{{$competitionobjective->description}}</p>
                     </div>
                 </div>
+                @endforeach
             </div>
-
-
         </div>
     </section>
 
@@ -254,97 +115,18 @@
             <div class="blog-box">
 
                 <div class="row">
-
+                    @foreach($competition->competitionphotos as $competitionphoto)
                     <div class="col-lg-3 col-md-6">
                         <div class="blog-post">
-                            <a href="single-post.html"><img src="{{ asset('stem/upload/blog/blog-image-1.jpg') }}" alt=""></a>
+                            <a><img src="{{ asset('storage/competition/photos/'.$competitionphoto->image) }}" alt=""></a>
                             <div class="post-content">
-
-                                <h2><a href="single-post.html">Couple Of Happy College Students Graduated</a></h2>
-
+                                <h2><a>{{$competitionphoto->name}}</a></h2>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="blog-post">
-                            <a href="single-post.html"><img src="{{ asset('stem/upload/blog/blog-image-1.jpg') }}" alt=""></a>
-                            <div class="post-content">
-
-                                <h2><a href="single-post.html">Couple Of Happy College Students Graduated</a></h2>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="blog-post">
-                            <a href="single-post.html"><img src="{{ asset('stem/upload/blog/blog-image-1.jpg') }}" alt=""></a>
-                            <div class="post-content">
-
-                                <h2><a href="single-post.html">Couple Of Happy College Students Graduated</a></h2>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="blog-post">
-                            <a href="single-post.html"><img src="{{ asset('stem/upload/blog/blog-image-1.jpg') }}" alt=""></a>
-                            <div class="post-content">
-
-                                <h2><a href="single-post.html">Couple Of Happy College Students Graduated</a></h2>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="blog-post">
-                            <a href="single-post.html"><img src="{{ asset('stem/upload/blog/blog-image-1.jpg') }}" alt=""></a>
-                            <div class="post-content">
-
-                                <h2><a href="single-post.html">Couple Of Happy College Students Graduated</a></h2>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="blog-post">
-                            <a href="single-post.html"><img src="{{ asset('stem/upload/blog/blog-image-1.jpg') }}" alt=""></a>
-                            <div class="post-content">
-
-                                <h2><a href="single-post.html">Couple Of Happy College Students Graduated</a></h2>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="blog-post">
-                            <a href="single-post.html"><img src="{{ asset('stem/upload/blog/blog-image-1.jpg') }}" alt=""></a>
-                            <div class="post-content">
-
-                                <h2><a href="single-post.html">Couple Of Happy College Students Graduated</a></h2>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="blog-post">
-                            <a href="single-post.html"><img src="{{ asset('stem/upload/blog/blog-image-1.jpg') }}" alt=""></a>
-                            <div class="post-content">
-
-                                <h2><a href="single-post.html">Couple Of Happy College Students Graduated</a></h2>
-
-                            </div>
-                        </div>
-                    </div>
-
-
-
-
-
+                    @endforeach
                 </div>
-
-
             </div>
-
         </div>
     </section>
 
@@ -359,34 +141,20 @@
                     <div class="blog-box">
                         <div class="blog-post single-post">
 
-
                             <div class="post-content">
                                 <h2>It’s only natural. Entanglement happens.</h2>
-
                                 <ul class="text-list">
-                                    <li>Modular – You can get to the point of building a page without writing a single line of CSS.</li>
-                                    <li>Predictable – It doesn’t matter where you put the component, it’ll behave the same and look the same. It’s easy to write the code. You have systems in place for naming it. It’s more intuitive to write.</li>
-                                    <li>Maintainable – It’s quick and easy to deal with. It won’t break other things on the site.</li>
-                                    <li>Scalable – It’s hard to break and easy to build onto.</li>
-                                    <li>Dry – It eliminates the need for copy and paste duplication in the CSS.</li>
-                                    <li>Organized – There’s a place for everything.</li>
+                                    @foreach($competition->competitionkeypoints as $row)
+                                        <li>{{$row->points}}</li>
+                                    @endforeach
                                 </ul>
-
                             </div>
+
                         </div>
-
-
-
-
-
-
                     </div>
+
                 </div>
-
-
-
             </div>
-
         </div>
     </section>
     {{--end of outcome--}}
@@ -404,18 +172,13 @@
                             <h1>Learn Anywhere</h1>
                         </div>
                     </div>
-
+                    @foreach($competition->competitionvideos as $video)
                     <div class="video-box">
-                        <div class="video-post">
-                            <img src="{{ asset('stem/upload/video/video-poster-1.jpg') }}" alt="">
-                            <div class="hover-post">
-                                <h2>Marketing, Media and Advertising</h2>
-                                <p>About Studioare</p>
-                            </div>
-                            <a class="video-link iframe" href="https://vimeo.com/97447862"><span><i class="fa fa-play"></i></span></a>
+                        <div class="video-post text-center">
+                            {!! $video->video !!}
                         </div>
-
                     </div>
+                    @endforeach
                 </div>
             </div>
 
@@ -428,53 +191,21 @@
         <div class="container">
 
             <div class="teachers-box">
-                <h1>Participants</h1>
+                <h1>Mentors</h1>
                 <div class="row">
-
+                    @foreach($competition->competitionmentors as $mentor)
                     <div class="col-lg-3 col-md-6">
                         <div class="teacher-post">
                             <a href="single-teacher.html">
-                                <img src="{{ asset('stem/upload/teachers/teacher6.jpg') }}" alt="">
+                                <img src="{{ asset('storage/competition/mentors/'.$mentor->image) }}" alt="">
                                 <div class="hover-post">
-                                    <h2>Michael Arnet</h2>
-                                    <span>Photographer</span>
+                                    <h2>{{$mentor->name}}</h2>
+                                    <span>{{$mentor->profession}}</span>
                                 </div>
                             </a>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="teacher-post">
-                            <a href="single-teacher.html">
-                                <img src="{{ asset('stem/upload/teachers/teacher6.jpg') }}" alt="">
-                                <div class="hover-post">
-                                    <h2>Michael Arnet</h2>
-                                    <span>Photographer</span>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="teacher-post">
-                            <a href="single-teacher.html">
-                                <img src="{{ asset('stem/upload/teachers/teacher6.jpg') }}" alt="">
-                                <div class="hover-post">
-                                    <h2>Michael Arnet</h2>
-                                    <span>Photographer</span>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="teacher-post">
-                            <a href="single-teacher.html">
-                                <img src="{{ asset('stem/upload/teachers/teacher6.jpg') }}" alt="">
-                                <div class="hover-post">
-                                    <h2>Michael Arnet</h2>
-                                    <span>Photographer</span>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
+                    @endforeach
 
                 </div>
 

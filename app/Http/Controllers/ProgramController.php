@@ -11,6 +11,7 @@ use App\Models\Programvideo;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+use File;
 
 class ProgramController extends Controller
 {
@@ -29,8 +30,7 @@ class ProgramController extends Controller
     }
 
     public function create_program(){
-
-        return view('admin.programs.create_program');
+        return view('admin.programs.create_program',$data);
     }
     public function store_program(Request  $request){
 
@@ -100,6 +100,8 @@ class ProgramController extends Controller
     public function addpoint($id)
     {
         $data['program_id'] = Program::where('id',$id)->first()->id;
+        $data['program'] = $program = Program::where('id',$id)->first();
+
         return view('admin.programs.addpoint',$data);
     }
 
@@ -122,9 +124,27 @@ class ProgramController extends Controller
         return redirect()->back();
     }
 
+    public function edit_key_point($keypoint_id)
+    {
+        $data['program_key_point'] = ProgramKeyPoint::where('id',$keypoint_id)->first();
+        return view('admin.programs.edit_keypoint',$data);
+    }
+
+    public function update_key_point(Request $request, $id)
+    {   
+        
+        $program_key_point = ProgramKeyPoint::findOrFail($id);
+        $program_key_point->points = $request->points;
+        $program_key_point->save();
+        
+        Session::flash('success_message','Updated successfully!');
+        return redirect()->back();
+    }
+
     public function addobjective($id)
     {
         $data['program_id'] = Program::where('id',$id)->first()->id;
+        $data['program'] = $program = Program::where('id',$id)->first();
         return view('admin.programs.addobjective',$data);
     }
 
@@ -144,9 +164,27 @@ class ProgramController extends Controller
         return redirect()->back();
     }
 
+    public function edit_program_objective($objective_id)
+    {
+        $data['program_objective'] = Programobjective::where('id',$objective_id)->first();
+        return view('admin.programs.edit_objective',$data);
+    }
+    
+    public function update_program_objective(Request $request, $objective_id)
+    {   
+        
+        $program_objective = Programobjective::findOrFail($objective_id);
+        $program_objective->description = $request->description;
+        $program_objective->save();
+        
+        Session::flash('success_message','Updated successfully!');
+        return redirect()->back();
+    }
+
     public function countlists($id)
     {
         $data['program_id'] = Program::where('id',$id)->first()->id;
+        $data['program'] = $program = Program::where('id',$id)->first();
         return view('admin.programs.countlists',$data);
     }
 
@@ -168,9 +206,30 @@ class ProgramController extends Controller
         return redirect()->back();
     }
 
+    public function edit_program_countlist($countlist_id)
+    {
+        $data['program_countlist'] = Programcase::where('id',$countlist_id)->first();
+        return view('admin.programs.edit_countlist',$data);
+    }
+    
+    public function update_program_countlist(Request $request, $countlist_id)
+    {   
+
+        $program_countlist = Programcase::findOrFail($countlist_id);
+        $program_countlist->no_of_participants = $request->no_of_participants;
+        $program_countlist->no_of_applicants = $request->no_of_applicants;
+        $program_countlist->no_of_mentors = $request->no_of_mentors;
+        $program_countlist->no_of_casestudies = $request->no_of_casestudies;
+        $program_countlist->save();
+        
+        Session::flash('success_message','Updated successfully!');
+        return redirect()->back();
+    }
+
     public function popularcourse($id)
     {
         $data['program_id'] = Program::where('id',$id)->first()->id;
+        $data['program'] = $program = Program::where('id',$id)->first();
         return view('admin.programs.popularcourse',$data);
     }
 
@@ -199,9 +258,37 @@ class ProgramController extends Controller
         return redirect()->back();
     }
 
+    public function edit_program_popularcourse($popularcourse_id)
+    {
+        $data['program_popularcourse'] = Popularcourse::where('id',$popularcourse_id)->first();
+        return view('admin.programs.edit_popularcourse',$data);
+    }
+
+    
+    public function update_program_popularcourse(Request $request, $popularcourse_id)
+    {   
+        
+        $popularcourse = Popularcourse::findOrFail($popularcourse_id);
+
+        $image  = $request->file('image');
+        if($image){
+                $imagepath = 'storage/program/popularcourse'.$popularcourse->image;
+                File::delete($imagepath);
+                $filename       = time().$image->getClientOriginalName();
+                $image->storeAs("public/program/popularcourse",$filename);
+                $image     = $filename;
+        
+                $popularcourse->image      = $image;
+                $popularcourse->save();
+        }
+        Session::flash('success_message','Updated successfully!');
+        return redirect()->back();
+    }
+
     public function video($id)
     {
         $data['program_id'] = Program::where('id',$id)->first()->id;
+        $data['program'] = $program = Program::where('id',$id)->first();
         return view('admin.programs.video',$data);
     }
 
@@ -220,4 +307,22 @@ class ProgramController extends Controller
         Session::flash('success_message','Created successfully!');
         return redirect()->back();
     }
+
+    public function edit_program_video($video_id)
+    {
+        $data['program_video'] = Programvideo::where('id',$video_id)->first();
+        return view('admin.programs.edit_video',$data);
+    }
+
+    public function update_program_video(Request $request, $video_id)
+    {   
+
+        $program_video = Programvideo::findOrFail($video_id);
+        $program_video->video = $request->video;
+        $program_video->save();
+        
+        Session::flash('success_message','Updated successfully!');
+        return redirect()->back();
+    }
+
 }

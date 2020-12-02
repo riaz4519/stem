@@ -7,7 +7,7 @@
             @include('flash_message')
             <div class="row d-flex justify-content-center">
                 <div class="col-md-6">
-                    
+                    <h4 class="text-center">Create Program Count List</h4>
                     <form action="{{route('program.countlist.store')}}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <input type="hidden" name="program_id" value="{{$program_id}}">
@@ -29,6 +29,32 @@
                     
                 </div>
             </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <h4 class="mt-2 mb-2">All Count Lists of Program</h4>
+            <div class="table-responsive">
+                <table id="example1" class="table">
+                    <thead>
+                        <tr>
+                            <th class="wd-25p">Program Name</th>
+                            <th class="wd-20p">Edit</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach($program->programcases as $programcase)
+                        <tr>
+                            <td class="ellipsis">{{$programcase->program->title}}</td>
+                            <td>
+                              <a href="{{route('program.countlist.edit',$programcase->id)}}" class="btn btn-xs btn-info"><i class="fa fa-pencil"></i></a>
+                            </td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
+            
         </div>
     </div>
 </div>

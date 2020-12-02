@@ -32,7 +32,7 @@
 
                             <div class="row mt-4">
                                 <label class="d-block">About Event</label>
-                                <textarea rows="10"  name="about" placeholder="Enter program details" class="form-control" required></textarea>
+                                <textarea rows="10"  name="about" placeholder="Enter event details" class="form-control" required></textarea>
                             </div>
                             <div class="row">
                                 <button class="mt-4 btn btn-sm btn-primary submit_cls" type="submit">Submit</button>

@@ -10,4 +10,9 @@ class Eventvideo extends Model
     use HasFactory;
 
     protected $guarded = [];
+
+    public function event()
+    {
+        return $this->belongsTo(Event::class);
+    }
 }

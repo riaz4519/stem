@@ -23,6 +23,39 @@
             </div>
         </div>
     </div>
+
+    <div class="card">
+        <div class="card-body">
+            <h4 class="mt-2 mb-2">All Photos of Program</h4>
+            <div class="table-responsive">
+                <table id="example1" class="table">
+                    <thead>
+                        <tr>
+                            <th class="wd-25p">Program Name</th>
+                            <th class="wd-25p">Image</th>
+                            <th class="wd-20p">Edit</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach($program->popularcourses as $popularcourse)
+                        <tr>
+                            <td>
+                                {{$popularcourse->program->title}}
+                            </td>
+                            <td>
+                                <img src="{{asset('storage/program/popularcourse/'.$popularcourse->image)}}" style="width: 60px; height: 60px;" alt="" srcset="">
+                            </td>
+                            <td>
+                              <a href="{{route('program.popularcourse.edit',$popularcourse->id)}}" class="btn btn-xs btn-info"><i class="fa fa-pencil"></i></a>
+                            </td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
+            
+        </div>
+    </div>
 </div>
 @endsection
 

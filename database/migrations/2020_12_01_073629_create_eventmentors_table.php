@@ -15,6 +15,7 @@ class CreateEventmentorsTable extends Migration
     {
         Schema::create('eventmentors', function (Blueprint $table) {
             $table->id();
+            $table->integer('event_id');
             $table->string('name');
             $table->string('image');
             $table->string('profession')->nullable();

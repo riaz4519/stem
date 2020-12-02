@@ -23,7 +23,7 @@
 
                             <div class="row mt-4">
                                 <label class="d-block">Profession (Optional)</label>
-                                <input type="text" name="profession" class="form-control" id="" placeholder="profession" required>
+                                <input type="text" name="profession" class="form-control" id="" placeholder="profession">
                             </div>
 
                             <div class="row mt-4">
