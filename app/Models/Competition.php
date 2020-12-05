@@ -45,4 +45,8 @@ class Competition extends Model
     {
         return $this->hasMany(Competitionmentor::class,'competition_id','id');
     }
+    public function program()
+    {
+        return $this->belongsTo(Program::class);
+    }
 }

@@ -26,10 +26,43 @@
                                     <label class="custom-file-label" for="customFile">Choose file</label>
                                 </div>
                             </div>
+                            <button type="submit" class="btn btn-info text-white btn-block mt-4">Submit</button>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-info text-white btn-block mt-4">Submit</button>
+                    
                 </form>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <h4 class="mt-2 mb-2">All Photos of Competition</h4>
+                <div class="table-responsive">
+                    <table id="example1" class="table">
+                        <thead>
+                            <tr>
+                                <th class="wd-25p">Competition Name</th>
+                                <th class="wd-25p">Image</th>
+                                <th class="wd-20p">Edit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach($competition->competitionphotos as $competitionphoto)
+                            <tr>
+                                <td>
+                                    {{$competitionphoto->competition->title}}
+                                </td>
+                                <td>
+                                    <img src="{{asset('storage/competition/photos/'.$competitionphoto->image)}}" style="width: 60px; height: 60px;" alt="" srcset="">
+                                </td>
+                                <td>
+                                  <a href="{{route('competition.competitionphoto.edit',$competitionphoto->id)}}" class="btn btn-xs btn-info"><i class="fa fa-pencil"></i></a>
+                                </td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+                
             </div>
         </div>
     </div>

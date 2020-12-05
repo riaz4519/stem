@@ -1,7 +1,15 @@
 @extends('layout.backend_layout.backend_layout')
 @section('title','Create program')
 @section('backendcss')
-<style></style>
+<style>
+    .ellipsis {
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        display: block;
+        overflow: hidden;
+        width: 20em;
+    }
+  </style>
 @endsection
 
 @section('content')
@@ -20,6 +28,32 @@
                     <p><button class="add_fields btn btn-success mt-2">Add More Fields</button></p>
                     <input type="submit" class="btn btn-primary btn-block" value="Submit" />
                 </form>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <h4 class="mt-2 mb-2">All Key Points of Event</h4>
+                <div class="table-responsive">
+                    <table id="example1" class="table">
+                        <thead>
+                            <tr>
+                                <th class="wd-25p">Title</th>
+                                <th class="wd-20p">Edit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach($event->eventkeypoints as $eventkeypoint)
+                            <tr>
+                                <td class="ellipsis">{{$eventkeypoint->points}}</td>
+                                <td>
+                                  <a href="{{route('event.keypoint.edit',$eventkeypoint->id)}}" class="btn btn-xs btn-info"><i class="fa fa-pencil"></i></a>
+                                </td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+                
             </div>
         </div>
     </div>

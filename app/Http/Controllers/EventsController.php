@@ -201,7 +201,7 @@ class EventsController extends Controller
     public function add_event_photos($event_id)
     {
         $data['event_id'] = Event::where('id',$event_id)->first()->id;
-        $data['event'] = Event::where('id',$id)->first();
+        $data['event'] = Event::where('id',$event_id)->first();
         return view('admin.event.addphotos',$data);
     }
     
@@ -233,9 +233,39 @@ class EventsController extends Controller
         return redirect()->back();
     }
 
+    
+    public function edit_eventphoto($eventphoto_id)
+    {
+        $data['event_eventphoto'] = Eventphoto::where('id',$eventphoto_id)->first();
+        return view('admin.event.edit.edit_eventphoto',$data);
+    }
+
+    public function update_event_eventphoto(Request $request, $eventphoto_id)
+    {   
+        
+        $eventphoto = Eventphoto::findOrFail($eventphoto_id);
+
+        $image  = $request->file('image');
+        if($image){
+                $imagepath = 'storage/event/photos/'.$eventphoto->image;
+                File::delete($imagepath);
+                $filename       = time().$image->getClientOriginalName();
+                $image->storeAs("public/event/photos",$filename);
+                $image     = $filename;
+        
+                $eventphoto->image      = $image;
+                $eventphoto->save();
+        }
+        Session::flash('success_message','Updated successfully!');
+        return redirect()->back();
+    }
+
+
     public function addpoint($id)
     {
         $data['event_id'] = Event::where('id',$id)->first()->id;
+        $data['event'] = Event::where('id',$id)->first();
+
         return view('admin.event.addpoint',$data);
     }
 
@@ -258,9 +288,27 @@ class EventsController extends Controller
         return redirect()->back();
     }
 
+    public function edit_keypoint($keypoint_id)
+    {
+        $data['event_key_point'] = Eventkeypoint::where('id',$keypoint_id)->first();
+        return view('admin.event.edit.edit_keypoint',$data);
+    }
+    
+    public function update_event_keypoint(Request $request, $keypoint_id)
+    {   
+        
+        $event_key_point = Eventkeypoint::findOrFail($keypoint_id);
+        $event_key_point->points = $request->points;
+        $event_key_point->save();
+        
+        Session::flash('success_message','Updated successfully!');
+        return redirect()->back();
+    }
+
     public function video($id)
     {
         $data['event_id'] = Event::where('id',$id)->first()->id;
+        $data['event'] = Event::where('id',$id)->first();
         return view('admin.event.video',$data);
     }
 
@@ -280,8 +328,26 @@ class EventsController extends Controller
         return redirect()->back();
     }
 
+    public function edit_event_video($video_id)
+    {
+        $data['event_video'] = Eventvideo::where('id',$video_id)->first();
+        return view('admin.event.edit.edit_video',$data);
+    }
+    
+    public function update_event_video(Request $request, $video_id)
+    {  
+
+        $event_video = Eventvideo::findOrFail($video_id);
+        $event_video->video = $request->video;
+        $event_video->save();
+        
+        Session::flash('success_message','Updated successfully!');
+        return redirect()->back();
+    }
+
     public function create_event_mentors($event_id){
         $data['event_id'] = Event::where('id',$event_id)->first()->id;
+        $data['event'] = Event::where('id',$event_id)->first();
         return view('admin.event.addmentors',$data);
     }
 
@@ -311,6 +377,36 @@ class EventsController extends Controller
         ]);
 
         Session::flash('success_message','Created successfully!');
+        return redirect()->back();
+    }
+
+    public function edit_eventmentor($eventmentor_id)
+    {
+        $data['event_eventmentor'] = Eventmentor::where('id',$eventmentor_id)->first();
+        return view('admin.event.edit.edit_eventmentor',$data);
+    }
+
+    
+    public function update_event_eventmentor(Request $request, $eventmentor_id)
+    {   
+        $eventmentor = Eventmentor::findOrFail($eventmentor_id);
+
+        $image  = $request->file('image');
+        if($image){
+                $imagepath = 'storage/event/mentors/'.$eventmentor->image;
+                File::delete($imagepath);
+                $filename       = time().$image->getClientOriginalName();
+                $image->storeAs("public/event/mentors/",$filename);
+                $image     = $filename;
+                $eventmentor->image = $image;
+                $eventmentor->save();
+        }
+
+        $eventmentor->name             = $request->name;
+        $eventmentor->profession       = $request->profession;
+        $eventmentor->save();
+
+        Session::flash('success_message','Updated successfully!');
         return redirect()->back();
     }
 }

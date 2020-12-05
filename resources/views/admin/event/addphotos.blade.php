@@ -33,6 +33,38 @@
                 </form>
             </div>
         </div>
+        <div class="card">
+            <div class="card-body">
+                <h4 class="mt-2 mb-2">All Photos of Event</h4>
+                <div class="table-responsive">
+                    <table id="example1" class="table">
+                        <thead>
+                            <tr>
+                                <th class="wd-25p">Event Name</th>
+                                <th class="wd-25p">Image</th>
+                                <th class="wd-20p">Edit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach($event->eventphotos as $eventphoto)
+                            <tr>
+                                <td>
+                                    {{$eventphoto->event->title}}
+                                </td>
+                                <td>
+                                    <img src="{{asset('storage/event/photos/'.$eventphoto->image)}}" style="width: 60px; height: 60px;" alt="" srcset="">
+                                </td>
+                                <td>
+                                  <a href="{{route('event.eventphoto.edit',$eventphoto->id)}}" class="btn btn-xs btn-info"><i class="fa fa-pencil"></i></a>
+                                </td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+                
+            </div>
+        </div>
     </div>
 @endsection
 

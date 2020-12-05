@@ -272,7 +272,7 @@ class ProgramController extends Controller
 
         $image  = $request->file('image');
         if($image){
-                $imagepath = 'storage/program/popularcourse'.$popularcourse->image;
+                $imagepath = 'storage/program/popularcourse/'.$popularcourse->image;
                 File::delete($imagepath);
                 $filename       = time().$image->getClientOriginalName();
                 $image->storeAs("public/program/popularcourse",$filename);

@@ -205,12 +205,27 @@ Route::middleware('auth')->group(function (){
 
     Route::get('event/add-photos/{id}',[App\Http\Controllers\EventsController::class,'add_event_photos'])->name('event.add.photos')->middleware('auth');
     Route::post('/event/store/photos',[EventsController::class,'store_event_photos'])->name('event.addphotos.store')->middleware('auth');
+    
+    Route::get('event/eventphoto/{eventphoto_id}/edit',[App\Http\Controllers\EventsController::class,'edit_eventphoto'])->name('event.eventphoto.edit')->middleware('auth');
+    Route::patch('event/eventphoto/{eventphoto_id}',[App\Http\Controllers\EventsController::class,'update_event_eventphoto'])->name('event.eventphoto.update')->middleware('auth');
+    
     Route::get('event/add-points/{id}',[App\Http\Controllers\EventsController::class,'addpoint'])->name('event.add.keypoints')->middleware('auth');
     Route::post('/event/store/keypoints',[EventsController::class,'store_key_points'])->name('event.addpoint.store')->middleware('auth');
+    
+    Route::get('event/keypoint/{keypoint_id}/edit',[App\Http\Controllers\EventsController::class,'edit_keypoint'])->name('event.keypoint.edit')->middleware('auth');
+    Route::patch('event/keypoint/{keypoint_id}',[App\Http\Controllers\EventsController::class,'update_event_keypoint'])->name('event.keypoint.update')->middleware('auth');
+
     Route::get('event/add-video/{id}',[App\Http\Controllers\EventsController::class,'video'])->name('event.add.video')->middleware('auth');
     Route::post('/event/store/video',[EventsController::class,'store_event_video'])->name('event.video.store')->middleware('auth');
+    
+    Route::get('event/video/{video_id}/edit',[App\Http\Controllers\EventsController::class,'edit_event_video'])->name('event.video.edit')->middleware('auth');
+    Route::patch('event/video/{video_id}',[App\Http\Controllers\EventsController::class,'update_event_video'])->name('event.video.update')->middleware('auth');
+
     Route::get('event/add-mentors/{id}',[App\Http\Controllers\EventsController::class,'create_event_mentors'])->name('event.add.mentor')->middleware('auth');
     Route::post('/event/store/mentors',[EventsController::class,'store_event_mentors'])->name('event.addmentors.store')->middleware('auth');
+
+    Route::get('event/eventmentor/{eventmentor_id}/edit',[App\Http\Controllers\EventsController::class,'edit_eventmentor'])->name('event.eventmentor.edit')->middleware('auth');
+    Route::patch('event/eventmentor/{eventmentor_id}',[App\Http\Controllers\EventsController::class,'update_event_eventmentor'])->name('event.event_eventmentor.update')->middleware('auth');
 
 // Competition
     Route::get('/admin/competition/create-competition',[CompetitionController::class,'create_competition'])->name('competition.create')->middleware('auth');
@@ -220,16 +235,43 @@ Route::middleware('auth')->group(function (){
     Route::patch('competition/{id}',[App\Http\Controllers\CompetitionController::class,'update'])->name('competition.update')->middleware('auth');
     Route::get('competition/add-participants/{id}',[App\Http\Controllers\CompetitionController::class,'create_competition_participants'])->name('competition.create.participants')->middleware('auth');
     Route::post('/competition/store/participants',[CompetitionController::class,'store_competition_participants'])->name('competition.addparticipants.store')->middleware('auth');
+    
+    Route::get('competition/competitionparticipant/{competitionparticipant_id}/edit',[App\Http\Controllers\CompetitionController::class,'edit_competitionparticipant'])->name('competition.competitionparticipant.edit')->middleware('auth');
+    Route::patch('competition/competitionparticipant/{competitionparticipant_id}',[App\Http\Controllers\CompetitionController::class,'update_competitionparticipant'])->name('competition.competitionparticipant.update')->middleware('auth');
+
     Route::get('competition/add-objectives/{id}',[App\Http\Controllers\CompetitionController::class,'addobjective'])->name('competition.add.objective')->middleware('auth');
     Route::post('/competition/store/objective',[CompetitionController::class,'store_competition_objective'])->name('competition.addobjective.store')->middleware('auth');
+    
+    Route::get('competition/objective/{objective_id}/edit',[App\Http\Controllers\CompetitionController::class,'edit_objective'])->name('competition.objective.edit')->middleware('auth');
+    Route::patch('competition/objective/{objective_id}',[App\Http\Controllers\CompetitionController::class,'update_competition_objective'])->name('competition.objective.update')->middleware('auth');
+
     Route::get('competition/add-photos/{id}',[App\Http\Controllers\CompetitionController::class,'add_competition_photos'])->name('competition.add.photos')->middleware('auth');
     Route::post('/competition/store/photos',[CompetitionController::class,'store_competition_photos'])->name('competition.addphotos.store')->middleware('auth');
+    
+    Route::get('competition/competitionphoto/{competitionphoto_id}/edit',[App\Http\Controllers\CompetitionController::class,'edit_competitionphoto'])->name('competition.competitionphoto.edit')->middleware('auth');
+    Route::patch('competition/competitionphoto/{competitionphoto_id}',[App\Http\Controllers\CompetitionController::class,'update_competitionphoto'])->name('competition.competitionphoto.update')->middleware('auth');
+
     Route::get('competition/add-points/{id}',[App\Http\Controllers\CompetitionController::class,'addpoint'])->name('competition.add.keypoints')->middleware('auth');
     Route::post('/competition/store/keypoints',[CompetitionController::class,'store_key_points'])->name('competition.addpoint.store')->middleware('auth');
+    
+    Route::get('competition/keypoint/{keypoint_id}/edit',[App\Http\Controllers\CompetitionController::class,'edit_keypoint'])->name('competition.keypoint.edit')->middleware('auth');
+    Route::patch('competition/keypoint/{keypoint_id}',[App\Http\Controllers\CompetitionController::class,'update_competition_keypoint'])->name('competition.keypoint.update')->middleware('auth');
+
     Route::get('competition/add-video/{id}',[App\Http\Controllers\CompetitionController::class,'video'])->name('competition.add.video')->middleware('auth');
     Route::post('/competition/store/video',[CompetitionController::class,'store_competition_video'])->name('competition.video.store')->middleware('auth');
+    
+    Route::get('competition/video/{video_id}/edit',[App\Http\Controllers\CompetitionController::class,'edit_competition_video'])->name('competition.video.edit')->middleware('auth');
+    Route::patch('competition/video/{video_id}',[App\Http\Controllers\CompetitionController::class,'update_competition_video'])->name('competition.video.update')->middleware('auth');
+
     Route::get('competition/add-mentors/{id}',[App\Http\Controllers\CompetitionController::class,'create_competition_mentors'])->name('competition.add.mentor')->middleware('auth');
     Route::post('/competition/store/mentors',[CompetitionController::class,'store_competition_mentors'])->name('competition.addmentors.store')->middleware('auth');
+    
+    Route::get('competition/competitionmentor/{competitionmentor_id}/edit',[App\Http\Controllers\CompetitionController::class,'edit_competitionmentor'])->name('competition.mentor.edit')->middleware('auth');
+    Route::patch('competition/competitionmentor/{competitionmentor_id}',[App\Http\Controllers\CompetitionController::class,'update_competition_competitionmentor'])->name('competition.competition_mentor.update')->middleware('auth');
+
     Route::get('competition/add-winner/{id}',[App\Http\Controllers\CompetitionController::class,'create_competition_winner'])->name('competition.add.winner')->middleware('auth');
     Route::post('/competition/store/winner',[CompetitionController::class,'store_competition_winner'])->name('competition.addwinner.store')->middleware('auth');
+
+    Route::get('competition/winner/{competitionwinner_id}/edit',[App\Http\Controllers\CompetitionController::class,'edit_competitionwinner'])->name('competition.winner.edit')->middleware('auth');
+    Route::patch('competition/competitionwinner/{competitionwinner_id}',[App\Http\Controllers\CompetitionController::class,'update_competitionwinner'])->name('competition.winner.update')->middleware('auth');
 });
