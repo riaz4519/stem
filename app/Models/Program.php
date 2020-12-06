@@ -40,4 +40,9 @@ class Program extends Model
     {
         return $this->hasMany(Programvideo::class,'program_id','id');
     }
+
+    public function competitions()
+    {
+        return $this->hasMany(Competition::class,'program_id','id');
+    }
 }

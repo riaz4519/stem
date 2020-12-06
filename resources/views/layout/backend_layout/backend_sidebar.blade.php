@@ -25,17 +25,27 @@
         </a>
         <div class="collapse" id="dashboard-dropdown1">
           <ul class="nav flex-column sub-menu">
-            <li class="nav-item">
-              <a class="nav-link" href="{{route('banner.create')}}">Create Banner</a>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">  Banner  </a>
+              <ul class="dropdown-menu">
+                <li class="nav-item">
+                  <a class="nav-link" href="{{route('banner.create')}}">Create Banner</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{{route('banner.index')}}">All Banners</a>
+                </li>
+              </ul>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{{route('banner.index')}}">All Banners</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{{route('aboutmessage.create')}}">Create About Message</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{{route('aboutmessage.index')}}">All About Message</a>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">  About Message  </a>
+                <ul class="dropdown-menu">
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{route('aboutmessage.create')}}">Create About Message</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{route('aboutmessage.index')}}">All About Message</a>
+                  </li>
+                </ul>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{{route('whatwedo.create')}}">Create What We Do</a>
