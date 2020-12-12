@@ -233,10 +233,10 @@
             <div class="clients-box">
                 <h1>Our Partners</h1>
                 <p>Sed vehicula consectetur rutrum</p>
-                <ul class="clients-list">
+                <ul class="clients-list d-flex justify-content-center">
                     @foreach($partners as $partner)
                     <li>
-                        <img src="{{asset('storage/partners/'.$partner->image)}}" alt="">
+                        <img src="{{asset('storage/partners/'.$partner->image)}}" style="height: 200px; object-fit: contain;" alt="">
                         <a><span>{{$partner->name}}</span></a>
                     </li>
                     @endforeach
