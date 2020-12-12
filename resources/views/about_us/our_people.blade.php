@@ -48,9 +48,9 @@
                         <div class="row">
 
                             @foreach($ourpeoples as $ourpeople)
-                           <div class="col-lg-6">
+                            <div class="col-lg-6">
                                 <div class="blog-post">
-                                    <a><img src="{{asset('storage/ourpeople/'.$ourpeople->image)}}" style="object-fit: contain; height: 255px;" alt=""></a>
+                                    <a style="display:flex;"><img src="{{asset('storage/ourpeople/'.$ourpeople->image)}}" style="object-fit: contain; height: 255px;" alt=""></a>
                                     <div class="post-content">
                                         <a class="category">{{$ourpeople->peoplecategory->name}}</a>
                                         <h2><a>{{$ourpeople->name}}</a></h2>
