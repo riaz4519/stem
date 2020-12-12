@@ -25,27 +25,17 @@
         </a>
         <div class="collapse" id="dashboard-dropdown1">
           <ul class="nav flex-column sub-menu">
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">  Banner  </a>
-              <ul class="dropdown-menu">
-                <li class="nav-item">
-                  <a class="nav-link" href="{{route('banner.create')}}">Create Banner</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="{{route('banner.index')}}">All Banners</a>
-                </li>
-              </ul>
+            <li class="nav-item">
+              <a class="nav-link" href="{{route('banner.create')}}">Create Banner</a>
             </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">  About Message  </a>
-                <ul class="dropdown-menu">
-                  <li class="nav-item">
-                    <a class="nav-link" href="{{route('aboutmessage.create')}}">Create About Message</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="{{route('aboutmessage.index')}}">All About Message</a>
-                  </li>
-                </ul>
+            <li class="nav-item">
+              <a class="nav-link" href="{{route('banner.index')}}">All Banners</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{route('aboutmessage.create')}}">Create About Message</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{route('aboutmessage.index')}}">All About Message</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{{route('whatwedo.create')}}">Create What We Do</a>
@@ -59,8 +49,6 @@
             <li class="nav-item">
               <a class="nav-link" href="{{route('ourpartner.index')}}">All Partners</a>
             </li>
-
-
           </ul>
         </div>
       </li>
@@ -104,7 +92,14 @@
               <li class="nav-item">
                   <a class="nav-link" href="{{route('news.index')}}">All news</a>
               </li>
-
+              {{--start of our work--}}
+              <li class="nav-item">
+                <a class="nav-link" href="{{route('ourwork.create')}}">Create Our work</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{route('ourwork.index')}}">All of 'Our work'</a>
+              </li>
+              {{--end of our work--}}
 
           </ul>
         </div>
@@ -173,25 +168,7 @@
       </li>
       {{--end of competition--}}
 
-        {{--start of our work--}}
-        <li class="nav-item">
-          <a class="nav-link" data-toggle="collapse" href="#ourwork-drop" aria-expanded="false" aria-controls="dashboard-dropdown">
-              <i class="menu-icon mdi mdi-television"></i>
-              <span class="menu-title">Our work</span>
-              <i class="menu-arrow"></i>
-          </a>
-          <div class="collapse" id="ourwork-drop">
-              <ul class="nav flex-column sub-menu">
-                  <li class="nav-item">
-                      <a class="nav-link" href="{{route('ourwork.create')}}">Create Our work</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="{{route('ourwork.index')}}">All of 'Our work'</a>
-                  </li>
-              </ul>
-          </div>
-      </li>
-      {{--end of our work--}}
+      
 
       <li class="nav-item">
           <a class="nav-link" data-toggle="collapse" href="#contact-drop" aria-expanded="false" aria-controls="dashboard-dropdown">
