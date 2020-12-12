@@ -216,6 +216,75 @@
 
         </div>
     </section>
+    <section class="popular-courses-section">
+        <div class="container">
+            <div class="title-section">
+                <div class="left-part">
+                    <span>Events</span>
+                    <h1>Program Events</h1>
+                </div>
+            </div>
+
+            <div class="popular-courses-box">
+                <div class="row">
+                    @foreach($program->events as $event)
+                    <div class="col-lg-3 col-md-6">
+                        <div class="course-post">
+                            <div class="course-thumbnail-holder">
+                                <a href="{{route('event.single',$event->id)}}">
+                                    <img src="{{asset('storage/event/'.$event->image)}}" alt="">
+                                </a>
+                            </div>
+                            <div class="course-content-holder">
+                                <div class="course-content-bottom">
+                                    <div class="course-students">
+                                        <span>{{$event->title}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    @endforeach
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="popular-courses-section">
+        <div class="container">
+            <div class="title-section">
+                <div class="left-part">
+                    <span>Competition</span>
+                    <h1>Program Competitions</h1>
+                </div>
+            </div>
+
+            <div class="popular-courses-box">
+                <div class="row">
+                    @foreach($program->competitions as $competition)
+                    <div class="col-lg-3 col-md-6">
+                        <div class="course-post">
+                            <div class="course-thumbnail-holder">
+                                <a href="{{route('competition.single',$competition->id)}}">
+                                    <img src="{{asset('storage/competition/'.$competition->image)}}" alt="">
+                                </a>
+                            </div>
+                            <div class="course-content-holder">
+                                <div class="course-content-bottom">
+                                    <div class="course-students">
+                                        <span>{{$competition->title}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    @endforeach
+
+                </div>
+            </div>
+        </div>
+    </section>
 
 
 @endsection

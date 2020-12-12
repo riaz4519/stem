@@ -49,8 +49,6 @@
             <li class="nav-item">
               <a class="nav-link" href="{{route('ourpartner.index')}}">All Partners</a>
             </li>
-
-
           </ul>
         </div>
       </li>
@@ -94,7 +92,14 @@
               <li class="nav-item">
                   <a class="nav-link" href="{{route('news.index')}}">All news</a>
               </li>
-
+              {{--start of our work--}}
+              <li class="nav-item">
+                <a class="nav-link" href="{{route('ourwork.create')}}">Create Our work</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{route('ourwork.index')}}">All of 'Our work'</a>
+              </li>
+              {{--end of our work--}}
 
           </ul>
         </div>
@@ -163,25 +168,7 @@
       </li>
       {{--end of competition--}}
 
-        {{--start of our work--}}
-        <li class="nav-item">
-          <a class="nav-link" data-toggle="collapse" href="#ourwork-drop" aria-expanded="false" aria-controls="dashboard-dropdown">
-              <i class="menu-icon mdi mdi-television"></i>
-              <span class="menu-title">Our work</span>
-              <i class="menu-arrow"></i>
-          </a>
-          <div class="collapse" id="ourwork-drop">
-              <ul class="nav flex-column sub-menu">
-                  <li class="nav-item">
-                      <a class="nav-link" href="{{route('ourwork.create')}}">Create Our work</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="{{route('ourwork.index')}}">All of 'Our work'</a>
-                  </li>
-              </ul>
-          </div>
-      </li>
-      {{--end of our work--}}
+      
 
       <li class="nav-item">
           <a class="nav-link" data-toggle="collapse" href="#contact-drop" aria-expanded="false" aria-controls="dashboard-dropdown">

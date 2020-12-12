@@ -50,7 +50,7 @@
                             @foreach($ourpeoples as $ourpeople)
                             <div class="col-lg-6">
                                 <div class="blog-post">
-                                    <a><img src="{{asset('storage/ourpeople/'.$ourpeople->image)}}" style="object-fit: contain; height: 255px;" alt=""></a>
+                                    <a class="d-flex"><img src="{{asset('storage/ourpeople/'.$ourpeople->image)}}" style="object-fit: contain; height: 255px;" alt=""></a>
                                     <div class="post-content">
                                         <a class="category">{{$ourpeople->peoplecategory->name}}</a>
                                         <h2><a>{{$ourpeople->name}}</a></h2>
@@ -63,13 +63,6 @@
                             @endforeach
 
                         </div>
-
-                        <ul class="page-pagination">
-                            <li><a href="#"><i class="fa fa-angle-left"></i></a></li>
-                            <li><a href="#" class="active">1</a></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#"><i class="fa fa-angle-right"></i></a></li>
-                        </ul>
 
                     </div>
                 </div>
