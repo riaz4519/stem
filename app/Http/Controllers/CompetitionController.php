@@ -38,20 +38,22 @@ class CompetitionController extends Controller
             'program_id' => 'required'
         ]);
 
-        $image  = $request->file('image');
-
-        if($image){
-
-            $filename       = time().$image->getClientOriginalName();
-            $image->storeAs("public/competition",$filename);
-            $image     = $filename;
-        }
-
         $check_event_or_comp = Program::where('id',$request->program_id)->first()->verify_event_competition;
         
         // 0 = event, 1 = competition, 2 = both
         if($check_event_or_comp == 1 || $check_event_or_comp == 2)
         {
+
+            $image  = $request->file('image');
+
+            if($image){
+
+                $filename       = time().$image->getClientOriginalName();
+                $image->storeAs("public/competition",$filename);
+                $image     = $filename;
+            }
+
+        
 
             Competition::create([
                 'about' => $request->about,

@@ -21,6 +21,8 @@
         ================================================== -->
     <section class="about-section">
         <div class="container">
+
+
             @foreach($ourworks as $ourwork)
                 @if($loop->iteration % 2 == 0)
                     <div class="about-article">
@@ -60,24 +62,5 @@
     </section>
     <!-- End about section -->
 
-    <section class="about-section">
-        <div class="container">
-            <div class="about-article">
-                @foreach($ourworkswithoutimages as $row)
-                <div class="row">
-
-                    <div class="col-lg-12">
-                        <div class="article-content">
-                            <div class="text-center">
-                                <i class="fa fa-umbrella"></i>
-                                <h2>{{$row->title}}</h2>
-                            </div>
-                            <p>{{$row->description}}</p>
-                        </div>
-                    </div>
-                </div>
-                @endforeach
-            </div>
-        </div>
-    </section>
+    
 @endsection
