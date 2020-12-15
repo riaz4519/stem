@@ -79,9 +79,9 @@
                             @endforeach
                         </ul>
                     </li>
-                    <li><a href="contact.html">Course</a></li>
+                    <li><a href="{{route('course.show_course_page')}}">Course</a></li>
                 </ul>
-                <a href="#" class="register-modal-opener login-button"><i class="material-icons">perm_identity</i> Get Started</a>
+                <a href="{{route('career.show_career_page')}}" class="register-modal-opener login-button"><i class="material-icons">perm_identity</i> Get Started</a>
             </div>
         </div>
     </nav>

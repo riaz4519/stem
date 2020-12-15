@@ -58,6 +58,9 @@ Route::get('/all-news',[App\Http\Controllers\FrontendController::class,'news'])-
 // career page
 Route::get('/career',[App\Http\Controllers\FrontendController::class,'career'])->name('career.show_career_page');
 
+// course
+
+Route::get('/course',[App\Http\Controllers\FrontendController::class,'course'])->name('course.show_course_page');
 
 Auth::routes();
 Route::middleware('auth')->group(function (){
@@ -184,7 +187,10 @@ Route::middleware('auth')->group(function (){
 
     Route::get('program/video/{video_id}/edit',[App\Http\Controllers\ProgramController::class,'edit_program_video'])->name('program.video.edit')->middleware('auth');
     Route::patch('program/video/{video_id}',[App\Http\Controllers\ProgramController::class,'update_program_video'])->name('program.video.update')->middleware('auth');
-// Event 
+
+    Route::delete('program/destroy',[App\Http\Controllers\ProgramController::class,'destroy_program'])->name('program.destroy');
+
+    // Event 
 
     Route::get('/event/create/event',[EventsController::class,'create_event'])->name('event.create')->middleware('auth');
     Route::post('/event/store-event',[EventsController::class,'store_event'])->name('event.new.store')->middleware('auth');
@@ -226,6 +232,8 @@ Route::middleware('auth')->group(function (){
 
     Route::get('event/eventmentor/{eventmentor_id}/edit',[App\Http\Controllers\EventsController::class,'edit_eventmentor'])->name('event.eventmentor.edit')->middleware('auth');
     Route::patch('event/eventmentor/{eventmentor_id}',[App\Http\Controllers\EventsController::class,'update_event_eventmentor'])->name('event.event_eventmentor.update')->middleware('auth');
+
+    Route::delete('event/destroy',[App\Http\Controllers\EventsController::class,'destroy_event'])->name('event.destroy');
 
 // Competition
     Route::get('/admin/competition/create-competition',[CompetitionController::class,'create_competition'])->name('competition.create')->middleware('auth');
@@ -274,4 +282,7 @@ Route::middleware('auth')->group(function (){
 
     Route::get('competition/winner/{competitionwinner_id}/edit',[App\Http\Controllers\CompetitionController::class,'edit_competitionwinner'])->name('competition.winner.edit')->middleware('auth');
     Route::patch('competition/competitionwinner/{competitionwinner_id}',[App\Http\Controllers\CompetitionController::class,'update_competitionwinner'])->name('competition.winner.update')->middleware('auth');
+
+    Route::delete('competition/destroy',[App\Http\Controllers\CompetitionController::class,'destroy_competition'])->name('competition.destroy');
+    
 });

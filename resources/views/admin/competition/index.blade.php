@@ -20,11 +20,12 @@
                             <th class="wd-20p">Edit</th>
                             <th class="wd-20p">Participants</th>
                             <th class="wd-20p">Objectives</th>
-                            <th class="wd-20p">Event Photos</th>
-                            <th class="wd-20p">Event Key Points</th>
+                            <th class="wd-20p">Photos</th>
+                            <th class="wd-20p">Key Points</th>
                             <th class="wd-20p">Video</th>
                             <th class="wd-20p">Mentors</th>
                             <th class="wd-20p">Winner</th>
+                            <th class="wd-20p">Delete</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -53,14 +54,42 @@
                                 <a href="{{route('competition.add.mentor',$row->id)}}" class="btn btn-xs btn-dark text-white"><i class="fa fa-plus"></i></a>
                             </td>
                             <td>
-                                <a href="{{route('competition.add.winner',$row->id)}}" class="btn btn-xs btn-danger text-dark"><i class="fa fa-plus"></i></a>
+                                <a href="{{route('competition.add.winner',$row->id)}}" class="btn btn-xs btn-secondary text-dark"><i class="fa fa-plus"></i></a>
+                            </td>
+                            <td>
+                                <button type="button" value="{{ $row->id }}" class="btn btn-danger btn-xs competition_delete_btn">
+                                    <i class="fa fa-minus"></i>
+                                </button>
                             </td>
                         </tr>
                       @endforeach
                     </tbody>
                 </table>
             </div>
-            
+            <!-- Modal -->
+            <div class="modal fade" id="competitiondelete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h4 class="modal-title text-center" id="myModalLabel">Delete Confirmation</h4>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    </div>
+                    <form action="{{route('competition.destroy','test')}}" id="competition_delete_form" method="POST">
+                        {{method_field('delete')}}
+                        {{csrf_field()}}
+                        <div class="modal-body">
+                          <p class="text-center">Are you sure you want to delete?</p>
+                          <input type="hidden" name="competition_id" id="competition_id" >
+                        </div>
+                    
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-xs btn-success" data-dismiss="modal">No, Cancel</button>
+                          <button type="submit" class="btn btn-xs btn-warning">Yes, DELETE</button>
+                        </div>
+                      </form>
+                  </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -69,7 +98,12 @@
 @section('backend_custom_script')
 <script>
     $(document).ready(function(){
-
+        // competition delete btn
+        $('.competition_delete_btn').on('click',function(){ 
+            $("#competition_delete_form").trigger("reset");
+            $('#competition_id').val($(this).val());
+            $("#competitiondelete").modal('show');
+        });
     });
 </script>
 @endsection

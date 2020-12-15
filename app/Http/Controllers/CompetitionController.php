@@ -500,4 +500,61 @@ class CompetitionController extends Controller
         return redirect()->back();
     }
 
+    public function destroy_competition(Request $request)
+    {
+        $competition = Competition::where('id',$request->competition_id)->first();
+
+        // participants
+        foreach($competition->competitionparticipants as $competitionparticipant)
+        {
+            $participant_imagepath = 'storage/competition/participants/'.$competitionparticipant->image;
+            File::delete($participant_imagepath);
+
+            $competitionparticipant->delete();
+        }
+
+        // objectives
+        $competition->competitionobjectives()->delete();
+        
+        //photos
+        foreach($competition->competitionphotos as $competitionphoto)
+        {
+            $competitionphoto_imagepath = 'storage/competition/photos/'.$competitionphoto->image;
+            File::delete($competitionphoto_imagepath);
+            $competitionphoto->delete();
+        }
+
+        // keypoints
+        $competition->competitionkeypoints()->delete();
+
+        // videos
+        $competition->competitionvideos()->delete();
+
+        // mentors
+        foreach($competition->competitionmentors as $competitionmentor)
+        {
+            $competitionmentor_imagepath = 'storage/competition/mentors/'.$competitionmentor->image;
+            File::delete($competitionmentor_imagepath);
+            $competitionmentor->delete();
+        }
+
+        // winners
+        foreach($competition->competitionwinners as $competitionwinner)
+        {
+            
+            $competitionwinner_imagepath = 'storage/competition/winner/'.$competitionwinner->image;
+            File::delete($competitionwinner_imagepath);
+            $competitionwinner->delete();
+
+        }
+
+        $competition_imagepath = 'storage/competition/'.$competition->image;
+        File::delete($competition_imagepath);
+        $competition->delete();
+
+        Session::flash('success_message','Deletion Completed successfully!');
+        return redirect()->back();
+
+    }
+
 }

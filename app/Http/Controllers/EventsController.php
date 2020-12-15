@@ -420,4 +420,49 @@ class EventsController extends Controller
         Session::flash('success_message','Updated successfully!');
         return redirect()->back();
     }
+
+    public function destroy_event(Request $request)
+    {
+        $event = Event::where('id',$request->event_id)->first();
+
+        // participants
+        foreach($event->eventparticipants as $eventparticipant)
+        {
+            $eventparticipant_imagepath = 'storage/event/participants/'.$eventparticipant->image;
+            File::delete($eventparticipant_imagepath);
+            $eventparticipant->delete();
+        }
+
+        // objectives
+        $event->eventobjectives()->delete();
+
+        // photos
+        foreach($event->eventphotos as $eventphoto)
+        {
+            $eventphoto_imagepath = 'storage/event/photos/'.$eventphoto->image;
+            File::delete($eventphoto_imagepath);
+            $eventphoto->delete();
+        }
+
+        // keypoints
+        $event->eventkeypoints()->delete();
+
+        // videos
+        $event->eventvideos()->delete();
+
+        // mentors
+        foreach($event->eventmentors as $eventmentor)
+        {
+            $eventmentor_imagepath = 'storage/event/mentors/'.$eventmentor->image;
+            File::delete($eventmentor_imagepath);
+            $eventmentor->delete();
+        }
+
+        $event_imagepath = 'storage/event/'.$event->image;
+        File::delete($event_imagepath);
+        $event->delete();
+
+        Session::flash('success_message','Deletion Completed successfully!');
+        return redirect()->back();
+    }
 }
