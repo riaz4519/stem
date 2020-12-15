@@ -26,6 +26,25 @@
                                 <label class="d-block">About Program</label>
                                 <textarea rows="10"  name="about" placeholder="Enter program details" class="form-control" required></textarea>
                             </div>
+
+                            <div class="row mt-4">
+                                <div class="col-md-4">
+                                    <div class="radio">
+                                        <label><input type="radio" name="verify_event_competition" value="0" checked> Includes Event (Default)</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="radio">
+                                        <label><input type="radio" name="verify_event_competition" value="1"> Includes Competition</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="radio">
+                                        <label><input type="radio" name="verify_event_competition" value="2"> Both</label>
+                                    </div>
+                                </div>
+                            </div>
+
                             <div class="row">
                                 <button class="mt-4 btn btn-sm btn-primary submit_cls" type="submit">Submit</button>
                             </div>

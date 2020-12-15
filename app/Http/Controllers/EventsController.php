@@ -36,25 +36,36 @@ class EventsController extends Controller
             'program_id' => 'required'
         ]);
 
-        $image  = $request->file('image');
+        $check_event_or_comp = Program::where('id',$request->program_id)->first()->verify_event_competition;
+        
+        // 0 = event, 1 = competition, 2 = both
+        if($check_event_or_comp == 0 || $check_event_or_comp == 2)
+        {
+        
+            $image  = $request->file('image');
 
-        if($image){
+            if($image){
 
-            $filename       = time().$image->getClientOriginalName();
-            $image->storeAs("public/event",$filename);
-            $image     = $filename;
+                $filename       = time().$image->getClientOriginalName();
+                $image->storeAs("public/event",$filename);
+                $image     = $filename;
+            }
+
+
+            Event::create([
+                'about' => $request->about,
+                'title' => $request->title,
+                'image' => $image,
+                'program_id' => $request->program_id
+            ]);
+
+            Session::flash('success_message','Created successfully!');
+            return redirect()->back();
+
+        }else{
+            Session::flash('error_message','Sorry this program has no permission to create event!');
+            return redirect()->back();
         }
-
-
-        Event::create([
-            'about' => $request->about,
-            'title' => $request->title,
-            'image' => $image,
-            'program_id' => $request->program_id
-        ]);
-
-        Session::flash('success_message','Created successfully!');
-        return redirect()->back();
     }
 
     public function index()

@@ -47,21 +47,30 @@ class CompetitionController extends Controller
             $image     = $filename;
         }
 
-        if(Event::where('program_id',$request->program_id)->first())
+        $check_event_or_comp = Program::where('id',$request->program_id)->first()->verify_event_competition;
+        
+        // 0 = event, 1 = competition, 2 = both
+        if($check_event_or_comp == 1 || $check_event_or_comp == 2)
         {
-            Session::flash('success_message','Selected program already exists in Event!!!');
-            return back();
+
+            Competition::create([
+                'about' => $request->about,
+                'title' => $request->title,
+                'image' => $image,
+                'program_id' => $request->program_id
+            ]);
+    
+            Session::flash('success_message','Created successfully!');
+            return redirect()->back();
+
+        }else{
+
+            Session::flash('error_message','Sorry this program has no permission to create competition!');
+            return redirect()->back();
+
         }
 
-        Competition::create([
-            'about' => $request->about,
-            'title' => $request->title,
-            'image' => $image,
-            'program_id' => $request->program_id
-        ]);
-
-        Session::flash('success_message','Created successfully!');
-        return redirect()->back();
+        
     }
 
     public function index()
