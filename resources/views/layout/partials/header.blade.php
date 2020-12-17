@@ -5,7 +5,7 @@
             <div class="row">
                 <div class="col-lg-6">
                     <p><i class="material-icons">phone</i> <span>+01 2334 853</span></p>
-                    <p><i class="material-icons">email</i> <span>email@mycourse.com</span></p>
+                    <p><i class="material-icons">email</i> <span>info@stemforsupergirls.com</span></p>
                 </div>
                 <div class="col-lg-6">
                     <div class="right-top-line">
@@ -46,7 +46,7 @@
                     <li class="drop-link">
                         <a href="#">About us <i class="fa fa-angle-down"></i></a>
                         <ul class="dropdown">
-                            
+
                             <li><a href="{{ route('about_us.our_work') }}">Our Work</a></li>
                             <li><a href="{{ route('about_us.our_story') }}">Our Story</a></li>
                             <li><a href="{{ route('about_us.our_people') }}">Our People</a></li>

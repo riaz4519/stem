@@ -21,110 +21,9 @@
   <component name="ChangeListManager">
     <list default="true" id="acd0f078-da99-4ba8-8227-4998d119ce8f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/annualreport/1606667764kelly-sikkema-FuGDsA6Jeu8-unsplash.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/banner/1606644893myaura.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/banner/1607764867Slide Show 1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/banner/1607764894Slide show 2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/banner/1607764900Slide Show 3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/competition/1606888726about1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/competition/1608011680about1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/competition/1608023938Art STEM Form Header.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/competition/1608023964STEMagination Form Header.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/competition/1608023992STEM A Thon Junior Form Header.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/competition/1608024010STEM A Thon Senior Form Header.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/competition/1608024224STEM Tales Form Cover.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/competition/1608024242STEM Innovation Challenge Form Cover.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/competition/1608024259Girls Programming Contest Form Cover.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/competition/1608031368about1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/competition/participants/1608025875Judges and Planner Post- Girls Programming Contest .png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/competition/participants/1608027037Judges and Planner Post- STEM Innovation Challenge.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/competition/participants/1608031461about1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/competition/photos/1606895222about1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/competition/photos/1608026333Judges and Planner Post- Girls Programming Contest .png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/competition/photos/1608026344Winners Post- Girls Programming Contest (University).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/competition/photos/1608026364Winners Post- Girls Programming Contest (College).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/competition/photos/1608026528Girls Programming Contest Form Cover.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/competition/photos/1608026611Judges and Planner Post- STEM Innovation Challenge.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/competition/photos/1608026637Winners Post- STEM Innovation Challenge (Best Female) .png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/competition/photos/1608026650Winners Post- STEM Innovation Challenge.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/competition/photos/1608031917about3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/competition/winner/1608025096Winners Post- Girls Programming Contest (University).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/competition/winner/1608025136Winners Post- Girls Programming Contest (College).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/competition/winner/1608026772Winners Post- STEM Innovation Challenge (Best Female) .png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/competition/winner/1608026873Winners Post- STEM Innovation Challenge.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/competition/winner/1608031663about1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/event/1608023260Art STEM Form Header.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/event/1608023331STEMagination Form Header.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/event/1608023388STEM A Thon Junior Form Header.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/event/1608023408STEM A Thon Senior Form Header.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/event/1608023448STEM Tales Form Cover.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/event/1608023521STEM Innovation Challenge Form Cover.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/event/1608023554Girls Programming Contest Form Cover.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/event/1608030252about1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/event/mentors/1608031308about1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/event/participants/1608030586about1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/event/photos/1608030717about1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/event/photos/1608030724about2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/news/1606676360kelly-sikkema-N3o-leQyFsI-unsplash.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/ourpeople/1606672546dogman.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/ourpeople/1606672563mountain-man.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/ourpeople/1606672578person-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/ourpeople/1606672591person-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/ourpeople/1606672604person-3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/ourpeople/1607768515Ejaj Ur Rahaman.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/ourpeople/1607768585Ejaj Ur Rahaman.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/ourpeople/1607768601Asma Tabassum.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/ourpeople/1607768624Amit Saha.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/ourpeople/1607768638Farzana Yeasmin.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/ourpeople/1607768692Mohammad Mesbah Uddin Hasib.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/ourpeople/1607768705Mosarruf Hossain.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/ourpeople/1607768851Mahmud Sajjad Abeer (1).jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/ourpeople/1607768868Md. Samin Rahman.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/ourpeople/1607768885Muhammad Ahsan Nahiyan.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/ourpeople/1607768897Nazmul Hossain.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/ourpeople/1607769002Redwan Ferdous.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/ourpeople/1607769013Sohana Samsuddin Shashi.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/ourpeople/1607769032Tanima Hossain.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/ourpeople/1607769043Tonmoy Sarker.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/ourpeople/1607769083Arifa Jannat.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/ourpeople/1607769094Asif Ahmed.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/ourpeople/1607769130Debanjana Saha.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/ourpeople/1607769139Mim Rahman Auti.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/ourpeople/1607769152Nawrin Islam.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/ourpeople/1607769162Nogib Anwar Zafi.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/ourpeople/1607769171Rahul Deb Nath.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/ourpeople/1607769213Ahmed Shariar Shuvo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/ourpeople/1607769439Asif Amer.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/ourpeople/1607769450Dianath Kabir.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/ourpeople/1607769468Dr. Sadiqul Haque.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/ourpeople/1607769495Hafizur Rahman Arfin.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/ourpeople/1607769509Mukdiul Islam Sobuj.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/ourpeople/1607769517Saifa Hossain.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/ourstory/160666548469257811_1316773085153357_8842626742297296896_o.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/ourstory/1606666090cowomen-t9ovV7r-FJU-unsplash.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/ourstory/1606683546portfolio-image-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/ourstory/1606683569portfolio-image-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/ourwork/1606714275cosmetics-image.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/ourwork/1606715407about2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/ourwork/1608021498mission.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/ourwork/1608021531mission.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/ourwork/1608021621vission.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/partners/1606652242logo-client-2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/partners/1606652342logo-client-4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/partners/1607766847EMK Center Logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/partners/1607766915client.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/partners/1607767053HRDI Logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/partners/1607767088Mekateam Logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/partners/1608021189Toph Logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/program/1608029668about1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/storage/program/popularcourse/1608029979about1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/app/public/event/1608023260Art STEM Form Header.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/app/public/event/1608023331STEMagination Form Header.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/app/public/event/1608023388STEM A Thon Junior Form Header.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/app/public/event/1608023408STEM A Thon Senior Form Header.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/app/public/event/1608023448STEM Tales Form Cover.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/app/public/event/1608023521STEM Innovation Challenge Form Cover.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/app/public/event/1608023554Girls Programming Contest Form Cover.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layout/partials/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout/partials/footer.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layout/partials/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout/partials/header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storage/logs/laravel.log" beforeDir="false" afterPath="$PROJECT_DIR$/storage/logs/laravel.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -302,7 +201,7 @@
       <workItem from="1606719653631" duration="2725000" />
       <workItem from="1606799012773" duration="235000" />
       <workItem from="1608018299187" duration="2241000" />
-      <workItem from="1608188427587" duration="2425000" />
+      <workItem from="1608188427587" duration="4753000" />
     </task>
     <servers />
   </component>
@@ -340,12 +239,13 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="635" y="353" key="NewPhpFileDialog/0.0.1600.860/1600.0.1600.860@0.0.1600.860" timestamp="1605733252625" />
-    <state x="395" y="152" width="672" height="574" key="search.everywhere.popup" timestamp="1606688688128">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="222" y="277" width="672" height="1046" key="search.everywhere.popup" timestamp="1608203532470">
+      <screen x="0" y="0" width="768" height="1326" />
     </state>
     <state x="395" y="152" width="672" height="574" key="search.everywhere.popup/0.0.1366.728/-1366.0.1366.728@0.0.1366.728" timestamp="1605822370601" />
     <state x="395" y="152" width="672" height="574" key="search.everywhere.popup/0.0.1366.728/1366.0.1440.860@0.0.1366.728" timestamp="1606688688128" />
     <state x="395" y="152" width="672" height="574" key="search.everywhere.popup/0.0.1366.728/1366.212.1366.728@0.0.1366.728" timestamp="1606523206256" />
     <state x="463" y="180" width="672" height="678" key="search.everywhere.popup/0.0.1600.860/1600.0.1600.860@0.0.1600.860" timestamp="1605729565934" />
+    <state x="222" y="277" width="672" height="1046" key="search.everywhere.popup/0.0.768.1326/768.-105.1366.728@0.0.768.1326" timestamp="1608203532470" />
   </component>
 </project>
