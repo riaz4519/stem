@@ -19,7 +19,7 @@
                             <th class="wd-20p">Points</th>
                             <th class="wd-20p">Objectives</th>
                             <th class="wd-20p">Total Counts</th>
-                            <th class="wd-20p">Popular Course</th>
+                            <th class="wd-20p">Photos</th>
                             <th class="wd-20p">Video</th>
                             <th class="wd-20p">Delete</th>
                         </tr>
@@ -41,6 +41,7 @@
                               <a href="{{route('program.countlists',$row->id)}}" class="btn btn-xs btn-primary"><i class="fa fa-plus"></i></a>
                             </td>
                             <td>
+                              {{-- photos --}}
                               <a href="{{route('program.popularcourse',$row->id)}}" class="btn btn-xs btn-secondary text-dark"><i class="fa fa-plus"></i></a>
                             </td>
                             <td>

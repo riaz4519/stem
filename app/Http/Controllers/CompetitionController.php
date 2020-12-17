@@ -84,6 +84,7 @@ class CompetitionController extends Controller
     public function edit($id)
     {
         $data['competition'] = Competition::findOrFail($id);
+        $data['programs'] = Program::all();
         return view('admin.competition.edit',$data);
     }
 
@@ -104,6 +105,7 @@ class CompetitionController extends Controller
 
         $competition->title             = $request->title;
         $competition->about             = $request->about;
+        $competition->program_id        = $request->program_id;
         $competition->save();
 
         Session::flash('success_message','Updated successfully!');

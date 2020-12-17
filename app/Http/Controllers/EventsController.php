@@ -78,11 +78,13 @@ class EventsController extends Controller
     public function edit($id)
     {
         $data['event'] = Event::findOrFail($id);
+        $data['programs'] = Program::all();
         return view('admin.event.edit',$data);
     }
 
     public function update(Request $request, $id)
     {   
+
         $event = Event::findOrFail($id);
 
         $image  = $request->file('image');
@@ -98,6 +100,7 @@ class EventsController extends Controller
 
         $event->title             = $request->title;
         $event->about             = $request->about;
+        $event->program_id        = $request->program_id;
         $event->save();
 
         Session::flash('success_message','Updated successfully!');

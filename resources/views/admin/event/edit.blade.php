@@ -32,6 +32,16 @@
                                     <textarea type="text" name="about" class="form-control" rows="20">{{$event->about}}</textarea>
                                 </div>
                                 
+                                <div class="row mt-4">
+                                    <label class="d-block">Program </label>
+                                    <select name="program_id" id="program_id" class="form-control select2">
+                                        <option label="Program"></option>
+                                        @foreach($programs as $program)
+                                            <option value="{{$program->id}}" {{$event->program_id == $program->id ? 'selected': ''}}>{{$program->title}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+
                                 
                                 <button class="mt-4 mb-4 btn btn-sm btn-primary submit_cls" type="submit">Update </button>
                         </form>
@@ -47,7 +57,10 @@
 @section('backend_custom_script')
 <script>
 $(document).ready(function(){
-    
+    $('.select2').select2({
+        placeholder: 'Choose one',
+        searchInputPlaceholder: 'Search options'
+    });
 });
 </script>
 @endsection

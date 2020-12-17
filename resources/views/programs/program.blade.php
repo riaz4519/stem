@@ -147,7 +147,7 @@
             <div class="title-section">
                 <div class="left-part">
                     <span>Education</span>
-                    <h1>Popular Courses</h1>
+                    <h1>Photos</h1>
                 </div>
                 <div class="right-part">
                     <a class="button-one" href="#">View All Courses</a>
