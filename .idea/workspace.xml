@@ -21,10 +21,6 @@
   <component name="ChangeListManager">
     <list default="true" id="acd0f078-da99-4ba8-8227-4998d119ce8f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layout/partials/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout/partials/footer.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layout/partials/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout/partials/header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/logs/laravel.log" beforeDir="false" afterPath="$PROJECT_DIR$/storage/logs/laravel.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,7 +152,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../touristvisauae" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -201,7 +197,8 @@
       <workItem from="1606719653631" duration="2725000" />
       <workItem from="1606799012773" duration="235000" />
       <workItem from="1608018299187" duration="2241000" />
-      <workItem from="1608188427587" duration="4753000" />
+      <workItem from="1608188427587" duration="5411000" />
+      <workItem from="1608207877903" duration="44000" />
     </task>
     <servers />
   </component>
@@ -230,11 +227,11 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="118" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728/1366.0.1440.860@0.0.1366.728" timestamp="1606683163954" />
-    <state x="278" y="285" key="FileChooserDialogImpl" timestamp="1606799246279">
+    <state x="278" y="285" key="FileChooserDialogImpl" timestamp="1608207920518">
       <screen x="0" y="0" width="768" height="1326" />
     </state>
     <state x="580" y="185" key="FileChooserDialogImpl/0.0.1600.860/1600.0.1600.860@0.0.1600.860" timestamp="1601486963183" />
-    <state x="278" y="285" key="FileChooserDialogImpl/0.0.768.1326/768.-105.1366.728@0.0.768.1326" timestamp="1606799246279" />
+    <state x="278" y="285" key="FileChooserDialogImpl/0.0.768.1326/768.-105.1366.728@0.0.768.1326" timestamp="1608207920518" />
     <state x="635" y="353" key="NewPhpFileDialog" timestamp="1605733252625">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
