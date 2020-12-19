@@ -36,25 +36,36 @@ class EventsController extends Controller
             'program_id' => 'required'
         ]);
 
-        $image  = $request->file('image');
+        $check_event_or_comp = Program::where('id',$request->program_id)->first()->verify_event_competition;
+        
+        // 0 = event, 1 = competition, 2 = both
+        if($check_event_or_comp == 0 || $check_event_or_comp == 2)
+        {
+        
+            $image  = $request->file('image');
 
-        if($image){
+            if($image){
 
-            $filename       = time().$image->getClientOriginalName();
-            $image->storeAs("public/event",$filename);
-            $image     = $filename;
+                $filename       = time().$image->getClientOriginalName();
+                $image->storeAs("public/event",$filename);
+                $image     = $filename;
+            }
+
+
+            Event::create([
+                'about' => $request->about,
+                'title' => $request->title,
+                'image' => $image,
+                'program_id' => $request->program_id
+            ]);
+
+            Session::flash('success_message','Created successfully!');
+            return redirect()->back();
+
+        }else{
+            Session::flash('error_message','Sorry this program has no permission to create event!');
+            return redirect()->back();
         }
-
-
-        Event::create([
-            'about' => $request->about,
-            'title' => $request->title,
-            'image' => $image,
-            'program_id' => $request->program_id
-        ]);
-
-        Session::flash('success_message','Created successfully!');
-        return redirect()->back();
     }
 
     public function index()
@@ -67,11 +78,13 @@ class EventsController extends Controller
     public function edit($id)
     {
         $data['event'] = Event::findOrFail($id);
+        $data['programs'] = Program::all();
         return view('admin.event.edit',$data);
     }
 
     public function update(Request $request, $id)
     {   
+
         $event = Event::findOrFail($id);
 
         $image  = $request->file('image');
@@ -87,6 +100,7 @@ class EventsController extends Controller
 
         $event->title             = $request->title;
         $event->about             = $request->about;
+        $event->program_id        = $request->program_id;
         $event->save();
 
         Session::flash('success_message','Updated successfully!');
@@ -407,6 +421,51 @@ class EventsController extends Controller
         $eventmentor->save();
 
         Session::flash('success_message','Updated successfully!');
+        return redirect()->back();
+    }
+
+    public function destroy_event(Request $request)
+    {
+        $event = Event::where('id',$request->event_id)->first();
+
+        // participants
+        foreach($event->eventparticipants as $eventparticipant)
+        {
+            $eventparticipant_imagepath = 'storage/event/participants/'.$eventparticipant->image;
+            File::delete($eventparticipant_imagepath);
+            $eventparticipant->delete();
+        }
+
+        // objectives
+        $event->eventobjectives()->delete();
+
+        // photos
+        foreach($event->eventphotos as $eventphoto)
+        {
+            $eventphoto_imagepath = 'storage/event/photos/'.$eventphoto->image;
+            File::delete($eventphoto_imagepath);
+            $eventphoto->delete();
+        }
+
+        // keypoints
+        $event->eventkeypoints()->delete();
+
+        // videos
+        $event->eventvideos()->delete();
+
+        // mentors
+        foreach($event->eventmentors as $eventmentor)
+        {
+            $eventmentor_imagepath = 'storage/event/mentors/'.$eventmentor->image;
+            File::delete($eventmentor_imagepath);
+            $eventmentor->delete();
+        }
+
+        $event_imagepath = 'storage/event/'.$event->image;
+        File::delete($event_imagepath);
+        $event->delete();
+
+        Session::flash('success_message','Deletion Completed successfully!');
         return redirect()->back();
     }
 }

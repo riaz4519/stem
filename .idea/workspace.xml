@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="6e8f2f59-0e34-4b91-8074-78a77dc9021f" name="Default Changelist" comment="" />
+=======
+    <list default="true" id="acd0f078-da99-4ba8-8227-4998d119ce8f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layout/partials/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout/partials/footer.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layout/partials/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout/partials/header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/logs/laravel.log" beforeDir="false" afterPath="$PROJECT_DIR$/storage/logs/laravel.log" afterDir="false" />
+    </list>
+>>>>>>> dc47ec4a74df8469c9a402ea7772e021e3096f06
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -133,7 +143,17 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+<<<<<<< HEAD
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../invoice-purple" />
+=======
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+>>>>>>> dc47ec4a74df8469c9a402ea7772e021e3096f06
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RunManager">
@@ -149,8 +169,25 @@
       <created>1607955513187</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
+<<<<<<< HEAD
       <updated>1607955513187</updated>
       <workItem from="1607955528514" duration="746000" />
+=======
+      <updated>1601475709422</updated>
+      <workItem from="1601475710469" duration="2272000" />
+      <workItem from="1601486658066" duration="297000" />
+      <workItem from="1605291091325" duration="1446000" />
+      <workItem from="1605629538588" duration="4803000" />
+      <workItem from="1605720364500" duration="9644000" />
+      <workItem from="1605821171506" duration="2675000" />
+      <workItem from="1606501965173" duration="13256000" />
+      <workItem from="1606602678830" duration="1381000" />
+      <workItem from="1606673720882" duration="11492000" />
+      <workItem from="1606719653631" duration="2725000" />
+      <workItem from="1606799012773" duration="235000" />
+      <workItem from="1608018299187" duration="2241000" />
+      <workItem from="1608188427587" duration="4753000" />
+>>>>>>> dc47ec4a74df8469c9a402ea7772e021e3096f06
     </task>
     <servers />
   </component>
@@ -158,9 +195,38 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
+<<<<<<< HEAD
     <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1607967460211">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1607967460211" />
+=======
+    <state x="256" y="301" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1606730048945">
+      <screen x="0" y="0" width="768" height="1326" />
+    </state>
+    <state x="456" y="165" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728/1366.0.1440.860@0.0.1366.728" timestamp="1606678464826" />
+    <state x="256" y="301" key="#com.intellij.fileTypes.FileTypeChooser/0.0.768.1326/768.-105.1366.728@0.0.768.1326" timestamp="1606730048945" />
+    <state x="413" y="118" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1606683163954">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="413" y="118" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728/1366.0.1440.860@0.0.1366.728" timestamp="1606683163954" />
+    <state x="278" y="285" key="FileChooserDialogImpl" timestamp="1606799246279">
+      <screen x="0" y="0" width="768" height="1326" />
+    </state>
+    <state x="580" y="185" key="FileChooserDialogImpl/0.0.1600.860/1600.0.1600.860@0.0.1600.860" timestamp="1601486963183" />
+    <state x="278" y="285" key="FileChooserDialogImpl/0.0.768.1326/768.-105.1366.728@0.0.768.1326" timestamp="1606799246279" />
+    <state x="635" y="353" key="NewPhpFileDialog" timestamp="1605733252625">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="635" y="353" key="NewPhpFileDialog/0.0.1600.860/1600.0.1600.860@0.0.1600.860" timestamp="1605733252625" />
+    <state x="222" y="277" width="672" height="1046" key="search.everywhere.popup" timestamp="1608203532470">
+      <screen x="0" y="0" width="768" height="1326" />
+    </state>
+    <state x="395" y="152" width="672" height="574" key="search.everywhere.popup/0.0.1366.728/-1366.0.1366.728@0.0.1366.728" timestamp="1605822370601" />
+    <state x="395" y="152" width="672" height="574" key="search.everywhere.popup/0.0.1366.728/1366.0.1440.860@0.0.1366.728" timestamp="1606688688128" />
+    <state x="395" y="152" width="672" height="574" key="search.everywhere.popup/0.0.1366.728/1366.212.1366.728@0.0.1366.728" timestamp="1606523206256" />
+    <state x="463" y="180" width="672" height="678" key="search.everywhere.popup/0.0.1600.860/1600.0.1600.860@0.0.1600.860" timestamp="1605729565934" />
+    <state x="222" y="277" width="672" height="1046" key="search.everywhere.popup/0.0.768.1326/768.-105.1366.728@0.0.768.1326" timestamp="1608203532470" />
+>>>>>>> dc47ec4a74df8469c9a402ea7772e021e3096f06
   </component>
 </project>

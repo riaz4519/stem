@@ -18,6 +18,7 @@ class CreateProgramsTable extends Migration
             $table->string('title');
             $table->text('about');
             $table->string('image');
+            $table->integer('verify_event_competition')->default(0);
             $table->timestamps();
         });
     }

@@ -24,6 +24,7 @@
                             <th class="wd-20p">Event Key Points</th>
                             <th class="wd-20p">Video</th>
                             <th class="wd-20p">Mentors</th>
+                            <th class="wd-20p">Delete</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -51,12 +52,40 @@
                             <td>
                                 <a href="{{route('event.add.mentor',$row->id)}}" class="btn btn-xs btn-dark text-white"><i class="fa fa-plus"></i></a>
                             </td>
+                            <td>
+                                <button type="button" value="{{ $row->id }}" class="btn btn-danger btn-xs event_delete_btn">
+                                    <i class="fa fa-minus"></i>
+                                </button>
+                            </td>
                         </tr>
                       @endforeach
                     </tbody>
                 </table>
             </div>
-            
+            <!-- Modal -->
+            <div class="modal fade" id="eventdelete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h4 class="modal-title text-center" id="myModalLabel">Delete Confirmation</h4>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    </div>
+                    <form action="{{route('event.destroy','test')}}" id="event_delete_form" method="POST">
+                        {{method_field('delete')}}
+                        {{csrf_field()}}
+                        <div class="modal-body">
+                          <p class="text-center">Are you sure you want to delete?</p>
+                          <input type="hidden" name="event_id" id="event_id" >
+                        </div>
+                    
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-xs btn-success" data-dismiss="modal">No, Cancel</button>
+                          <button type="submit" class="btn btn-xs btn-warning">Yes, DELETE</button>
+                        </div>
+                      </form>
+                  </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -65,7 +94,12 @@
 @section('backend_custom_script')
 <script>
     $(document).ready(function(){
-
+        // event delete btn
+        $('.event_delete_btn').on('click',function(){ 
+            $("#event_delete_form").trigger("reset");
+            $('#event_id').val($(this).val());
+            $("#eventdelete").modal('show');
+        });
     });
 </script>
 @endsection

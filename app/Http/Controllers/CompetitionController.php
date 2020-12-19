@@ -38,30 +38,41 @@ class CompetitionController extends Controller
             'program_id' => 'required'
         ]);
 
-        $image  = $request->file('image');
-
-        if($image){
-
-            $filename       = time().$image->getClientOriginalName();
-            $image->storeAs("public/competition",$filename);
-            $image     = $filename;
-        }
-
-        if(Event::where('program_id',$request->program_id)->first())
+        $check_event_or_comp = Program::where('id',$request->program_id)->first()->verify_event_competition;
+        
+        // 0 = event, 1 = competition, 2 = both
+        if($check_event_or_comp == 1 || $check_event_or_comp == 2)
         {
-            Session::flash('success_message','Selected program already exists in Event!!!');
-            return back();
+
+            $image  = $request->file('image');
+
+            if($image){
+
+                $filename       = time().$image->getClientOriginalName();
+                $image->storeAs("public/competition",$filename);
+                $image     = $filename;
+            }
+
+        
+
+            Competition::create([
+                'about' => $request->about,
+                'title' => $request->title,
+                'image' => $image,
+                'program_id' => $request->program_id
+            ]);
+    
+            Session::flash('success_message','Created successfully!');
+            return redirect()->back();
+
+        }else{
+
+            Session::flash('error_message','Sorry this program has no permission to create competition!');
+            return redirect()->back();
+
         }
 
-        Competition::create([
-            'about' => $request->about,
-            'title' => $request->title,
-            'image' => $image,
-            'program_id' => $request->program_id
-        ]);
-
-        Session::flash('success_message','Created successfully!');
-        return redirect()->back();
+        
     }
 
     public function index()
@@ -73,6 +84,7 @@ class CompetitionController extends Controller
     public function edit($id)
     {
         $data['competition'] = Competition::findOrFail($id);
+        $data['programs'] = Program::all();
         return view('admin.competition.edit',$data);
     }
 
@@ -93,6 +105,7 @@ class CompetitionController extends Controller
 
         $competition->title             = $request->title;
         $competition->about             = $request->about;
+        $competition->program_id        = $request->program_id;
         $competition->save();
 
         Session::flash('success_message','Updated successfully!');
@@ -487,6 +500,63 @@ class CompetitionController extends Controller
 
         Session::flash('success_message','Updated successfully!');
         return redirect()->back();
+    }
+
+    public function destroy_competition(Request $request)
+    {
+        $competition = Competition::where('id',$request->competition_id)->first();
+
+        // participants
+        foreach($competition->competitionparticipants as $competitionparticipant)
+        {
+            $participant_imagepath = 'storage/competition/participants/'.$competitionparticipant->image;
+            File::delete($participant_imagepath);
+
+            $competitionparticipant->delete();
+        }
+
+        // objectives
+        $competition->competitionobjectives()->delete();
+        
+        //photos
+        foreach($competition->competitionphotos as $competitionphoto)
+        {
+            $competitionphoto_imagepath = 'storage/competition/photos/'.$competitionphoto->image;
+            File::delete($competitionphoto_imagepath);
+            $competitionphoto->delete();
+        }
+
+        // keypoints
+        $competition->competitionkeypoints()->delete();
+
+        // videos
+        $competition->competitionvideos()->delete();
+
+        // mentors
+        foreach($competition->competitionmentors as $competitionmentor)
+        {
+            $competitionmentor_imagepath = 'storage/competition/mentors/'.$competitionmentor->image;
+            File::delete($competitionmentor_imagepath);
+            $competitionmentor->delete();
+        }
+
+        // winners
+        foreach($competition->competitionwinners as $competitionwinner)
+        {
+            
+            $competitionwinner_imagepath = 'storage/competition/winner/'.$competitionwinner->image;
+            File::delete($competitionwinner_imagepath);
+            $competitionwinner->delete();
+
+        }
+
+        $competition_imagepath = 'storage/competition/'.$competition->image;
+        File::delete($competition_imagepath);
+        $competition->delete();
+
+        Session::flash('success_message','Deletion Completed successfully!');
+        return redirect()->back();
+
     }
 
 }

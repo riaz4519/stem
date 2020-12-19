@@ -31,4 +31,9 @@ class FrontendController extends Controller
     {
         return view('career.career_page');
     }
+
+    public function course()
+    {
+        return view('course.course_details');
+    }
 }

@@ -17,6 +17,26 @@
 
     <!-- events-section
         ================================================== -->
+    <section class="about-section" style="padding: 0px 0px;">
+        <div class="container">
+            <div class="about-article">
+                @foreach($ourworkswithoutimages as $row)
+                <div class="row">
+
+                    <div class="col-lg-12">
+                        <div class="article-content">
+                            <div class="text-center">
+                                <i class="fa fa-umbrella"></i>
+                                <h2>{{$row->title}}</h2>
+                            </div>
+                            <p>{{$row->description}}</p>
+                        </div>
+                    </div>
+                </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
     <section class="events-section events-page">
         <div class="container">
             <div class="row justify-content-center">

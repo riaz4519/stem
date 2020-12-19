@@ -15,12 +15,12 @@ class AboutUsController extends Controller
 
     public function our_work(){
         $data['ourworks'] = Ourwork::whereNotNull('image')->get();
-        $data['ourworkswithoutimages'] = Ourwork::whereNull('image')->get();
         return view('about_us.our_work',$data);
     }
 
     public function our_story(){
         $data['ourstories'] = Ourstory::paginate(8);
+        $data['ourworkswithoutimages'] = Ourwork::whereNull('image')->get();
         return view('about_us.our_story',$data);
     }
 

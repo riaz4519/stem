@@ -38,16 +38,17 @@
     <!-- End portfolio section -->
 
     {{--participants--}}
+    @if(!$event->eventparticipants->isEmpty())
     <section class="teachers-section">
         <div class="container">
 
             <div class="teachers-box">
                 <h1>Participants</h1>
-                <div class="row">
+                <div class="row d-flex justify-content-center">
                     @foreach($event->eventparticipants as $eventparticipant)
                     <div class="col-lg-3 col-md-6">
                         <div class="teacher-post">
-                            <a href="single-teacher.html">
+                            <a>
                                 <img src="{{ asset('storage/event/participants/'.$eventparticipant->image)}}" alt="">
                                 <div class="hover-post">
                                     <h2>{{$eventparticipant->name}}</h2>
@@ -62,9 +63,11 @@
 
         </div>
     </section>
+    @endif
     {{--end of participants--}}
 
     {{--objective--}}
+    @if(!$event->eventobjectives->isEmpty())
     <section class="portfolio-section">
         <div class="container">
             <div class="row">
@@ -81,16 +84,16 @@
             </div>
         </div>
     </section>
-
+    @endif
     {{--end of objective--}}
 
     {{--photos--}}
-
+    @if(!$event->eventphotos->isEmpty())
     <section class="blog-section">
         <div class="container">
             <h1>Photos</h1>
             <div class="blog-box">
-                <div class="row">
+                <div class="row d-flex justify-content-center">
                     @foreach($event->eventphotos as $eventphoto)
                     <div class="col-lg-3 col-md-6">
                         <div class="blog-post">
@@ -105,10 +108,11 @@
             </div>
         </div>
     </section>
-
+    @endif
     {{--end of photos--}}
 
     {{--outcome--}}
+    @if(!$event->eventkeypoints->isEmpty())
     <section class="blog-section">
         <div class="container">
             <div class="row">
@@ -134,10 +138,11 @@
             </div>
         </div>
     </section>
+    @endif
     {{--end of outcome--}}
 
     {{--videos--}}
-
+    @if(!$event->eventvideos->isEmpty())
     <section class="events-section">
         <div class="container">
             <div class="row">
@@ -159,15 +164,17 @@
             </div>
         </div>
     </section>
+    @endif
     {{--end of videos--}}
 
     {{--mentors--}}
+    @if(!$event->eventmentors->isEmpty())
     <section class="teachers-section">
         <div class="container">
 
             <div class="teachers-box">
                 <h1>Mentors</h1>
-                <div class="row">
+                <div class="row d-flex justify-content-center">
                     @foreach($event->eventmentors as $eventmentor)
                     <div class="col-lg-3 col-md-6">
                         <div class="teacher-post">
@@ -187,5 +194,6 @@
             </div>
         </div>
     </section>
+    @endif
     {{--end of mentors--}}
 @endsection

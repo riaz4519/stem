@@ -28,8 +28,26 @@
                                     <input type="text" name="title" value="{{$program->title}}" class="form-control" id="" placeholder="title">
                                 </div>
                                 <div class="row mt-4">
-                                    <label class="d-block">Description</label>
+                                    <label class="d-block">About</label>
                                     <textarea type="text" name="about" class="form-control" rows="20">{{$program->about}}</textarea>
+                                </div>
+
+                                <div class="row mt-4">
+                                    <div class="col-md-4">
+                                        <div class="radio">
+                                            <label><input type="radio" name="verify_event_competition" value="0" {{$program->verify_event_competition == 0 ? 'checked' : ''}}> Includes Event (Default)</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="radio">
+                                            <label><input type="radio" name="verify_event_competition" value="1" {{$program->verify_event_competition == 1 ? 'checked' : ''}}> Includes Competition</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="radio">
+                                            <label><input type="radio" name="verify_event_competition" value="2" {{$program->verify_event_competition == 2 ? 'checked' : ''}}> Both</label>
+                                        </div>
+                                    </div>
                                 </div>
                                 
                                 

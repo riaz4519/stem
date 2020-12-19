@@ -23,7 +23,9 @@
             <div class="row">
                 <div class="col-lg-7">
                     <div class="project-image">
-                        <img src="{{ asset('storage/competition/'.$competition->image) }}" alt="">
+                        <div>
+                            <img src="{{ asset('storage/competition/'.$competition->image) }}" alt="">
+                        </div>
                     </div>
                 </div>
                 <div class="col-lg-5">
@@ -38,16 +40,17 @@
     <!-- End portfolio section -->
 
     {{--participants--}}
+    @if(!$competition->competitionparticipants->isEmpty())
     <section class="teachers-section">
         <div class="container">
 
             <div class="teachers-box">
                 <h1>Participants</h1>
-                <div class="row">
+                <div class="row d-flex justify-content-center">
                     @foreach($competition->competitionparticipants as $competitionparticipant)
                     <div class="col-lg-3 col-md-6">
                         <div class="teacher-post">
-                            <a href="single-teacher.html">
+                            <a>
                                 <img src="{{ asset('storage/competition/participants/'.$competitionparticipant->image) }}" alt="">
                                 <div class="hover-post">
                                     <h2>{{$competitionparticipant->name}}</h2>
@@ -62,13 +65,15 @@
             </div>
         </div>
     </section>
+    @endif
     {{--end of participants--}}
 
+    @if(!$competition->competitionwinners->isEmpty())
     <section class="blog-section">
         <div class="container">
             <h1>winners</h1>
             <div class="blog-box">
-                <div class="row">
+                <div class="row d-flex justify-content-center">
                     @foreach($competition->competitionwinners as $competitionwinner)
                     <div class="col-lg-4 col-md-6">
                         <div class="blog-post">
@@ -87,8 +92,10 @@
             </div>
         </div>
     </section>
+    @endif
 
     {{--objective--}}
+    @if(!$competition->competitionobjectives->isEmpty())
     <section class="portfolio-section">
         <div class="container">
             <div class="row">
@@ -103,18 +110,18 @@
             </div>
         </div>
     </section>
-
+    @endif
     {{--end of objective--}}
 
     {{--photos--}}
-
+    @if(!$competition->competitionphotos->isEmpty())
     <section class="blog-section">
 
         <div class="container">
             <h1>Photos</h1>
             <div class="blog-box">
 
-                <div class="row">
+                <div class="row d-flex justify-content-center">
                     @foreach($competition->competitionphotos as $competitionphoto)
                     <div class="col-lg-3 col-md-6">
                         <div class="blog-post">
@@ -129,10 +136,11 @@
             </div>
         </div>
     </section>
-
+    @endif
     {{--end of photos--}}
 
     {{--outcome--}}
+    @if(!$competition->competitionkeypoints->isEmpty())
     <section class="blog-section">
         <div class="container">
             <div class="row">
@@ -157,10 +165,11 @@
             </div>
         </div>
     </section>
+    @endif
     {{--end of outcome--}}
 
     {{--videos--}}
-
+    @if(!$competition->competitionvideos->isEmpty())
     <section class="events-section">
         <div class="container">
             <div class="row">
@@ -184,14 +193,16 @@
 
         </div>
     </section>
+    @endif
     {{--end of videos--}}
 
     {{--mentors--}}
+    @if(!$competition->competitionmentors->isEmpty())
     <section class="teachers-section">
         <div class="container">
 
             <div class="teachers-box">
-                <h1>Mentors</h1>
+                <h1>Judge</h1>
                 <div class="row">
                     @foreach($competition->competitionmentors as $mentor)
                     <div class="col-lg-3 col-md-6">
@@ -206,12 +217,10 @@
                         </div>
                     </div>
                     @endforeach
-
                 </div>
-
-
             </div>
         </div>
     </section>
+    @endif
     {{--end of mentors--}}
 @endsection

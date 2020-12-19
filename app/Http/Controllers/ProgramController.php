@@ -19,26 +19,21 @@ class ProgramController extends Controller
 
     public function program($program_id){
 
+        $data['program'] = Program::where('id',$program_id)->first();
 
-         $data['program'] = Program::where('id',$program_id)->first();
-         $data['program_key_points'] = ProgramKeyPoint::where('program_id',$program_id)->get();
-         $data['programobjectives'] = Programobjective::where('program_id',$program_id)->get();
-         $data['programcountlists'] = Programcase::where('program_id',$program_id)->get();
-         $data['popularcourses'] = Popularcourse::where('program_id',$program_id)->get();
-         $data['videos'] = Programvideo::where('program_id',$program_id)->get();
         return view('programs.program')->with($data);
     }
 
     public function create_program(){
-        return view('admin.programs.create_program',$data);
+        return view('admin.programs.create_program');
     }
     public function store_program(Request  $request){
 
         $request->validate([
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
-            'about' => 'required',
-            'title' => 'required',
-
+            'image'                     => 'required|image|mimes:jpeg,png,jpg,gif,svg',
+            'about'                     => 'required',
+            'title'                     => 'required',
+            'verify_event_competition'  => 'required'
         ]);
 
         $image  = $request->file('image');
@@ -55,6 +50,7 @@ class ProgramController extends Controller
             'about' => $request->about,
             'title' => $request->title,
             'image' => $image,
+            'verify_event_competition' => $request->verify_event_competition
         ]);
 
         Session::flash('success_message','Created successfully!');
@@ -89,8 +85,9 @@ class ProgramController extends Controller
                 $program->save();
         }
 
-        $program->title             = $request->title;
-        $program->about             = $request->about;
+        $program->title                     = $request->title;
+        $program->about                     = $request->about;
+        $program->verify_event_competition  = $request->verify_event_competition;
         $program->save();
 
         Session::flash('success_message','Updated successfully!');
@@ -323,6 +320,39 @@ class ProgramController extends Controller
         
         Session::flash('success_message','Updated successfully!');
         return redirect()->back();
+    }
+
+    public function destroy_program(Request $request)
+    {
+        $program = Program::where('id',$request->program_id)->first();
+
+        // points
+        $program->programkeypoints()->delete();
+
+        // objectives
+        $program->programobjectives()->delete();
+
+        // totalcounts (program cases)
+        $program->programcases()->delete();
+
+        // popular courses
+        foreach($program->popularcourses as $popularcourse)
+        {
+            $imagepath = 'storage/program/popularcourse/'.$popularcourse->image;
+            File::delete($imagepath);
+            $popularcourse->delete();
+        }
+
+        // videos
+        $program->programvideos()->delete();
+
+        $program_imagepath = 'storage/program/'.$program->image;
+        File::delete($program_imagepath);
+        $program->delete();
+
+        Session::flash('success_message','Deletion Completed successfully!');
+        return redirect()->back();
+        
     }
 
 }
