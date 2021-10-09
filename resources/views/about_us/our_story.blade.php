@@ -29,7 +29,7 @@
                                 <i class="fa fa-umbrella"></i>
                                 <h2>{{$row->title}}</h2>
                             </div>
-                            <p>{{$row->description}}</p>
+                            <p>{!! $row->description !!}</p>
                         </div>
                     </div>
                 </div>
@@ -69,9 +69,9 @@
                             </div>
                         </div>
                         @endforeach
-                        
+
                         {{$ourstories->links()}}
-                        
+
 
                     </div>
                 </div>
